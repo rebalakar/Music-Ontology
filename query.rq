@@ -1,0 +1,43 @@
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX fx:   <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz:  <http://sparql.xyz/facade-x/data/>
+PREFIX ex:   <http://example.org/music/>
+
+CONSTRUCT {
+    # Define Classes
+    ex:Artist a rdfs:Class .
+    ex:Release a rdfs:Class .
+
+    # Define Object Property (Release → Artist)
+    ex:releasedBy a rdf:Property ;
+        rdfs:domain ex:Release ;
+        rdfs:range ex:Artist .
+
+    # Generate Instances for Releases and Artists
+    ?releaseUri a ex:Release ;
+        ex:releasedBy ?artistUri .
+
+    ?artistUri a ex:Artist .
+} WHERE {
+  SERVICE <x-sparql-anything:> {
+    fx:properties fx:location "release.json" .
+
+    # Extract keys (release names) as ?release_slot
+    ?root a fx:root ;
+          ?release_slot ?release .  
+
+    # Extract release details
+    ?release xyz:id ?id ;   
+             xyz:title ?title ;
+             xyz:artist ?artist ;
+             xyz:first-release-date ?firstReleaseDate ;   
+             xyz:primary-type ?primaryType .
+
+    # Force Creation of Release Instances
+    BIND(IRI(CONCAT("http://example.org/music/", REPLACE(?title, " ", ""))) AS ?releaseUri)
+    
+    # Force Creation of Artist Instances
+    BIND(IRI(CONCAT("http://example.org/music/", REPLACE(?artist, " ", ""))) AS ?artistUri)
+}
+}
