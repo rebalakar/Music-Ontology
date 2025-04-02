@@ -1,0 +1,4 @@
+pandas
+rdflib
+rapidfuzz
+numpy
