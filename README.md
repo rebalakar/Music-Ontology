@@ -13,7 +13,7 @@ project/
     ├── entity_resolution.py   # Entity resolution functions
     ├── mapping_engine.py      # Core mapping functionality
     ├── main.py                # Main script to run the pipeline
-    └── count_entities.py      # Entity counting utility
+    ├── analyze_graph.py       # Analysis script for the knowledge graph
 ```
 
 ## Mapping Implementation
@@ -25,6 +25,7 @@ The mapping process involves several components:
 3. **Entity Resolution (`src/entity_resolution.py`)**: Handles fuzzy matching for entity resolution.
 4. **Mapping Engine (`src/mapping_engine.py`)**: Core component that maps data to RDF triples.
 5. **Main Script (`src/main.py`)**: Orchestrates the entire mapping process.
+6. **Analysis Script (`src/analyze_graph.py`)**: Performs comprehensive analysis of the knowledge graph.
 
 ## Usage
 
@@ -34,10 +35,15 @@ The mapping process involves several components:
 - Required packages (install via `pip install -r requirements.txt`):
   - rdflib
   - pandas
-  - rapidfuzz
+  - fuzzywuzzy
   - numpy
+  - matplotlib
+  - seaborn
 
 ### How to run
+
+
+Make sure you have the enriched lyrics as lyrics_enriched.csv, the musicbrainz json as recordings.json, and singles_charts_2010s_cleaned.csv, all in the data directory
 
 Run the main script to generate the knowledge graph:
 
@@ -54,12 +60,14 @@ This will:
 2. Map the data to RDF triples
 3. Save the resulting knowledge graph to `output/music_knowledge_graph.ttl`
 
-To check the entity counts in the generated graph, run:
+To analyze the knowledge graph, run:
 
 ```bash
 # In the src directory
-python count_entities.py
+python analyze_graph.py
 ```
+
+This will generate a comprehensive analysis report in the output directory.
 
 ## Mapping Approaches
 
@@ -71,14 +79,15 @@ The CSV data is mapped as follows:
 - Artists are extracted and mapped to MusicArtist entities
 - Dates are mapped to time:Instant entities
 - Chart positions are mapped as chartPosition properties
+- Chart runs are tracked and measured in weeks
 
 ### JSON Mapping
 
 The JSON data is mapped as follows:
 - Each object becomes additional properties for existing or new Track entities
-- Artist details are added to existing or new MusicArtist entities
-- Additional properties like language, writers, composers are added
-- Tags are added as comments
+- Artist details (including birth dates, country, area) are added to existing or new MusicArtist entities
+- Additional properties like language, writers, composers, labels are added
+- Additional roles (engineers, mixers, vocalists, etc.) are added
 
 ### Entity Resolution
 
@@ -91,6 +100,8 @@ Entity resolution is handled through:
 
 The output graph contains:
 - Tracks with their associated artists, writers, languages, and other metadata
-- Music artists with their gender, legal names, and relationships to tracks
+- Music artists with their gender, legal names, dates of birth, countries, and relationships to tracks
 - Chart entries linking tracks to chart positions and dates
-- Time instants for the chart dates
+- Chart runs measuring how long songs remained on the charts
+- Time instants, intervals, and durations to represent temporal relationships
+- Analysis reports and visualizations in the output directory

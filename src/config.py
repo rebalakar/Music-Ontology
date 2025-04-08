@@ -15,7 +15,7 @@ NAMESPACES = {
 
 # File paths 
 CSV_DATA_PATH = os.path.join(PROJECT_ROOT, 'data', 'singles_charts_2010s_cleaned.csv')
-JSON_DATA_PATH = os.path.join(PROJECT_ROOT, 'data', 'filtered_all.json')
+JSON_DATA_PATH = os.path.join(PROJECT_ROOT, 'data', 'recordings.json')
 OUTPUT_PATH = os.path.join(PROJECT_ROOT, 'output', 'music_knowledge_graph.ttl')
 
 # Entity IRI patterns
@@ -23,4 +23,14 @@ TRACK_IRI_PATTERN = 'http://example.org/mo#track_{}'
 ARTIST_IRI_PATTERN = 'http://example.org/mo#artist_{}'
 CHART_ENTRY_IRI_PATTERN = 'http://example.org/billboard#chartEntry_{}'
 CHART_IRI_PATTERN = 'http://example.org/billboard#chart_{}'
-TIME_INSTANT_IRI_PATTERN = 'http://example.org/time#instant_{}' 
+TIME_INSTANT_IRI_PATTERN = 'http://example.org/time#instant_{}'
+RECORD_IRI_PATTERN = 'http://example.org/mo#record_{}'
+GENRE_IRI_PATTERN = 'http://example.org/mo#genre_{}'
+LABEL_IRI_PATTERN = 'http://example.org/mo#label_{}'
+WRITER_IRI_PATTERN = 'http://example.org/mo#writer_{}'
+PRODUCER_IRI_PATTERN = 'http://example.org/mo#producer_{}'
+ARRANGER_IRI_PATTERN = 'http://example.org/mo#arranger_{}'
+TIME_INTERVAL_IRI_PATTERN = 'http://example.org/time#interval_{}'
+TIME_DURATION_IRI_PATTERN = 'http://example.org/time#duration_{}'
+TEMPORAL_UNIT_IRI_PATTERN = 'http://example.org/time#unit_{}'
+CHART_RUN_IRI_PATTERN = 'http://example.org/billboard#chartRun_{}' 
