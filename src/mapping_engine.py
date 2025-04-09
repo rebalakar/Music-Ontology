@@ -1012,7 +1012,7 @@ class MappingEngine:
                         if 'area' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['area']:
                             area = all_artists_to_process[artist_name]['area']
                             if area:  # Check if area is not None
-                                self.graph.add((artist_uri, self.mo.area, Literal(area, lang="en")))
+                                self.graph.add((artist_uri, self.mo.area, Literal(area)))
             
             # Process writers
             if 'writer' in data and data['writer']:
@@ -1664,12 +1664,12 @@ class MappingEngine:
                                 
                         if 'country' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['country']:
                             country = all_artists_to_process[artist_name]['country']
-                            self.graph.add((artist_uri, self.mo.country, Literal(country, lang="en")))
+                            self.graph.add((artist_uri, self.mo.country, Literal(country)))
                             
                         if 'area' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['area']:
                             area = all_artists_to_process[artist_name]['area']
                             if area:  # Check if area is not None
-                                self.graph.add((artist_uri, self.mo.area, Literal(area, lang="en")))
+                                self.graph.add((artist_uri, self.mo.area, Literal(area)))
         
         print(f"Preprocessed {artist_count} artists from JSON data:")
         print(f"  - {matched_artists} matched to existing artists")
