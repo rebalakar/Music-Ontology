@@ -7,8 +7,7 @@
 
 <http://example.org/billboard#>
     a owl:Ontology ;
-    owl:imports <file:///home/ethan/KET-Music-History/ontologies/music_ontology.ttl> , 
-                <file:///home/ethan/KET-Music-History/ontologies/time.ttl> .
+    owl:imports <http://example.org/mo#> , <http://example.org/time#> .
 
 ################################################################################
 # Classes

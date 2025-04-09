@@ -330,21 +330,54 @@ class MappingEngine:
         self._update_chart_run(track_uri, track_id, chart_entry_uri, time_instant_uri, chart_date)
     
     def _process_artists(self, artist_text, track_uri):
-        """Process artist field from CSV and create artist entities"""
+        """
+        Process artist field from CSV and create artist entities.
+        Handles various collaboration formats and ensures only individual artists are created.
+        """
+        # First normalize the artist text to handle different collaboration formats
+        normalized_text = artist_text
         
-        # Handle various forms of artist collaborations (feat., ft., &, etc.)
+        # Handle various forms of artist collaborations
+        # Define all patterns to split - using word boundaries and more careful patterns
+        collaboration_patterns = [
+            " feat. ", " ft. ", " featuring ", 
+            " & ", 
+            ", ", 
+            " with ", 
+            r" x ", # Only match "x" when it's surrounded by spaces, not part of names like Alex
+            " + ", 
+            " vs. ", " versus "
+        ]
+        # Don't use "and" as it's too common in artist names
+        
+        # Split by each pattern, keeping the full hierarchy of splits
+        artists_to_process = [normalized_text]
+        for pattern in collaboration_patterns:
+            new_artists_list = []
+            for artist in artists_to_process:
+                if pattern in artist:  # Simple string check works for all our patterns
+                    splits = artist.split(pattern)
+                    new_artists_list.extend([a.strip() for a in splits if a.strip()])
+                else:
+                    new_artists_list.append(artist)
+            artists_to_process = new_artists_list
+        
+        # Remove duplicates while preserving order
         artists = []
-        if " feat. " in artist_text:
-            artists = artist_text.split(" feat. ")
-        elif " ft. " in artist_text:
-            artists = artist_text.split(" ft. ")
-        elif " & " in artist_text:
-            artists = artist_text.split(" & ")
-        else:
-            artists = [artist_text]
+        for artist in artists_to_process:
+            if artist not in artists:
+                artists.append(artist)
         
         for artist_name in artists:
             artist_name = artist_name.strip()  # Clean up the name
+            # Skip empty names or obviously incomplete fragments
+            if not artist_name or len(artist_name) < 2:
+                continue
+                
+            # Remove any leftover parenthetical phrases that might contain "feat" etc.
+            artist_name = re.sub(r'\([^)]*\)', '', artist_name).strip()
+            artist_name = re.sub(r'\[[^\]]*\]', '', artist_name).strip()
+            
             artist_id = generate_entity_id(artist_name)
             artist_uri = URIRef(ARTIST_IRI_PATTERN.format(artist_id))
             
@@ -361,6 +394,8 @@ class MappingEngine:
             
             # Link track to artist
             self.graph.add((track_uri, self.mo.hasMusicArtist, artist_uri))
+            # Add inverse relationship - artist to track
+            self.graph.add((artist_uri, self.mo.hasTrack, track_uri))
     
     def _extract_record_from_title(self, track_title, track_uri):
         """Try to extract record information from a track title (for albums, EPs, etc.)"""
@@ -391,7 +426,7 @@ class MappingEngine:
         
         return None
     
-    def _normalize_track_name(self, track_name):
+    def _normalize_track_title(self, track_name):
         """
         Apply advanced normalization to track names to improve matching:
         - Remove common variations like "(Radio Edit)", "(Live)", etc.
@@ -443,21 +478,35 @@ class MappingEngine:
     def _artists_match(self, json_artists, csv_artist_id):
         """
         Check if any artist from the JSON data matches the CSV artist.
-        Uses more advanced matching to handle spelling variations and name format differences.
+        Uses more relaxed matching to handle spelling variations and name format differences.
         """
         if not json_artists or not csv_artist_id:
             return False
             
         # Try to extract artist names from the CSV artist ID
-        csv_artists = csv_artist_id.split('_and_')
-        if len(csv_artists) == 1:
+        csv_artists = csv_artist_id.split('_')
+        
+        # Try to get the original artist name from RDFS:label if available
+        csv_artist_uri = None
+        for _, artist_uri in self.artists.items():
+            if str(artist_uri).endswith(csv_artist_id):
+                csv_artist_uri = artist_uri
+                break
+                
+        csv_artist_names = []
+        if csv_artist_uri:
+            for _, _, label in self.graph.triples((csv_artist_uri, RDFS.label, None)):
+                csv_artist_names.append(str(label))
+        
+        # If we couldn't find labels, fall back to ID-based names
+        if not csv_artist_names:
             # It might be a single artist name with underscores
             csv_artist_name = csv_artist_id.replace('_', ' ')
-            csv_artists = [csv_artist_name]
+            csv_artist_names = [csv_artist_name]
         
         # Normalize all artist names
         normalized_json_artists = [clean_entity_name(a.lower()) for a in json_artists]
-        normalized_csv_artists = [clean_entity_name(a.lower()) for a in csv_artists]
+        normalized_csv_artists = [clean_entity_name(a.lower()) for a in csv_artist_names]
         
         # Check for direct matches first
         for json_artist in normalized_json_artists:
@@ -470,10 +519,24 @@ class MappingEngine:
                 if json_artist in csv_artist or csv_artist in json_artist:
                     return True
                 
-                # Fuzzy match with a high threshold (85+)
+                # Fuzzy match with a lower threshold (60+) to capture more matches
                 similarity = fuzz.ratio(json_artist, csv_artist)
-                if similarity >= 85:
+                if similarity >= 60:
                     return True
+                
+                # Try token_sort_ratio for word reordering
+                token_similarity = fuzz.token_sort_ratio(json_artist, csv_artist)
+                if token_similarity >= 70:
+                    return True
+        
+        # Relaxed match: If we've made it this far, try one more check with a very low threshold
+        # This is more permissive and may introduce some false positives, but will maximize matches
+        for json_artist in normalized_json_artists:
+            for csv_artist in normalized_csv_artists:
+                if len(json_artist) > 2 and len(csv_artist) > 2:  # Only for non-trivial artist names
+                    # Final attempt with a lower threshold for artists with shared tokens
+                    if any(token in csv_artist for token in json_artist.split('_') if len(token) > 3):
+                        return True
         
         return False
 
@@ -517,11 +580,76 @@ class MappingEngine:
         matched_tracks = 0
         skipped_tracks = 0
         
+        # Preprocess all artist data from JSON first to capture metadata
+        # This ensures we get artist info even if their tracks don't match
+        person_uri_map = self.preprocess_json_artists(json_data)
+        
+        # Create a normalized title index of existing tracks from CSV
+        # This is the key improvement - focus on normalized title matching
+        normalized_track_index = {}
+        
+        # Function for basic title normalization (same as in our analysis)
+        def normalize_title(title):
+            if not title:
+                return ""
+            # Convert to lowercase
+            title = title.lower()
+            # Remove featuring artists
+            title = re.sub(r'\s+(?:feat|ft|featuring)\.?\s+.*', '', title, flags=re.IGNORECASE)
+            # Remove text in parentheses
+            title = re.sub(r'\([^)]*\)', '', title)
+            # Remove text in brackets
+            title = re.sub(r'\[[^\]]*\]', '', title)
+            # Standardize slashes (for medleys)
+            title = re.sub(r'\s*/\s*', '/', title)
+            # Remove special characters (except slash for medleys)
+            title = re.sub(r'[^\w\s/]', '', title)
+            # Remove common filler words
+            for word in [r'\bthe\b', r'\band\b', r'\bwith\b', r'\ba\b', r'\ban\b', r'\bof\b']:
+                title = re.sub(word, '', title, flags=re.IGNORECASE)
+            # Normalize whitespace
+            title = re.sub(r'\s+', ' ', title).strip()
+            return title
+        
+        # Build the normalized title index from existing tracks
+        for track_id, track_uri in self.tracks.items():
+            # The track ID format is: clean_title_clean_artist_hash
+            # Extract the parts before the hash (last segment)
+            parts = track_id.split('_')
+            if len(parts) > 1:
+                # In analyze_title_matches.py, we're looking at the raw song title from CSV
+                # so here we should fetch the original track title from the graph
+                track_title = None
+                for _, _, label in self.graph.triples((track_uri, RDFS.label, None)):
+                    track_title = str(label)
+                    break
+                
+                # If we can't find a label, fall back to extracting from ID
+                if not track_title:
+                    # Last part is the hash (6 chars)
+                    # Remove the hash and the artist from the ID
+                    track_parts = parts[:-1]  # Remove hash
+                    # Just use the whole reconstructed string as a fallback
+                    track_title = '_'.join(track_parts).replace('_', ' ')
+                
+                # Normalize the track title
+                norm_title = normalize_title(track_title)
+                
+                # Store with artist info for better matching
+                if norm_title not in normalized_track_index:
+                    normalized_track_index[norm_title] = []
+                normalized_track_index[norm_title].append((track_id, track_uri))
+        
+        print(f"Built normalized index of {len(normalized_track_index)} unique track titles")
+        
+        # Process each JSON track
         for key, data in json_data.items():
-            # Extract track name and process
             track_name = data.get('track', '')
-            
-            # Extract artist information - we'll use this for better matching
+            if not track_name:
+                skipped_tracks += 1
+                continue
+                
+            # Extract artists for additional matching criteria if needed
             artists = []
             if 'artist' in data and data['artist']:
                 for artist_data in data['artist']:
@@ -529,77 +657,77 @@ class MappingEngine:
                     if artist_name:
                         artists.append(artist_name)
             
-            # Generate a consistent ID format that matches the CSV approach
-            # Using the first artist if available, or a placeholder if not
             primary_artist = artists[0] if artists else "unknown_artist"
-            consistent_track_id = generate_entity_id(f"{track_name}_{primary_artist}")
             
-            # Now try multiple matching strategies to find existing track
+            # Normalize the JSON track title
+            normalized_json_title = normalize_title(track_name)
+            
+            # Look for exact match in normalized titles
             track_uri = None
             track_exists = False
             
-            # Strategy 1: Direct ID match (most reliable)
-            if consistent_track_id in self.tracks:
-                track_uri = self.tracks[consistent_track_id]
-                track_exists = True
-            
-            # Strategy 2: Advanced matching using normalized track names and all artists
-            if not track_exists:
-                normalized_track_name = self._normalize_track_name(track_name)
+            if normalized_json_title in normalized_track_index:
+                # We have a normalized title match, but we still need to verify the artist
+                candidates = normalized_track_index[normalized_json_title]
                 
-                for existing_id, existing_uri in self.tracks.items():
-                    # Parse existing ID to extract name and artist components
-                    existing_parts = existing_id.split('_')
-                    if len(existing_parts) > 1:
-                        # Extract the artist portion (last component)
-                        existing_artist = existing_parts[-1]
-                        # Everything else is the track name
-                        existing_track = '_'.join(existing_parts[:-1])
-                        
-                        # Apply same normalization to existing track name
-                        normalized_existing = self._normalize_track_name(existing_track.replace('_', ' '))
-                        
-                        # First check: Do normalized track names match exactly?
-                        exact_match = normalized_track_name == normalized_existing
-                        
-                        # Second check: Are they similar enough for fuzzy matching?
-                        fuzzy_match = False
-                        if len(normalized_track_name) > 3 and len(normalized_existing) > 3:
-                            similarity = fuzz.ratio(normalized_track_name, normalized_existing)
-                            fuzzy_match = similarity >= 90  # Higher threshold for track names
-                        
-                        # If either track match and any artist matches, use this entity
-                        if (exact_match or fuzzy_match) and self._artists_match(artists, existing_artist):
-                            track_uri = existing_uri
-                            track_exists = True
-                            # Add this ID mapping for future lookups
-                            self.tracks[consistent_track_id] = track_uri
-                            break
-            
-            # Strategy 3: Fuzzy fallback for track name only (least strict)
-            if not track_exists:
-                normalized_track_name = self._normalize_track_name(track_name)
+                # Try to find the best artist match among candidates
+                for candidate_id, candidate_uri in candidates:
+                    # Extract original track ID for artist matching
+                    # Check if any of our artists match the candidate
+                    if any(self._artists_match([artist], candidate_id) for artist in artists):
+                        track_uri = candidate_uri
+                        track_exists = True
+                        break
                 
-                for existing_id, existing_uri in self.tracks.items():
-                    existing_parts = existing_id.split('_')
-                    if len(existing_parts) > 1:
-                        existing_track = '_'.join(existing_parts[:-1]).replace('_', ' ')
-                        normalized_existing = self._normalize_track_name(existing_track)
-                        
-                        # Less strict fuzzy matching as a last resort
-                        # (shorter threshold for very short track names)
-                        threshold = 85 if len(normalized_track_name) > 10 else 95
-                        
-                        if len(normalized_track_name) > 3 and len(normalized_existing) > 3:
-                            similarity = fuzz.ratio(normalized_track_name, normalized_existing)
-                            if similarity >= threshold:
-                                track_uri = existing_uri
-                                track_exists = True
-                                # Add this ID mapping for future lookups
-                                self.tracks[consistent_track_id] = track_uri
+                # If we couldn't match by artist, just use the first candidate
+                # This is reasonable since we have the same normalized title
+                if not track_exists and candidates:
+                    track_uri = candidates[0][1]
+                    track_exists = True
+            
+            # If we still don't have a match, try token-based fuzzy matching
+            if not track_exists:
+                best_match = None
+                best_score = 0
+                best_uri = None
+                
+                # Try fuzzy matching for all titles
+                for norm_title, candidates in normalized_track_index.items():
+                    # Try several fuzzy matching approaches
+                    
+                    # 1. Basic ratio (overall string similarity)
+                    ratio_score = fuzz.ratio(normalized_json_title, norm_title)
+                    
+                    # 2. Token sort ratio (handles word reordering)
+                    token_sort_score = fuzz.token_sort_ratio(normalized_json_title, norm_title)
+                    
+                    # 3. Token set ratio (handles partial matches and subsets)
+                    token_set_score = fuzz.token_set_ratio(normalized_json_title, norm_title)
+                    
+                    # Take the best score from the three approaches
+                    score = max(ratio_score, token_sort_score, token_set_score)
+                    
+                    # Lower threshold (60) to catch more matches
+                    if score > 60 and score > best_score:
+                        # Try to match by artist for better accuracy
+                        for candidate_id, candidate_uri in candidates:
+                            if any(self._artists_match([artist], candidate_id) for artist in artists):
+                                best_match = candidate_id
+                                best_score = score
+                                best_uri = candidate_uri
                                 break
+                        
+                        # If no artist match but better score, still consider it
+                        if not best_match and score > best_score:
+                            best_match = candidates[0][0]
+                            best_score = score
+                            best_uri = candidates[0][1]
+                
+                if best_uri:
+                    track_uri = best_uri
+                    track_exists = True
             
-            # If no match found, skip this JSON track - don't create a new entity
+            # If we still don't have a match, skip this JSON track
             if not track_exists:
                 skipped_tracks += 1
                 continue  # Skip to the next JSON track
@@ -607,11 +735,76 @@ class MappingEngine:
             # Track was found, count it and proceed with enrichment
             matched_tracks += 1
             
-            # Add lyrics if available 
-            # Check if we're using track ID keys for lyrics instead of JSON keys
-            if consistent_track_id in self.lyrics_dict:
-                lyrics_text = self.lyrics_dict[consistent_track_id]
-                self.graph.add((track_uri, self.mo.hasLyrics, Literal(lyrics_text)))
+            # The rest of the method continues as before - enriching the track with additional data
+            # Add additional track properties if available
+            if 'year' in data and data['year']:
+                try:
+                    year = int(data['year'])
+                    self.graph.add((track_uri, self.mo.year, Literal(year, datatype=XSD.integer)))
+                except (ValueError, TypeError):
+                    pass
+                    
+            if 'duration' in data and data['duration']:
+                try:
+                    duration_seconds = float(data['duration'])
+                    self.graph.add((track_uri, self.mo.duration, Literal(duration_seconds, datatype=XSD.decimal)))
+                except (ValueError, TypeError):
+                    pass
+            
+            # Helper function to get or create a person entity
+            def get_or_create_person_entity(person_name):
+                # First check if this person already exists in our map
+                if person_name in person_uri_map:
+                    return person_uri_map[person_name]
+                
+                # If not in our map, check if this person exists as an artist
+                person_id = generate_entity_id(person_name)
+                artist_uri = URIRef(ARTIST_IRI_PATTERN.format(person_id))
+                
+                # Try entity resolution for artist
+                artist_found, matching_uri, matched_id = find_matching_artist(
+                    person_name, person_id, self.artists
+                )
+                
+                if artist_found:
+                    # Use the existing artist URI
+                    person_uri = matching_uri
+                    # Update our artists map with this alternate ID to help future lookups
+                    if person_id != matched_id:
+                        self.artists[person_id] = matching_uri
+                else:
+                    # Next check if this person exists as a writer
+                    if person_id in self.writers:
+                        person_uri = self.writers[person_id]
+                    # Or as a producer
+                    elif person_id in self.producers:
+                        person_uri = self.producers[person_id]
+                    # Or as any other role
+                    elif person_id in self.arrangers:
+                        person_uri = self.arrangers[person_id]
+                    elif person_id in self.engineers:
+                        person_uri = self.engineers[person_id]
+                    elif person_id in self.mixers:
+                        person_uri = self.mixers[person_id]
+                    elif person_id in self.vocalists:
+                        person_uri = self.vocalists[person_id]
+                    elif person_id in self.instrumentalists:
+                        person_uri = self.instrumentalists[person_id]
+                    elif person_id in self.recorders:
+                        person_uri = self.recorders[person_id]
+                    else:
+                        # Create a new person entity if not found in any role
+                        person_uri = artist_uri  # Use the artist URI pattern for all persons
+                        self.graph.add((person_uri, RDFS.label, Literal(person_name, lang="en")))
+                        
+                        # Default to unknown gender if not specified
+                        gender_uri = self.genders.get("unknown")
+                        if gender_uri:
+                            self.graph.add((person_uri, self.mo.hasGender, gender_uri))
+                
+                # Store in our map for future reference
+                person_uri_map[person_name] = person_uri
+                return person_uri
             
             # Process language
             if 'language' in data and data['language']:
@@ -627,7 +820,7 @@ class MappingEngine:
                 
                 self.graph.add((track_uri, self.mo.hasLanguage, language_uri))
             
-            # Process record label - new addition
+            # Process record label
             if 'label' in data and data['label']:
                 label_names = data['label']
                 # Handle both single label string and list of labels
@@ -651,97 +844,171 @@ class MappingEngine:
                         self.graph.add((label_uri, RDFS.label, Literal(label_name, lang="en")))
                     
                     self.graph.add((track_uri, self.mo.hasLabel, label_uri))
+                    # Add inverse relationship
+                    self.graph.add((label_uri, self.mo.labelForTrack, track_uri))
             
             # Process artists
             if 'artist' in data and data['artist']:
+                artists_to_add = []
+                # First collect all artist names, handling collaborations properly
+                all_artists_to_process = {}  # Initialize the dictionary here
                 for artist_data in data['artist']:
                     artist_name = artist_data.get('artist_name', '')
                     if not artist_name:
                         continue
                     
-                    artist_id = generate_entity_id(artist_name)
-                    artist_uri = URIRef(ARTIST_IRI_PATTERN.format(artist_id))
+                    # Process each artist string for potential collaborations
+                    collaboration_patterns = [
+                        " feat. ", " ft. ", " featuring ", 
+                        " & ", 
+                        ", ", 
+                        " with ", 
+                        r" x ", # Only match "x" when it's surrounded by spaces, not part of names like Alex
+                        " + ", 
+                        " vs. ", " versus "
+                    ]
+                    # Don't use "and" as it's too common in artist names
                     
-                    # Use entity resolution to find matching artist
-                    artist_found, matching_uri, matched_id = find_matching_artist(
-                        artist_name, artist_id, self.artists
-                    )
+                    # Split by each pattern, recursively
+                    artists_from_name = [artist_name]
+                    for pattern in collaboration_patterns:
+                        new_list = []
+                        for artist in artists_from_name:
+                            if pattern in artist:  # Simple string check works for all our patterns
+                                splits = artist.split(pattern)
+                                new_list.extend([a.strip() for a in splits if a.strip()])
+                            else:
+                                new_list.append(artist)
+                        artists_from_name = new_list
                     
-                    if artist_found:
-                        artist_uri = matching_uri
-                        # Update our artists map with this alternate ID to help future lookups
-                        if artist_id != matched_id:
-                            self.artists[artist_id] = matching_uri
-                    else:
-                        # Create new artist if not found
-                        self.artists[artist_id] = artist_uri
+                    # Clean up and add to the artists list
+                    for individual_artist in artists_from_name:
+                        # Skip empty names or obviously incomplete fragments
+                        if not individual_artist or len(individual_artist) < 2:
+                            continue
+                            
+                        # Remove any parenthetical phrases that might contain "feat" etc.
+                        individual_artist = re.sub(r'\([^)]*\)', '', individual_artist).strip()
+                        individual_artist = re.sub(r'\[[^\]]*\]', '', individual_artist).strip()
+                        
+                        if individual_artist and individual_artist not in all_artists_to_process:
+                            all_artists_to_process[individual_artist] = artist_data if isinstance(artist_data, dict) else {}
+                
+                # Now process each individual artist
+                for artist_name in all_artists_to_process:
+                    # Skip if we've already processed this artist
+                    if artist_name in person_uri_map:
+                        continue
+                    
+                    artist_count += 1
+                    
+                    # Normalize the artist name for matching
+                    normalized_json_artist = self._normalize_artist_name(artist_name)
+                    
+                    # Check for a matching artist in our normalized index
+                    artist_uri = None
+                    artist_id = None
+                    artist_exists = False
+                    
+                    if normalized_json_artist in normalized_artist_index:
+                        # We have a normalized name match
+                        candidates = normalized_artist_index[normalized_json_artist]
+                        
+                        # Just use the first match for simplicity
+                        if candidates:
+                            artist_id, artist_uri, _ = candidates[0]
+                            artist_exists = True
+                            matched_artists += 1
+                    
+                    # If no match found, try fuzzy matching
+                    if not artist_exists:
+                        best_match = None
+                        best_score = 0
+                        
+                        for norm_name, candidates in normalized_artist_index.items():
+                            # Skip very short names to avoid false positives
+                            if len(norm_name) < 3 or len(normalized_json_artist) < 3:
+                                continue
+                                
+                            # Use token sort ratio for better handling of word order differences
+                            score = fuzz.token_sort_ratio(normalized_json_artist, norm_name)
+                            
+                            # Only consider high-confidence matches
+                            if score > 85 and score > best_score:
+                                best_score = score
+                                best_match = candidates[0]  # Take the first candidate
+                        
+                        if best_match:
+                            artist_id, artist_uri, _ = best_match
+                            artist_exists = True
+                            matched_artists += 1
+                    
+                    # If still no match, create a new artist
+                    if not artist_exists:
+                        artist_id = generate_entity_id(artist_name)
+                        artist_uri = URIRef(ARTIST_IRI_PATTERN.format(artist_id))
+                        new_artists += 1
+                        
+                        # Create new artist entity
                         self.graph.add((artist_uri, RDF.type, self.mo.MusicArtist))
                         self.graph.add((artist_uri, RDFS.label, Literal(artist_name, lang="en")))
+                        self.graph.add((artist_uri, RDFS.comment, Literal(f"Music artist or band named '{artist_name}'.", lang="en")))
                         
-                        # Default to unknown gender if not specified
+                        # Default to unknown gender
                         gender_uri = self.genders.get("unknown")
                         if gender_uri:
                             self.graph.add((artist_uri, self.mo.hasGender, gender_uri))
                     
-                    # Process gender if available - always update this
-                    if 'gender' in artist_data and artist_data['gender']:
-                        gender = artist_data['gender'].lower()
-                        gender_uri = self.genders.get(gender.lower())
-                        
-                        if gender_uri:
-                            # Remove any existing gender before adding the new one
-                            for s, p, o in self.graph.triples((artist_uri, self.mo.hasGender, None)):
-                                self.graph.remove((s, p, o))
-                            self.graph.add((artist_uri, self.mo.hasGender, gender_uri))
+                    # Store in our dictionaries
+                    person_uri_map[artist_name] = artist_uri
+                    self.artists[artist_id] = artist_uri
                     
-                    # Process legal names if available - always add these
-                    if 'legal_name' in artist_data and artist_data['legal_name']:
-                        for legal_name in artist_data['legal_name']:
-                            if legal_name:  # Check if not empty
-                                # Check if this legal name is already added
-                                legal_name_exists = False
-                                for _, _, existing_name in self.graph.triples((artist_uri, self.mo.hasLegalName, None)):
-                                    if str(existing_name) == legal_name:
-                                        legal_name_exists = True
-                                        break
+                    # Add additional artist information if available
+                    if isinstance(all_artists_to_process[artist_name], dict):
+                        if 'legal_name' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['legal_name']:
+                            legal_names = all_artists_to_process[artist_name]['legal_name']
+                            if isinstance(legal_names, list):
+                                for legal_name in legal_names:
+                                    if legal_name:
+                                        self.graph.add((artist_uri, self.mo.legalName, Literal(legal_name, lang="en")))
+                            else:
+                                self.graph.add((artist_uri, self.mo.legalName, Literal(legal_names, lang="en")))
                                 
-                                if not legal_name_exists:
-                                    self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_name)))
-
-                    # Add new artist properties - always update if available
-                    # Date of birth
-                    if 'date_of_birth' in artist_data and artist_data['date_of_birth']:
-                        date_of_birth = artist_data['date_of_birth']
-                        # Remove any existing date of birth before adding the new one
-                        for s, p, o in self.graph.triples((artist_uri, self.mo.dateOfBirth, None)):
-                            self.graph.remove((s, p, o))
-                        
-                        # Validate and normalize the date format
-                        validated_date = self._validate_xsd_date(date_of_birth)
-                        if validated_date:
-                            self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(validated_date, datatype=XSD.date)))
-                        else:
-                            # Store as string if not valid XSD date format
-                            self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(date_of_birth)))
-                    
-                    # Country
-                    if 'country' in artist_data and artist_data['country']:
-                        country = artist_data['country']
-                        # Remove any existing country before adding the new one
-                        for s, p, o in self.graph.triples((artist_uri, self.mo.country, None)):
-                            self.graph.remove((s, p, o))
-                        self.graph.add((artist_uri, self.mo.country, Literal(country)))
-                    
-                    # Area (city/region)
-                    if 'area' in artist_data and artist_data['area']:
-                        area = artist_data['area']
-                        # Remove any existing area before adding the new one
-                        for s, p, o in self.graph.triples((artist_uri, self.mo.area, None)):
-                            self.graph.remove((s, p, o))
-                        self.graph.add((artist_uri, self.mo.area, Literal(area)))
-                    
-                    # Link track to artist
-                    self.graph.add((track_uri, self.mo.hasMusicArtist, artist_uri))
+                        if 'gender' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['gender']:
+                            gender_str = all_artists_to_process[artist_name]['gender'].lower()
+                            if gender_str in self.genders:
+                                self.graph.add((artist_uri, self.mo.hasGender, self.genders[gender_str]))
+                                
+                        if 'date_of_birth' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['date_of_birth']:
+                            birth_date = all_artists_to_process[artist_name]['date_of_birth']
+                            artists_with_dob += 1
+                            
+                            # Handle incomplete dates (YYYY or YYYY-MM) by appending default month/day values
+                            if re.match(r'^\d{4}$', birth_date):  # Just a year
+                                birth_date = f"{birth_date}-01-01"  # Use January 1st
+                            elif re.match(r'^\d{4}-\d{2}$', birth_date):  # Year and month
+                                birth_date = f"{birth_date}-01"  # Use the 1st day of month
+                            
+                            try:
+                                # Only add as XSD.date if it's a valid date format
+                                if re.match(r'^\d{4}-\d{2}-\d{2}$', birth_date):
+                                    self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(birth_date, datatype=XSD.date)))
+                                else:
+                                    # Fall back to string literal if not a valid date format
+                                    self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(birth_date)))
+                            except Exception as e:
+                                # If there's any error, fall back to string
+                                print(f"Warning: Invalid birth date '{birth_date}', storing as string")
+                                self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(birth_date)))
+                                
+                        if 'country' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['country']:
+                            country = all_artists_to_process[artist_name]['country']
+                            self.graph.add((artist_uri, self.mo.country, Literal(country, lang="en")))
+                            
+                        if 'area' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['area']:
+                            area = all_artists_to_process[artist_name]['area']
+                            if area:  # Check if area is not None
+                                self.graph.add((artist_uri, self.mo.area, Literal(area, lang="en")))
             
             # Process writers
             if 'writer' in data and data['writer']:
@@ -749,31 +1016,41 @@ class MappingEngine:
                     if not writer_name:
                         continue
                     
-                    writer_id = generate_entity_id(writer_name)
-                    writer_uri = URIRef(WRITER_IRI_PATTERN.format(writer_id))
+                    # Get or create person entity
+                    writer_uri = get_or_create_person_entity(writer_name)
                     
-                    if writer_id not in self.writers:
-                        self.writers[writer_id] = writer_uri
+                    # Add writer type if not already present
                     self.graph.add((writer_uri, RDF.type, self.mo.MusicWriter))
-                    self.graph.add((writer_uri, RDFS.label, Literal(writer_name, lang="en")))
                     
+                    # Add writer to the writers dictionary if not already there
+                    writer_id = generate_entity_id(writer_name)
+                    self.writers[writer_id] = writer_uri
+                    
+                    # Link track to writer
                     self.graph.add((track_uri, self.mo.hasWriter, writer_uri))
+                    # Add inverse relationship
+                    self.graph.add((writer_uri, self.mo.wroteTrack, track_uri))
             
-            # Process composers
+            # Process composers (as producers)
             if 'composer' in data and data['composer']:
                 for composer_name in data['composer']:
                     if not composer_name:
                         continue
                     
-                    composer_id = generate_entity_id(composer_name)
-                    composer_uri = URIRef(PRODUCER_IRI_PATTERN.format(composer_id))
+                    # Get or create person entity
+                    composer_uri = get_or_create_person_entity(composer_name)
                     
-                    if composer_id not in self.producers:
-                        self.producers[composer_id] = composer_uri
+                    # Add producer type if not already present
                     self.graph.add((composer_uri, RDF.type, self.mo.MusicProducer))
-                    self.graph.add((composer_uri, RDFS.label, Literal(composer_name, lang="en")))
                     
+                    # Add producer to the producers dictionary if not already there
+                    composer_id = generate_entity_id(composer_name)
+                    self.producers[composer_id] = composer_uri
+                    
+                    # Link track to producer
                     self.graph.add((track_uri, self.mo.hasProducer, composer_uri))
+                    # Add inverse relationship
+                    self.graph.add((composer_uri, self.mo.producedTrack, track_uri))
             
             # Process tags as genres
             if 'tags' in data and data['tags']:
@@ -801,15 +1078,20 @@ class MappingEngine:
                     if not arranger_name:
                         continue
                     
+                    # Get or create person entity
+                    arranger_uri = get_or_create_person_entity(arranger_name)
+                    
+                    # Add arranger type if not already present
+                    self.graph.add((arranger_uri, RDF.type, self.mo.Arranger))
+                    
+                    # Add arranger to the arrangers dictionary if not already there
                     arranger_id = generate_entity_id(arranger_name)
-                    arranger_uri = URIRef(ARRANGER_IRI_PATTERN.format(arranger_id))
+                    self.arrangers[arranger_id] = arranger_uri
                     
-                    if arranger_id not in self.arrangers:
-                        self.arrangers[arranger_id] = arranger_uri
-                        self.graph.add((arranger_uri, RDF.type, self.mo.Arranger))
-                        self.graph.add((arranger_uri, RDFS.label, Literal(arranger_name, lang="en")))
-                    
+                    # Link track to arranger
                     self.graph.add((track_uri, self.mo.hasArranger, arranger_uri))
+                    # Add inverse relationship
+                    self.graph.add((arranger_uri, self.mo.arrangedTrack, track_uri))
             
             # Process engineer
             if 'engineer' in data and data['engineer']:
@@ -817,15 +1099,20 @@ class MappingEngine:
                     if not engineer_name:
                         continue
                     
+                    # Get or create person entity
+                    engineer_uri = get_or_create_person_entity(engineer_name)
+                    
+                    # Add engineer type if not already present
+                    self.graph.add((engineer_uri, RDF.type, self.mo.Engineer))
+                    
+                    # Add engineer to the engineers dictionary if not already there
                     engineer_id = generate_entity_id(engineer_name)
-                    engineer_uri = URIRef(f"{NAMESPACES['mo']}engineer_{engineer_id}")
+                    self.engineers[engineer_id] = engineer_uri
                     
-                    if engineer_id not in self.engineers:
-                        self.engineers[engineer_id] = engineer_uri
-                        self.graph.add((engineer_uri, RDF.type, self.mo.Engineer))
-                        self.graph.add((engineer_uri, RDFS.label, Literal(engineer_name, lang="en")))
-                    
+                    # Link track to engineer
                     self.graph.add((track_uri, self.mo.hasEngineer, engineer_uri))
+                    # Add inverse relationship
+                    self.graph.add((engineer_uri, self.mo.engineeredTrack, track_uri))
             
             # Process mix
             if 'mix' in data and data['mix']:
@@ -833,15 +1120,20 @@ class MappingEngine:
                     if not mixer_name:
                         continue
                     
+                    # Get or create person entity
+                    mixer_uri = get_or_create_person_entity(mixer_name)
+                    
+                    # Add mixer type if not already present
+                    self.graph.add((mixer_uri, RDF.type, self.mo.Mixer))
+                    
+                    # Add mixer to the mixers dictionary if not already there
                     mixer_id = generate_entity_id(mixer_name)
-                    mixer_uri = URIRef(f"{NAMESPACES['mo']}mixer_{mixer_id}")
+                    self.mixers[mixer_id] = mixer_uri
                     
-                    if mixer_id not in self.mixers:
-                        self.mixers[mixer_id] = mixer_uri
-                        self.graph.add((mixer_uri, RDF.type, self.mo.Mixer))
-                        self.graph.add((mixer_uri, RDFS.label, Literal(mixer_name, lang="en")))
-                    
+                    # Link track to mixer
                     self.graph.add((track_uri, self.mo.hasMixer, mixer_uri))
+                    # Add inverse relationship
+                    self.graph.add((mixer_uri, self.mo.mixedTrack, track_uri))
             
             # Process vocalist
             if 'vocal' in data and data['vocal']:
@@ -849,15 +1141,20 @@ class MappingEngine:
                     if not vocalist_name:
                         continue
                     
+                    # Get or create person entity
+                    vocalist_uri = get_or_create_person_entity(vocalist_name)
+                    
+                    # Add vocalist type if not already present
+                    self.graph.add((vocalist_uri, RDF.type, self.mo.Vocalist))
+                    
+                    # Add vocalist to the vocalists dictionary if not already there
                     vocalist_id = generate_entity_id(vocalist_name)
-                    vocalist_uri = URIRef(f"{NAMESPACES['mo']}vocalist_{vocalist_id}")
+                    self.vocalists[vocalist_id] = vocalist_uri
                     
-                    if vocalist_id not in self.vocalists:
-                        self.vocalists[vocalist_id] = vocalist_uri
-                        self.graph.add((vocalist_uri, RDF.type, self.mo.Vocalist))
-                        self.graph.add((vocalist_uri, RDFS.label, Literal(vocalist_name, lang="en")))
-                    
+                    # Link track to vocalist
                     self.graph.add((track_uri, self.mo.hasVocalist, vocalist_uri))
+                    # Add inverse relationship
+                    self.graph.add((vocalist_uri, self.mo.sangTrack, track_uri))
             
             # Process instrumentalist
             if 'instrument' in data and data['instrument']:
@@ -865,14 +1162,17 @@ class MappingEngine:
                     if not instrumentalist_name:
                         continue
                     
+                    # Get or create person entity
+                    instrumentalist_uri = get_or_create_person_entity(instrumentalist_name)
+                    
+                    # Add instrumentalist type if not already present
+                    self.graph.add((instrumentalist_uri, RDF.type, self.mo.Instrumentalist))
+                    
+                    # Add instrumentalist to the instrumentalists dictionary if not already there
                     instrumentalist_id = generate_entity_id(instrumentalist_name)
-                    instrumentalist_uri = URIRef(f"{NAMESPACES['mo']}instrumentalist_{instrumentalist_id}")
+                    self.instrumentalists[instrumentalist_id] = instrumentalist_uri
                     
-                    if instrumentalist_id not in self.instrumentalists:
-                        self.instrumentalists[instrumentalist_id] = instrumentalist_uri
-                        self.graph.add((instrumentalist_uri, RDF.type, self.mo.Instrumentalist))
-                        self.graph.add((instrumentalist_uri, RDFS.label, Literal(instrumentalist_name, lang="en")))
-                    
+                    # Link track to instrumentalist
                     self.graph.add((track_uri, self.mo.hasInstrumentalist, instrumentalist_uri))
             
             # Process recorder
@@ -881,15 +1181,20 @@ class MappingEngine:
                     if not recorder_name:
                         continue
                     
+                    # Get or create person entity
+                    recorder_uri = get_or_create_person_entity(recorder_name)
+                    
+                    # Add recorder type if not already present
+                    self.graph.add((recorder_uri, RDF.type, self.mo.Recorder))
+                    
+                    # Add recorder to the recorders dictionary if not already there
                     recorder_id = generate_entity_id(recorder_name)
-                    recorder_uri = URIRef(f"{NAMESPACES['mo']}recorder_{recorder_id}")
+                    self.recorders[recorder_id] = recorder_uri
                     
-                    if recorder_id not in self.recorders:
-                        self.recorders[recorder_id] = recorder_uri
-                        self.graph.add((recorder_uri, RDF.type, self.mo.Recorder))
-                        self.graph.add((recorder_uri, RDFS.label, Literal(recorder_name, lang="en")))
-                    
+                    # Link track to recorder
                     self.graph.add((track_uri, self.mo.hasRecorder, recorder_uri))
+                    # Add inverse relationship
+                    self.graph.add((recorder_uri, self.mo.recordedTrack, track_uri))
             
             # Process producer if not handled by composer mapping
             if 'producer' in data and data['producer']:
@@ -897,15 +1202,24 @@ class MappingEngine:
                     if not producer_name:
                         continue
                     
+                    # Get or create person entity
+                    producer_uri = get_or_create_person_entity(producer_name)
+                    
+                    # Add producer type if not already present
+                    self.graph.add((producer_uri, RDF.type, self.mo.MusicProducer))
+                    
+                    # Add producer to the producers dictionary if not already there
                     producer_id = generate_entity_id(producer_name)
-                    producer_uri = URIRef(PRODUCER_IRI_PATTERN.format(producer_id))
+                    self.producers[producer_id] = producer_uri
                     
-                    if producer_id not in self.producers:
-                        self.producers[producer_id] = producer_uri
-                        self.graph.add((producer_uri, RDF.type, self.mo.MusicProducer))
-                        self.graph.add((producer_uri, RDFS.label, Literal(producer_name, lang="en")))
-                    
+                    # Link track to producer
                     self.graph.add((track_uri, self.mo.hasProducer, producer_uri))
+                    # Add inverse relationship
+                    self.graph.add((producer_uri, self.mo.producedTrack, track_uri))
+        
+        print(f"Processed JSON data: {matched_tracks} tracks matched to existing tracks, {skipped_tracks} tracks skipped (no match found)")
+        
+        return self.tracks
     
     def _update_chart_run(self, track_uri, track_id, chart_entry_uri, time_instant_uri, chart_date):
         """
@@ -1105,4 +1419,256 @@ class MappingEngine:
     def save_graph(self, output_path):
         """Save the graph to a Turtle file"""
         self.graph.serialize(destination=output_path, format='turtle')
-        print(f"Knowledge graph saved to {output_path} with {len(self.graph)} triples") 
+        print(f"Knowledge graph saved to {output_path} with {len(self.graph)} triples")
+
+    def _normalize_artist_name(self, artist_name):
+        """
+        Apply advanced normalization to artist names to improve matching:
+        - Remove prefixes like "The", "DJ", etc.
+        - Standardize special characters
+        - Remove punctuation and lowercase
+        """
+        if not artist_name:
+            return ""
+            
+        # Convert to lowercase
+        normalized = artist_name.lower()
+        
+        # Remove common prefixes
+        common_prefixes = [r'^the ', r'^dj ', r'^mc']
+        for prefix in common_prefixes:
+            normalized = re.sub(prefix, '', normalized, flags=re.IGNORECASE)
+        
+        # Handle special cases
+        normalized = re.sub(r'\$', 's', normalized)  # Replace $ with s (e.g., "A$AP" -> "asap")
+        normalized = re.sub(r'[^\w\s]', '', normalized)  # Remove all non-alphanumeric characters
+        
+        # Remove extra spaces
+        normalized = re.sub(r'\s+', ' ', normalized).strip()
+        
+        return normalized
+        
+    def _create_normalized_artist_index(self):
+        """Create a normalized index of artists from the graph for better artist matching"""
+        print("Creating normalized artist index...")
+        
+        # Create a normalized artist index
+        normalized_artist_index = {}
+        
+        # Collect all artist URIs
+        for artist_id, artist_uri in self.artists.items():
+            # Get the artist name from label
+            artist_name = None
+            for _, _, label in self.graph.triples((artist_uri, RDFS.label, None)):
+                artist_name = str(label)
+                break
+                
+            if not artist_name:
+                continue
+                
+            # Normalize the artist name
+            norm_name = self._normalize_artist_name(artist_name)
+            
+            # Store with artist info
+            if norm_name not in normalized_artist_index:
+                normalized_artist_index[norm_name] = []
+            normalized_artist_index[norm_name].append((artist_id, artist_uri, artist_name))
+        
+        print(f"Built normalized index of {len(normalized_artist_index)} unique artist names")
+        return normalized_artist_index
+        
+    def preprocess_json_artists(self, json_data):
+        """
+        Extract and process all artist data from JSON, regardless of track matching.
+        This ensures we capture artist metadata like date_of_birth, even if their tracks don't match.
+        Uses normalized artist names for better matching between CSV and JSON artist data.
+        Handles collaborative artist names properly.
+        
+        Args:
+            json_data (dict): JSON data with artist information
+        """
+        print("Preprocessing artist data from JSON...")
+        
+        # Create a normalized artist index for better matching
+        normalized_artist_index = self._create_normalized_artist_index()
+        
+        # Track statistics
+        artist_count = 0
+        artists_with_dob = 0
+        matched_artists = 0
+        new_artists = 0
+        
+        # Create a dictionary to map person names to their URIs across all roles
+        person_uri_map = {}
+        
+        # First, collect all unique artist names from JSON data, handling collaborations
+        all_artists_to_process = {}  # Use a dict to track artist data
+        
+        # Process each JSON track for artist data
+        for key, data in json_data.items():
+            if 'artist' not in data or not data['artist']:
+                continue
+            
+            for artist_data in data['artist']:
+                artist_name = artist_data.get('artist_name', '')
+                if not artist_name:
+                    continue
+                
+                # Process each artist string for potential collaborations
+                collaboration_patterns = [
+                    " feat. ", " ft. ", " featuring ", 
+                    " & ", 
+                    ", ", 
+                    " with ", 
+                    r" x ", # Only match "x" when it's surrounded by spaces, not part of names like Alex
+                    " + ", 
+                    " vs. ", " versus "
+                ]
+                # Don't use "and" as it's too common in artist names
+                
+                # Split by each pattern, recursively
+                artists_from_name = [artist_name]
+                for pattern in collaboration_patterns:
+                    new_list = []
+                    for artist in artists_from_name:
+                        if pattern in artist:  # Simple string check works for all our patterns
+                            splits = artist.split(pattern)
+                            new_list.extend([a.strip() for a in splits if a.strip()])
+                        else:
+                            new_list.append(artist)
+                    artists_from_name = new_list
+                
+                # Clean up and add to the artists dictionary
+                for individual_artist in artists_from_name:
+                    # Skip empty names or obviously incomplete fragments
+                    if not individual_artist or len(individual_artist) < 2:
+                        continue
+                    
+                    # Remove any parenthetical phrases that might contain "feat" etc.
+                    individual_artist = re.sub(r'\([^)]*\)', '', individual_artist).strip()
+                    individual_artist = re.sub(r'\[[^\]]*\]', '', individual_artist).strip()
+                    
+                    if individual_artist and individual_artist not in all_artists_to_process:
+                        all_artists_to_process[individual_artist] = artist_data if isinstance(artist_data, dict) else {}
+                
+                # Now process each individual artist
+                for artist_name in all_artists_to_process:
+                    # Skip if we've already processed this artist
+                    if artist_name in person_uri_map:
+                        continue
+                    
+                    artist_count += 1
+                    
+                    # Normalize the artist name for matching
+                    normalized_json_artist = self._normalize_artist_name(artist_name)
+                    
+                    # Check for a matching artist in our normalized index
+                    artist_uri = None
+                    artist_id = None
+                    artist_exists = False
+                    
+                    if normalized_json_artist in normalized_artist_index:
+                        # We have a normalized name match
+                        candidates = normalized_artist_index[normalized_json_artist]
+                        
+                        # Just use the first match for simplicity
+                        if candidates:
+                            artist_id, artist_uri, _ = candidates[0]
+                            artist_exists = True
+                            matched_artists += 1
+                    
+                    # If no match found, try fuzzy matching
+                    if not artist_exists:
+                        best_match = None
+                        best_score = 0
+                        
+                        for norm_name, candidates in normalized_artist_index.items():
+                            # Skip very short names to avoid false positives
+                            if len(norm_name) < 3 or len(normalized_json_artist) < 3:
+                                continue
+                                
+                            # Use token sort ratio for better handling of word order differences
+                            score = fuzz.token_sort_ratio(normalized_json_artist, norm_name)
+                            
+                            # Only consider high-confidence matches
+                            if score > 85 and score > best_score:
+                                best_score = score
+                                best_match = candidates[0]  # Take the first candidate
+                        
+                        if best_match:
+                            artist_id, artist_uri, _ = best_match
+                            artist_exists = True
+                            matched_artists += 1
+                    
+                    # If still no match, create a new artist
+                    if not artist_exists:
+                        artist_id = generate_entity_id(artist_name)
+                        artist_uri = URIRef(ARTIST_IRI_PATTERN.format(artist_id))
+                        new_artists += 1
+                        
+                        # Create new artist entity
+                        self.graph.add((artist_uri, RDF.type, self.mo.MusicArtist))
+                        self.graph.add((artist_uri, RDFS.label, Literal(artist_name, lang="en")))
+                        self.graph.add((artist_uri, RDFS.comment, Literal(f"Music artist or band named '{artist_name}'.", lang="en")))
+                        
+                        # Default to unknown gender
+                        gender_uri = self.genders.get("unknown")
+                        if gender_uri:
+                            self.graph.add((artist_uri, self.mo.hasGender, gender_uri))
+                    
+                    # Store in our dictionaries
+                    person_uri_map[artist_name] = artist_uri
+                    self.artists[artist_id] = artist_uri
+                    
+                    # Add additional artist information if available
+                    if isinstance(all_artists_to_process[artist_name], dict):
+                        if 'legal_name' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['legal_name']:
+                            legal_names = all_artists_to_process[artist_name]['legal_name']
+                            if isinstance(legal_names, list):
+                                for legal_name in legal_names:
+                                    if legal_name:
+                                        self.graph.add((artist_uri, self.mo.legalName, Literal(legal_name, lang="en")))
+                            else:
+                                self.graph.add((artist_uri, self.mo.legalName, Literal(legal_names, lang="en")))
+                                
+                        if 'gender' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['gender']:
+                            gender_str = all_artists_to_process[artist_name]['gender'].lower()
+                            if gender_str in self.genders:
+                                self.graph.add((artist_uri, self.mo.hasGender, self.genders[gender_str]))
+                                
+                        if 'date_of_birth' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['date_of_birth']:
+                            birth_date = all_artists_to_process[artist_name]['date_of_birth']
+                            artists_with_dob += 1
+                            
+                            # Handle incomplete dates (YYYY or YYYY-MM) by appending default month/day values
+                            if re.match(r'^\d{4}$', birth_date):  # Just a year
+                                birth_date = f"{birth_date}-01-01"  # Use January 1st
+                            elif re.match(r'^\d{4}-\d{2}$', birth_date):  # Year and month
+                                birth_date = f"{birth_date}-01"  # Use the 1st day of month
+                            
+                            try:
+                                # Only add as XSD.date if it's a valid date format
+                                if re.match(r'^\d{4}-\d{2}-\d{2}$', birth_date):
+                                    self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(birth_date, datatype=XSD.date)))
+                                else:
+                                    # Fall back to string literal if not a valid date format
+                                    self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(birth_date)))
+                            except Exception as e:
+                                # If there's any error, fall back to string
+                                print(f"Warning: Invalid birth date '{birth_date}', storing as string")
+                                self.graph.add((artist_uri, self.mo.dateOfBirth, Literal(birth_date)))
+                                
+                        if 'country' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['country']:
+                            country = all_artists_to_process[artist_name]['country']
+                            self.graph.add((artist_uri, self.mo.country, Literal(country, lang="en")))
+                            
+                        if 'area' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['area']:
+                            area = all_artists_to_process[artist_name]['area']
+                            if area:  # Check if area is not None
+                                self.graph.add((artist_uri, self.mo.area, Literal(area, lang="en")))
+        
+        print(f"Preprocessed {artist_count} artists from JSON data:")
+        print(f"  - {matched_artists} matched to existing artists")
+        print(f"  - {new_artists} new artists created")
+        print(f"  - {artists_with_dob} artists with birth dates")
+        return person_uri_map 
