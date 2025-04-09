@@ -24,8 +24,9 @@ from data_loader import clean_entity_name, generate_entity_id
 from entity_resolution import find_matching_artist
 
 class MappingEngine:
-    def __init__(self):
+    def __init__(self, ontology_dir="ontologies"):
         self.graph = Graph()
+        
         # Register namespaces
         for prefix, uri in NAMESPACES.items():
             self.graph.bind(prefix, Namespace(uri))
@@ -35,10 +36,20 @@ class MappingEngine:
         self.ex = Namespace(NAMESPACES['ex'])
         self.time = Namespace(NAMESPACES['time'])
         
-        # Add OWL ontology declarations
-        self.graph.add((URIRef(NAMESPACES['mo']), RDF.type, OWL.Ontology))
-        self.graph.add((URIRef(NAMESPACES['ex']), RDF.type, OWL.Ontology))
-        self.graph.add((URIRef(NAMESPACES['time']), RDF.type, OWL.Ontology))
+        # Load the ontology files
+        ontology_files = {
+            "music": os.path.join(ontology_dir, "music_ontology.ttl"),
+            "billboard": os.path.join(ontology_dir, "billboard.ttl"),
+            "time": os.path.join(ontology_dir, "time.ttl")
+        }
+        
+        # Load each ontology file into the graph
+        for ont_file in ontology_files.values():
+            if os.path.exists(ont_file):
+                self.graph.parse(ont_file, format="turtle")
+                print(f"Loaded ontology file: {ont_file}")
+            else:
+                print(f"Warning: Ontology file not found: {ont_file}")
         
         # Track existing entities to avoid duplicates
         self.tracks = {}
@@ -67,75 +78,8 @@ class MappingEngine:
         # Track chart entries by track and date for easier references
         self.track_chart_entries = {}
         
-        # Declare all class types as OWL Classes
-        self._declare_classes()
-        
-        # Declare all properties in advance to ensure Protégé compatibility
-        self._declare_properties()
-        
-        # Initialize common entities
+        # Initialize common entities (but don't redeclare ontology classes)
         self._initialize_common_entities()
-    
-    def _declare_classes(self):
-        """Declare all classes as owl:Class with proper subClassOf relationships"""
-        classes = [
-            self.mo.MusicArtist, self.mo.Track, self.mo.Record, self.mo.Genre, 
-            self.mo.Label, self.mo.MusicProducer, self.mo.MusicWriter, self.mo.Arranger,
-            self.mo.Language, self.mo.Gender, self.ex.MusicChart, self.ex.ChartEntry,
-            self.time.Interval, self.time.Instant, self.time.Duration, self.time.TemporalUnit,
-            # Add new classes for the additional roles
-            self.mo.Engineer, self.mo.Mixer, self.mo.Vocalist, self.mo.Instrumentalist,
-            self.mo.Recorder,
-            # Add ChartRun class
-            self.ex.ChartRun
-        ]
-        
-        for cls in classes:
-            self.graph.add((cls, RDF.type, OWL.Class))
-            self.graph.add((cls, RDFS.subClassOf, OWL.Thing))
-    
-    def _declare_properties(self):
-        """Pre-declare all properties as either ObjectProperty or DatatypeProperty"""
-        # Object properties
-        object_properties = [
-            self.mo.hasMusicArtist, self.mo.hasGenre, self.mo.hasWriter, self.mo.hasProducer,
-            self.mo.hasArranger, self.mo.hasGender, self.mo.hasLanguage, self.mo.published_as,
-            self.mo.forTrack, self.ex.chart, self.ex.inChart, self.ex.hasInterval, 
-            self.ex.hasDuration, self.time.hasBeginning, self.time.hasEnd, self.time.unitType,
-            self.time.inDate,
-            self.mo.hasEngineer,
-            self.mo.hasMixer,
-            self.mo.hasVocalist,
-            self.mo.hasInstrumentalist,
-            self.mo.hasRecorder,
-            self.mo.hasLabel,
-            self.time.before,
-            self.time.after,
-            self.ex.chartRunDuration,
-            self.ex.hasChartRun
-        ]
-        
-        for prop in object_properties:
-            self.graph.add((prop, RDF.type, OWL.ObjectProperty))
-            # Use the local name directly as the label
-            local_name = str(prop).split('#')[-1]
-            self.graph.add((prop, RDFS.label, Literal(local_name, lang="en")))
-        
-        # Datatype properties
-        datatype_properties = [
-            self.mo.hasLegalName, self.mo.hasLyrics, self.ex.chartPosition, self.time.instantDate,
-            self.time.numericDuration, self.time.hasDuration,
-            # Add new artist properties
-            self.mo.dateOfBirth, self.mo.country, self.mo.area,
-            # Add new lyrics properties
-            self.mo.hasTranslatedLyrics, self.mo.hasTheme
-        ]
-        
-        for prop in datatype_properties:
-            self.graph.add((prop, RDF.type, OWL.DatatypeProperty))
-            # Use the local name directly as the label
-            local_name = str(prop).split('#')[-1]
-            self.graph.add((prop, RDFS.label, Literal(local_name, lang="en")))
     
     def _initialize_common_entities(self):
         """Initialize common entities for various ontology classes"""
@@ -147,6 +91,7 @@ class MappingEngine:
             self.genders[gender_id] = gender_uri
             self.graph.add((gender_uri, RDF.type, self.mo.Gender))
             self.graph.add((gender_uri, RDFS.label, Literal(gender, lang="en")))
+            self.graph.add((gender_uri, RDFS.comment, Literal(f"Represents {gender.lower()} gender.", lang="en")))
         
         # Initialize language instances
         language_codes = ["eng", "spa", "fra", "deu", "ita", "por", "mul"]
@@ -157,6 +102,7 @@ class MappingEngine:
             self.languages[code] = language_uri
             self.graph.add((language_uri, RDF.type, self.mo.Language))
             self.graph.add((language_uri, RDFS.label, Literal(name, lang="en")))
+            self.graph.add((language_uri, RDFS.comment, Literal(f"Represents the {name} language.", lang="en")))
         
         # Initialize common genres
         common_genres = ["Pop", "Rock", "Hip Hop", "R&B", "Country", "Electronic", "Jazz", "Classical", "Other"]
@@ -166,6 +112,7 @@ class MappingEngine:
             self.genres[genre_id] = genre_uri
             self.graph.add((genre_uri, RDF.type, self.mo.Genre))
             self.graph.add((genre_uri, RDFS.label, Literal(genre, lang="en")))
+            self.graph.add((genre_uri, RDFS.comment, Literal(f"Represents the {genre} music genre.", lang="en")))
         
         # Initialize temporal units
         units = ["second", "minute", "hour", "day", "week", "month", "year"]
@@ -174,13 +121,15 @@ class MappingEngine:
             self.temporal_units[unit] = unit_uri
             self.graph.add((unit_uri, RDF.type, self.time.TemporalUnit))
             self.graph.add((unit_uri, RDFS.label, Literal(unit, lang="en")))
+            self.graph.add((unit_uri, RDFS.comment, Literal(f"Represents a time unit of one {unit}.", lang="en")))
         
         # Initialize Billboard Hot 100 chart
         billboard_hot100 = URIRef(CHART_IRI_PATTERN.format('hot_100'))
         self.charts['hot_100'] = billboard_hot100
         self.graph.add((billboard_hot100, RDF.type, self.ex.MusicChart))
         self.graph.add((billboard_hot100, RDFS.label, Literal("Billboard Hot 100", lang="en")))
-        
+        self.graph.add((billboard_hot100, RDFS.comment, Literal("The Billboard Hot 100 music chart that ranks the most popular songs in the United States.", lang="en")))
+    
     def map_csv_data(self, df, lyrics_dict=None):
         """
         Map Billboard chart data from CSV to RDF triples
@@ -226,9 +175,10 @@ class MappingEngine:
         
         # Add interval properties
         self.graph.add((interval_uri, RDF.type, self.time.Interval))
+        self.graph.add((interval_uri, RDFS.label, Literal(f"Week of {start_date_str}", lang="en")))
+        self.graph.add((interval_uri, RDFS.comment, Literal(f"Time interval from {start_date_str} to {end_date_str}.", lang="en")))
         self.graph.add((interval_uri, self.time.hasBeginning, start_instant_uri))
         self.graph.add((interval_uri, self.time.hasEnd, end_instant_uri))
-        self.graph.add((interval_uri, RDFS.label, Literal(f"Week of {start_date_str}", lang="en")))
         
         return interval_uri
     
@@ -242,6 +192,8 @@ class MappingEngine:
         self.instants[date_str] = instant_uri
         
         self.graph.add((instant_uri, RDF.type, self.time.Instant))
+        self.graph.add((instant_uri, RDFS.label, Literal(f"Time instant {date_str}", lang="en")))
+        self.graph.add((instant_uri, RDFS.comment, Literal(f"A specific point in time on date {date_str}.", lang="en")))
         self.graph.add((instant_uri, self.time.instantDate, Literal(date_str, datatype=XSD.date)))
         
         return instant_uri
@@ -266,9 +218,12 @@ class MappingEngine:
             self.temporal_units[unit] = unit_uri
             self.graph.add((unit_uri, RDF.type, self.time.TemporalUnit))
             self.graph.add((unit_uri, RDFS.label, Literal(unit, lang="en")))
+            self.graph.add((unit_uri, RDFS.comment, Literal(f"Represents a time unit of one {unit}.", lang="en")))
         
         # Create the duration
         self.graph.add((duration_uri, RDF.type, self.time.Duration))
+        self.graph.add((duration_uri, RDFS.label, Literal(f"Duration of {amount} {unit}{'s' if amount != 1 else ''}", lang="en")))
+        self.graph.add((duration_uri, RDFS.comment, Literal(f"A time duration of {amount} {unit}{'s' if amount != 1 else ''}.", lang="en")))
         self.graph.add((duration_uri, self.time.numericDuration, Literal(amount, datatype=XSD.float)))
         self.graph.add((duration_uri, self.time.unitType, unit_uri))
         
@@ -317,6 +272,7 @@ class MappingEngine:
             self.tracks[track_id] = track_uri
             self.graph.add((track_uri, RDF.type, self.mo.Track))
             self.graph.add((track_uri, RDFS.label, Literal(song_title, lang="en")))
+            self.graph.add((track_uri, RDFS.comment, Literal(f"Track titled '{song_title}' by {artist_name}.", lang="en")))
             
             # Process artist(s)
             self._process_artists(artist_name, track_uri)
@@ -341,6 +297,7 @@ class MappingEngine:
                             self.languages[lang_code] = lang_uri
                             self.graph.add((lang_uri, RDF.type, self.mo.Language))
                             self.graph.add((lang_uri, RDFS.label, Literal(lang_code.upper(), lang="en")))
+                            self.graph.add((lang_uri, RDFS.comment, Literal(f"Represents the {lang_code.upper()} language.", lang="en")))
                         else:
                             lang_uri = self.languages[lang_code]
                             
@@ -359,6 +316,8 @@ class MappingEngine:
         
         # Create chart entry
         self.graph.add((chart_entry_uri, RDF.type, self.ex.ChartEntry))
+        self.graph.add((chart_entry_uri, RDFS.label, Literal(f"{song_title} at position {rank} on {chart_date}", lang="en")))
+        self.graph.add((chart_entry_uri, RDFS.comment, Literal(f"Chart entry for '{song_title}' at position {rank} on the Billboard Hot 100 chart dated {chart_date}.", lang="en")))
         self.graph.add((chart_entry_uri, self.ex.chartPosition, Literal(rank, datatype=XSD.integer)))
         self.graph.add((chart_entry_uri, self.ex.chart, chart_uri))
         self.graph.add((chart_entry_uri, self.ex.inChart, chart_uri))  # Add both properties from billboard.ttl
@@ -393,6 +352,7 @@ class MappingEngine:
                 self.artists[artist_id] = artist_uri
                 self.graph.add((artist_uri, RDF.type, self.mo.MusicArtist))
                 self.graph.add((artist_uri, RDFS.label, Literal(artist_name, lang="en")))
+                self.graph.add((artist_uri, RDFS.comment, Literal(f"Music artist or band named '{artist_name}'.", lang="en")))
                 
                 # Default to unknown gender for artists from CSV
                 gender_uri = self.genders.get("unknown")
@@ -1132,6 +1092,7 @@ class MappingEngine:
         # Create the chart run entity
         self.graph.add((chart_run_uri, RDF.type, self.ex.ChartRun))
         self.graph.add((chart_run_uri, RDFS.label, Literal(f"Chart run for '{track_name}' starting {start_date} ({duration_label})", lang="en")))
+        self.graph.add((chart_run_uri, RDFS.comment, Literal(f"Represents a continuous period of {duration_label} during which the track '{track_name}' appeared on the Billboard Hot 100 chart, starting on {start_date}.", lang="en")))
         self.graph.add((chart_run_uri, self.mo.forTrack, track_uri))
         
         # Create duration

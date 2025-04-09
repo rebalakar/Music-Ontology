@@ -9,19 +9,27 @@
 @base <http://example.org/mo#> .
 
 <http://example.org/mo> rdf:type owl:Ontology ;
-                         owl:imports <file:/C:/Users/guoji/KET-Music-History/time.ttl> ,
+                         owl:imports <file:/home/ethan/KET-Music-History/ontologies/time.ttl> ,
                                      <http://example.org/time#> .
 
 #################################################################
 #    Object Properties
 #################################################################
 
+###  http://example.org/mo#hasArranger
+mo:hasArranger rdf:type owl:ObjectProperty ;
+               rdfs:domain mo:Track ;
+               rdfs:range mo:Arranger ;
+               rdfs:comment "Links a track to its arranger(s)." ;
+               rdfs:label "has arranger"@en .
+
+
 ###  http://example.org/mo#hasEngineer
 mo:hasEngineer rdf:type owl:ObjectProperty ;
                rdfs:domain mo:Track ;
-               rdfs:range mo:SoundEngineer ;
-               rdfs:comment "Links a track to its sound engineer(s)." ;
-               rdfs:label "has engineer"@en .
+               rdfs:range mo:Engineer ;
+               rdfs:comment "Links a track to its sound engineer." ;
+               rdfs:label "Has Engineer"@en .
 
 
 ###  http://example.org/mo#hasGender
@@ -40,6 +48,14 @@ mo:hasGenre rdf:type owl:ObjectProperty ;
             rdfs:label "has genre"@en .
 
 
+###  http://example.org/mo#hasInstrumentalist
+mo:hasInstrumentalist rdf:type owl:ObjectProperty ;
+                      rdfs:domain mo:Track ;
+                      rdfs:range mo:Instrumentalist ;
+                      rdfs:comment "Links a track to a musician who played on it." ;
+                      rdfs:label "Has Instrumentalist"@en .
+
+
 ###  http://example.org/mo#hasLabel
 mo:hasLabel rdf:type owl:ObjectProperty ;
             rdfs:domain mo:Track ;
@@ -54,6 +70,14 @@ mo:hasLanguage rdf:type owl:ObjectProperty ;
                rdfs:range mo:Language ;
                rdfs:comment "Links a track to the language it is written in." ;
                rdfs:label "has language"@en .
+
+
+###  http://example.org/mo#hasMixer
+mo:hasMixer rdf:type owl:ObjectProperty ;
+            rdfs:domain mo:Track ;
+            rdfs:range mo:Mixer ;
+            rdfs:comment "Links a track to the person who mixed it." ;
+            rdfs:label "Has Mixer"@en .
 
 
 ###  http://example.org/mo#hasMusicArtist
@@ -72,6 +96,22 @@ mo:hasProducer rdf:type owl:ObjectProperty ;
                rdfs:label "has producer"@en .
 
 
+###  http://example.org/mo#hasRecorder
+mo:hasRecorder rdf:type owl:ObjectProperty ;
+               rdfs:domain mo:Track ;
+               rdfs:range mo:Recorder ;
+               rdfs:comment "Links a track to the person who recorded it." ;
+               rdfs:label "Has Recorder"@en .
+
+
+###  http://example.org/mo#hasVocalist
+mo:hasVocalist rdf:type owl:ObjectProperty ;
+               rdfs:domain mo:Track ;
+               rdfs:range mo:Vocalist ;
+               rdfs:comment "Links a track to its vocalist or singer." ;
+               rdfs:label "Has Vocalist"@en .
+
+
 ###  http://example.org/mo#hasWriter
 mo:hasWriter rdf:type owl:ObjectProperty ;
              rdfs:domain mo:Track ;
@@ -80,9 +120,41 @@ mo:hasWriter rdf:type owl:ObjectProperty ;
              rdfs:label "has writer"@en .
 
 
+###  http://example.org/mo#published_as
+mo:published_as rdf:type owl:ObjectProperty ;
+                rdfs:domain mo:Track ;
+                rdfs:range mo:Record ;
+                rdfs:comment "Links a track to the record it was published on." ;
+                rdfs:label "Published As"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://example.org/mo#area
+mo:area rdf:type owl:DatatypeProperty ;
+        rdfs:domain mo:MusicArtist ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The city, region or area associated with a music artist." ;
+        rdfs:label "Area"@en .
+
+
+###  http://example.org/mo#country
+mo:country rdf:type owl:DatatypeProperty ;
+           rdfs:domain mo:MusicArtist ;
+           rdfs:range xsd:string ;
+           rdfs:comment "The country of origin for a music artist." ;
+           rdfs:label "Country"@en .
+
+
+###  http://example.org/mo#dateOfBirth
+mo:dateOfBirth rdf:type owl:DatatypeProperty ;
+               rdfs:domain mo:MusicArtist ;
+               rdfs:range xsd:date ;
+               rdfs:comment "The birth date of a music artist." ;
+               rdfs:label "Date of Birth"@en .
+
 
 ###  http://example.org/mo#hasLegalName
 mo:hasLegalName rdf:type owl:DatatypeProperty ;
@@ -92,9 +164,45 @@ mo:hasLegalName rdf:type owl:DatatypeProperty ;
                 rdfs:label "has legal name"@en .
 
 
+###  http://example.org/mo#hasLyrics
+mo:hasLyrics rdf:type owl:DatatypeProperty ;
+             rdfs:domain mo:Track ;
+             rdfs:range xsd:string ;
+             rdfs:comment "Links a track to its lyrics." ;
+             rdfs:label "hasLyrics"@en .
+
+
+###  http://example.org/mo#hasTheme
+mo:hasTheme rdf:type owl:DatatypeProperty ;
+            rdfs:domain mo:Track ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Indicates the thematic content or emotional tone of a track." ;
+            rdfs:label "Has Theme"@en .
+
+
+###  http://example.org/mo#hasTranslatedLyrics
+mo:hasTranslatedLyrics rdf:type owl:DatatypeProperty ;
+                       rdfs:domain mo:Track ;
+                       rdfs:range xsd:string ;
+                       rdfs:comment "Contains translated lyrics of a track." ;
+                       rdfs:label "Has Translated Lyrics"@en .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://example.org/mo#Arranger
+mo:Arranger rdf:type owl:Class ;
+          rdfs:comment "Represents a music arranger." ;
+          rdfs:label "Arranger"@en .
+
+
+###  http://example.org/mo#Engineer
+mo:Engineer rdf:type owl:Class ;
+            rdfs:comment "Represents a sound engineer who records or mixes tracks." ;
+            rdfs:label "Engineer"@en .
+
 
 ###  http://example.org/mo#Gender
 mo:Gender rdf:type owl:Class ;
@@ -108,6 +216,12 @@ mo:Genre rdf:type owl:Class ;
          rdfs:label "Genre"@en .
 
 
+###  http://example.org/mo#Instrumentalist
+mo:Instrumentalist rdf:type owl:Class ;
+                   rdfs:comment "Represents a musician who plays instruments on a track." ;
+                   rdfs:label "Instrumentalist"@en .
+
+
 ###  http://example.org/mo#Label
 mo:Label rdf:type owl:Class ;
          rdfs:comment "Represents a record label." ;
@@ -118,6 +232,12 @@ mo:Label rdf:type owl:Class ;
 mo:Language rdf:type owl:Class ;
             rdfs:comment "Represents the language that the song is written in." ;
             rdfs:label "Language"@en .
+
+
+###  http://example.org/mo#Mixer
+mo:Mixer rdf:type owl:Class ;
+         rdfs:comment "Represents a person responsible for mixing audio tracks." ;
+         rdfs:label "Mixer"@en .
 
 
 ###  http://example.org/mo#MusicArtist
@@ -144,16 +264,22 @@ mo:Record rdf:type owl:Class ;
           rdfs:label "Record"@en .
 
 
-###  http://example.org/mo#SoundEngineer
-mo:SoundEngineer rdf:type owl:Class ;
-                 rdfs:comment "Represents a sound engineer." ;
-                 rdfs:label "Sound Engineer"@en .
+###  http://example.org/mo#Recorder
+mo:Recorder rdf:type owl:Class ;
+            rdfs:comment "Represents a person responsible for recording a track." ;
+            rdfs:label "Recorder"@en .
 
 
 ###  http://example.org/mo#Track
 mo:Track rdf:type owl:Class ;
          rdfs:comment "Represents an individual song." ;
          rdfs:label "Track"@en .
+
+
+###  http://example.org/mo#Vocalist
+mo:Vocalist rdf:type owl:Class ;
+            rdfs:comment "Represents a singer who performs vocals on a track." ;
+            rdfs:label "Vocalist"@en .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
