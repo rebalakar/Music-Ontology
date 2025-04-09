@@ -902,6 +902,10 @@ class MappingEngine:
                     
                     artist_count += 1
                     
+                    # Create a normalized artist index for better matching if not already created
+                    if 'normalized_artist_index' not in locals():
+                        normalized_artist_index = self._create_normalized_artist_index()
+                    
                     # Normalize the artist name for matching
                     normalized_json_artist = self._normalize_artist_name(artist_name)
                     
