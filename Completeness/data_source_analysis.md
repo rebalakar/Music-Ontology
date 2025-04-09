@@ -4,7 +4,7 @@
 
 - Total Chart Entries: 26101
 - Unique Songs: 2071
-- Unique Artists: 911
+- Unique Artists: 921
 - Unique Dates: 523
 - Unique Tracks (Song + Artist combinations): 2191
 
@@ -12,8 +12,8 @@
 
 | Artist | Chart Appearances |
 |--------|-------------------|
-| Drake | 1222 |
-| Nicki Minaj | 700 |
+| Drake | 1208 |
+| Nicki Minaj | 638 |
 | Rihanna | 637 |
 | Bruno Mars | 523 |
 | Taylor Swift | 523 |
@@ -38,7 +38,7 @@
 | Counting Stars | 58 |
 | Shape Of You | 58 |
 
-## Recordings Data (JSON)
+## Formatted Recordings Data (JSON)
 
 - Total Entries: 2189
 - Total Artists: 3120
@@ -52,6 +52,7 @@
 | artist | 2189 | 100.00% |
 | writer | 1850 | 84.51% |
 | producer | 1114 | 50.89% |
+| label | 804 | 36.73% |
 | mix | 761 | 34.76% |
 | vocal | 724 | 33.07% |
 | instrument | 524 | 23.94% |
@@ -101,6 +102,10 @@
 | Property | Unique Values | Total Instances |
 |----------|---------------|----------------|
 | arranger | 53 | 66 |
+| artist_area | 421 | 2957 |
+| artist_artist_name | 816 | 3120 |
+| artist_country | 30 | 2978 |
+| artist_date_of_birth | 650 | 3066 |
 | artist_name | 816 | 3120 |
 | artists and repertoire | 5 | 9 |
 | audio | 15 | 31 |
@@ -120,6 +125,7 @@
 | instrument technician | 4 | 4 |
 | key_artist_name | 878 | 0 |
 | key_track_title | 2070 | 0 |
+| label | 304 | 1272 |
 | legal_name | 501 | 2614 |
 | lyricist | 214 | 422 |
 | mastering | 1 | 1 |
@@ -139,7 +145,7 @@
 | remixer | 11 | 13 |
 | samples from artist | 10 | 11 |
 | sound | 8 | 9 |
-| tags | 683 | 8429 |
+| tags | 682 | 8427 |
 | track | 2074 | 2189 |
 | video appearance | 69 | 75 |
 | video director | 26 | 30 |
@@ -251,6 +257,21 @@
 | Chris Martin | 7 |
 | P!nk | 6 |
 | Fergie | 6 |
+
+### Top 10 Label Values
+
+| Label | Count |
+|----------|-------|
+| WEA International Inc. | 70 |
+| Interscope Records | 56 |
+| Big Machine Label Group, LLC | 55 |
+| Atlantic Recording Corporation | 43 |
+| Cash Money Records | 39 |
+| Young Money | 39 |
+| RCA Records | 32 |
+| Big Machine Records, LLC | 28 |
+| Republic Records | 28 |
+| Epic Records | 24 |
 
 ### Top 10 Tags Values
 
@@ -651,6 +672,21 @@
 ## Artist-Specific Statistics
 
 
+### Top 10 Artist Area Values
+
+| Area | Count |
+|----------|-------|
+| Atlanta | 137 |
+| Toronto | 118 |
+| Los Angeles | 111 |
+| New Orleans | 94 |
+| London | 82 |
+| Saint James | 64 |
+| Houston | 63 |
+| Nashville | 52 |
+| West Reading | 52 |
+| Compton | 47 |
+
 ### Top 10 Artist Artist_name Values
 
 | Artist_name | Count |
@@ -665,6 +701,36 @@
 | Rihanna | 38 |
 | Chris Brown | 34 |
 | Post Malone | 33 |
+
+### Top 10 Artist Country Values
+
+| Country | Count |
+|----------|-------|
+| US | 2400 |
+| CA | 222 |
+| GB | 142 |
+| AU | 39 |
+| FR | 30 |
+| PR | 27 |
+| IE | 12 |
+| SE | 12 |
+| DE | 11 |
+| CO | 11 |
+
+### Top 10 Artist Date_of_birth Values
+
+| Date_of_birth | Count |
+|----------|-------|
+| 1986-10-24 | 111 |
+| 1982-12-08 | 64 |
+| 2009-05-19 | 62 |
+| 1982-09-27 | 61 |
+| 1989-12-13 | 52 |
+| 1994-03-01 | 41 |
+| 2008 | 41 |
+| 1977-06-08 | 39 |
+| 1988-02-20 | 38 |
+| 1989-05-05 | 34 |
 
 ### Top 10 Artist Gender Values
 
