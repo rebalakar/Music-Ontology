@@ -387,7 +387,7 @@ class MappingEngine:
                 self.graph.add((artist_uri, RDFS.label, Literal(artist_name, lang="en")))
                 self.graph.add((artist_uri, RDFS.comment, Literal(f"Music artist or band named '{artist_name}'.", lang="en")))
                 
-                # Default to unknown gender for artists from CSV
+                # We keep this gender assignment since these ARE artists (MusicArtist type)
                 gender_uri = self.genders.get("unknown")
                 if gender_uri:
                     self.graph.add((artist_uri, self.mo.hasGender, gender_uri))
@@ -797,10 +797,11 @@ class MappingEngine:
                         person_uri = artist_uri  # Use the artist URI pattern for all persons
                         self.graph.add((person_uri, RDFS.label, Literal(person_name, lang="en")))
                         
-                        # Default to unknown gender if not specified
-                        gender_uri = self.genders.get("unknown")
-                        if gender_uri:
-                            self.graph.add((person_uri, self.mo.hasGender, gender_uri))
+                        # REMOVED: No longer assign default gender to non-artist entities
+                        # Only artists should have gender assigned
+                        # gender_uri = self.genders.get("unknown")
+                        # if gender_uri:
+                        #     self.graph.add((person_uri, self.mo.hasGender, gender_uri))
                 
                 # Store in our map for future reference
                 person_uri_map[person_name] = person_uri
@@ -958,7 +959,7 @@ class MappingEngine:
                         self.graph.add((artist_uri, RDFS.label, Literal(artist_name, lang="en")))
                         self.graph.add((artist_uri, RDFS.comment, Literal(f"Music artist or band named '{artist_name}'.", lang="en")))
                         
-                        # Default to unknown gender
+                        # Keep this gender assignment since these ARE artists (MusicArtist type)
                         gender_uri = self.genders.get("unknown")
                         if gender_uri:
                             self.graph.add((artist_uri, self.mo.hasGender, gender_uri))
@@ -978,9 +979,26 @@ class MappingEngine:
                             else:
                                 self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_names, lang="en")))
                                 
-                        if 'gender' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['gender']:
-                            gender_str = all_artists_to_process[artist_name]['gender'].lower()
+                        if 'gender' in all_artists_to_process[artist_name]:
+                            original_gender = all_artists_to_process[artist_name]['gender']
+                            gender_str = original_gender.lower() if original_gender else ''
+                            
+                            # Handle empty strings as 'unknown'
+                            if not gender_str:
+                                gender_str = 'unknown'
+                            # Handle 'non-binary' as 'other' (case-insensitive)
+                            elif gender_str == 'non-binary' or gender_str == 'nonbinary':
+                                gender_str = 'other'
+                                print(f"Mapped non-binary gender '{original_gender}' for artist: {artist_name}")
+                                
                             if gender_str in self.genders:
+                                # Remove any existing gender assignments (particularly "unknown")
+                                old_genders = []
+                                for _, _, old_gender_uri in self.graph.triples((artist_uri, self.mo.hasGender, None)):
+                                    old_genders.append(old_gender_uri)
+                                    self.graph.remove((artist_uri, self.mo.hasGender, old_gender_uri))
+                                
+                                # Add the specific gender from JSON
                                 self.graph.add((artist_uri, self.mo.hasGender, self.genders[gender_str]))
                                 
                         if 'date_of_birth' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['date_of_birth']:
@@ -1615,7 +1633,7 @@ class MappingEngine:
                         self.graph.add((artist_uri, RDFS.label, Literal(artist_name, lang="en")))
                         self.graph.add((artist_uri, RDFS.comment, Literal(f"Music artist or band named '{artist_name}'.", lang="en")))
                         
-                        # Default to unknown gender
+                        # Keep this gender assignment since these ARE artists (MusicArtist type)
                         gender_uri = self.genders.get("unknown")
                         if gender_uri:
                             self.graph.add((artist_uri, self.mo.hasGender, gender_uri))
@@ -1635,9 +1653,26 @@ class MappingEngine:
                             else:
                                 self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_names, lang="en")))
                                 
-                        if 'gender' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['gender']:
-                            gender_str = all_artists_to_process[artist_name]['gender'].lower()
+                        if 'gender' in all_artists_to_process[artist_name]:
+                            original_gender = all_artists_to_process[artist_name]['gender']
+                            gender_str = original_gender.lower() if original_gender else ''
+                            
+                            # Handle empty strings as 'unknown'
+                            if not gender_str:
+                                gender_str = 'unknown'
+                            # Handle 'non-binary' as 'other' (case-insensitive)
+                            elif gender_str == 'non-binary' or gender_str == 'nonbinary':
+                                gender_str = 'other'
+                                print(f"Mapped non-binary gender '{original_gender}' for artist: {artist_name}")
+                                
                             if gender_str in self.genders:
+                                # Remove any existing gender assignments (particularly "unknown")
+                                old_genders = []
+                                for _, _, old_gender_uri in self.graph.triples((artist_uri, self.mo.hasGender, None)):
+                                    old_genders.append(old_gender_uri)
+                                    self.graph.remove((artist_uri, self.mo.hasGender, old_gender_uri))
+                                
+                                # Add the specific gender from JSON
                                 self.graph.add((artist_uri, self.mo.hasGender, self.genders[gender_str]))
                                 
                         if 'date_of_birth' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['date_of_birth']:
