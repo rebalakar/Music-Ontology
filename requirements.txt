@@ -1,0 +1,6 @@
+pandas
+rdflib
+rapidfuzz
+numpy
+python-Levenshtein
+matplotlib

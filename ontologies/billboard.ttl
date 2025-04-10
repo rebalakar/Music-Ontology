@@ -1,0 +1,153 @@
+@prefix ex:    <http://example.org/billboard#> .
+@prefix mo:    <http://example.org/mo#> .
+@prefix time:  <http://example.org/time#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/billboard#>
+    a owl:Ontology ;
+    owl:imports <http://example.org/mo#> , <http://example.org/time#> .
+
+################################################################################
+# Classes
+################################################################################
+
+# Class: ex:MusicChart
+# Description: Represents a specific music chart (e.g., Billboard Hot 100).
+# Key Property: Uses rdfs:label to hold the chart name.
+ex:MusicChart a owl:Class ;
+    rdfs:label "Music Chart"@en ;
+    rdfs:comment "Represents a specific music chart (e.g., Billboard Hot 100)." .
+
+# Class: ex:ChartEntry
+# Description: Represents a song's ranking in a specific chart on a specific date.
+# Key Properties:
+#   - ex:chart: links this entry to a MusicChart.
+#   - mo:track: links to the song (track) as defined in the Music Ontology.
+#   - time:inDate: associates the entry with a specific date (using a time:Instant).
+#   - ex:chartPosition: holds the ranking as an integer.
+#   - ex:hasInterval: links to a time:Interval representing the period during which this ranking is valid.
+#   - ex:hasDuration: links to a time:Duration indicating the duration of the chart ranking.
+ex:ChartEntry a owl:Class ;
+    rdfs:label "Chart Entry"@en ;
+    rdfs:comment "Represents a song's ranking in a specific chart on a specific date." .
+
+# Class: ex:ChartRun
+# Description: Represents a continuous period during which a track appears on a chart.
+# Key Properties:
+#   - mo:forTrack: links to the song (track) that this chart run is for.
+#   - ex:chartRunDuration: links to a time:Duration representing how long the run lasted.
+#   - time:inDate: associates the run with a starting date (using a time:Instant).
+ex:ChartRun a owl:Class ;
+    rdfs:label "Chart Run"@en ;
+    rdfs:comment "Represents a continuous period when a track appears on a chart." .
+
+################################################################################
+# Object Properties
+################################################################################
+
+# Property: ex:chart
+# Description: Links a ChartEntry to the corresponding MusicChart.
+# Domain: ex:ChartEntry; Range: ex:MusicChart.
+ex:chart a owl:ObjectProperty ;
+    rdfs:label "chart"@en ;
+    rdfs:comment "Links a ChartEntry to the corresponding MusicChart." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range ex:MusicChart .
+
+# Property: ex:hasInterval
+# Description: Links a ChartEntry to a time:Interval representing the period during which the ranking is valid.
+# Domain: ex:ChartEntry; Range: time:Interval.
+ex:hasInterval a owl:ObjectProperty ;
+    rdfs:label "has interval"@en ;
+    rdfs:comment "Links a ChartEntry to a time:Interval indicating the period during which the chart ranking is applicable." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range time:Interval .
+
+# Property: ex:hasDuration
+# Description: Links a ChartEntry to a time:Duration representing how long the ranking persisted.
+# Domain: ex:ChartEntry; Range: time:Duration.
+ex:hasDuration a owl:ObjectProperty ;
+    rdfs:label "has duration"@en ;
+    rdfs:comment "Links a ChartEntry to a time:Duration indicating the duration of the chart ranking." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range time:Duration .
+
+# Property: ex:chartRunDuration
+# Description: Links a ChartRun to a time:Duration representing how long a track remained on the charts.
+# Domain: ex:ChartRun; Range: time:Duration.
+ex:chartRunDuration a owl:ObjectProperty ;
+    rdfs:label "chart run duration"@en ;
+    rdfs:comment "Indicates how long a track remained on the charts." ;
+    rdfs:domain ex:ChartRun ;
+    rdfs:range time:Duration .
+
+# Property: ex:hasChartRun
+# Description: Links a Track to its period of appearance on a chart.
+# Domain: mo:Track; Range: ex:ChartRun.
+ex:hasChartRun a owl:ObjectProperty ;
+    rdfs:label "has chart run"@en ;
+    rdfs:comment "Links a track to its period of appearance on a chart." ;
+    rdfs:domain mo:Track ;
+    rdfs:range ex:ChartRun .
+
+# -------------------------------------------------------------------------------
+# Additional Properties
+# -------------------------------------------------------------------------------
+
+# Property: ex:inChart
+# Description: An alternative property linking a ChartEntry directly to a MusicChart.
+# Domain: ex:ChartEntry; Range: ex:MusicChart.
+ex:inChart a owl:ObjectProperty ;
+    rdfs:label "in chart"@en ;
+    rdfs:comment "Links a ChartEntry directly to a MusicChart." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range ex:MusicChart .
+
+# Property: mo:forTrack
+# Description: Links a ChartEntry to a Track (song) as defined in the Music Ontology.
+# Domain: ex:ChartEntry; Range: mo:Track.
+mo:forTrack a owl:ObjectProperty ;
+    rdfs:label "for track"@en ;
+    rdfs:comment "Links a ChartEntry to a Track in the Music Ontology." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range mo:Track .
+
+# Property: time:inDate
+# Description: Associates a ChartEntry with a specific time:Instant (representing a date).
+# Domain: ex:ChartEntry; Range: time:Instant.
+time:inDate a owl:ObjectProperty ;
+    rdfs:label "in date"@en ;
+    rdfs:comment "Associates a ChartEntry with a specific time:Instant, representing the date of the chart entry." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range time:Instant .
+
+################################################################################
+# Datatype Properties
+################################################################################
+
+# Property: ex:chartPosition
+# Description: Represents the ranking position of a song in the chart (expressed as an integer).
+# Domain: ex:ChartEntry; Range: xsd:integer.
+ex:chartPosition a owl:DatatypeProperty ;
+    rdfs:label "chart position"@en ;
+    rdfs:comment "Represents the ranking position of a song in a chart, expressed as an integer." ;
+    rdfs:domain ex:ChartEntry ;
+    rdfs:range xsd:integer .
+
+################################################################################
+# Reused External Properties (for clarity)
+################################################################################
+
+# mo:track (from the Music Ontology)
+# Description: Links a ChartEntry to a song (track).
+# Domain: ex:ChartEntry; Range: mo:Track.
+# Example usage:
+#   ex:entry1 mo:track mo:SomeSong .
+
+# time:inDate (from the Time Ontology)
+# Description: Associates a specific date with an event.
+# Domain: ex:ChartEntry; Range: typically a time:Instant.
+# Example usage:
+#   ex:entry1 time:inDate someInstant .
