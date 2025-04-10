@@ -11,3 +11,6 @@ langchain-core==0.3.51
 langchain-community==0.0.32
 openai==1.70.0
 musicbrainzngs
+fuzzywuzzy
+psutil
+matplotlib

@@ -287273,12 +287273,8 @@ mo:artist_cookin_on_3_burners_28e663 a mo:MusicArtist ;
 
 mo:artist_culture_freeman_885174 a mo:MusicArtist ;
     rdfs:label "Culture Freeman"@en ;
-<<<<<<< HEAD
-    mo:hasGender mo:gender_male ;
-=======
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
->>>>>>> feat/RAG
     rdfs:comment "Music artist or band named 'Culture Freeman'."@en .
 
 mo:artist_dechecharge_5e5df0 a mo:MusicArtist ;
@@ -287370,8 +287366,11 @@ mo:artist_jarreau_vandal_bf050d a mo:MusicArtist ;
     rdfs:label "Jarreau Vandal"@en ;
     mo:country "NL" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -287553,8 +287552,11 @@ mo:artist_thurz_785e9a a mo:MusicArtist ;
     mo:area "Inglewood" ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -287578,8 +287580,11 @@ mo:artist_west_2_west_c6cdfc a mo:MusicArtist ;
     rdfs:label "West 2 West"@en ;
     mo:country "IE" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -306986,8 +306991,11 @@ mo:artist_craig_wayne_boyd_0d848f a mo:MusicArtist ;
     rdfs:label "Craig Wayne Boyd"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -308965,8 +308973,11 @@ mo:artist_hollis_363164 a mo:MusicArtist ;
     rdfs:label "Hollis"@en ;
     mo:area "Petaluma" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_female ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_female,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -311335,8 +311346,11 @@ mo:artist_loverance_d47bdd a mo:MusicArtist ;
     rdfs:label "LoveRance"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -312287,8 +312301,11 @@ mo:artist_monty_dc798a a mo:MusicArtist ;
     rdfs:label "Monty"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -313731,8 +313748,11 @@ mo:artist_roman_gianarthur_irvin_4ffb8e a mo:MusicArtist,
     rdfs:label "Roman GianArthur Irvin"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -319581,8 +319601,11 @@ mo:artist_eric_nally_ab622c a mo:MusicArtist,
     rdfs:label "eric nally"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -319596,8 +319619,11 @@ mo:artist_eric_turner_0b5643 a mo:MusicArtist,
     rdfs:label "Eric Turner"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -320482,8 +320508,11 @@ mo:artist_john_martin_db27ea a mo:MusicArtist,
     rdfs:label "John Martin"@en ;
     mo:country "SE" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -324330,8 +324359,11 @@ mo:artist_casino_07032f a mo:MusicArtist,
     rdfs:label "Casino"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -325497,8 +325529,11 @@ mo:artist_lookas_6313f2 a mo:MusicArtist,
     rdfs:label "Lookas"@en ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
@@ -458729,8 +458764,11 @@ mo:artist_dj_frank_e_bc1d05 a mo:MusicArtist,
     mo:area "Denver" ;
     mo:country "US" ;
 <<<<<<< HEAD
+<<<<<<< HEAD
     mo:hasGender mo:gender_male ;
 =======
+=======
+>>>>>>> feature/evaluation
     mo:hasGender mo:gender_male,
         mo:gender_unknown ;
 >>>>>>> feat/RAG
