@@ -5,7 +5,7 @@
 |--------|-------|
 | Total triples | 368253 |
 | Entities | 35516 |
-| Relationships | 231233 |
+| Relationships | 231733 |
 
 ## Entity Types
 | Type | Count |
@@ -63,11 +63,11 @@
 | instant-date links | 525 |
 | interval-start links | 522 |
 | interval-end links | 522 |
+| artist-legal name links | 500 |
 | track-arranger links | 65 |
 | duration-unit links | 61 |
 | duration-value links | 61 |
 | duration-xsd links | 61 |
-| artist-legal name links | 0 |
 | track-record links | 0 |
 
 ## Time Ontology Analysis
@@ -155,6 +155,27 @@
 | 1000-5000 chars | 913 | 91.30% |
 | 5000-10000 chars | 21 | 2.10% |
 | 10000-inf chars | 6 | 0.60% |
+
+## Gender Analysis
+| Metric | Value |
+|--------|-------|
+| Artists with gender | 974 |
+| Total artists (gender analysis) | 974 |
+| Gender coverage (%) | 100.00% |
+
+        ### Gender Distribution
+        | Gender | Count | Percentage |
+        |--------|-------|------------|
+        | http://example.org/mo#gender_unknown | 974 | 100.00% |
+| http://example.org/mo#gender_male | 479 | 49.18% |
+| http://example.org/mo#gender_female | 152 | 15.61% |
+
+### Genre Analysis
+| Metric | Value |
+|--------|-------|
+| Tracks with genre | 1512 |
+| Total tracks (genre analysis) | 2190 |
+| Genre coverage (%) | 69.04% |
 
 ### Theme Distribution
 | Theme | Count | Percentage |
