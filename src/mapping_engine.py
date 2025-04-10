@@ -974,9 +974,9 @@ class MappingEngine:
                             if isinstance(legal_names, list):
                                 for legal_name in legal_names:
                                     if legal_name:
-                                        self.graph.add((artist_uri, self.mo.legalName, Literal(legal_name, lang="en")))
+                                        self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_name, lang="en")))
                             else:
-                                self.graph.add((artist_uri, self.mo.legalName, Literal(legal_names, lang="en")))
+                                self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_names, lang="en")))
                                 
                         if 'gender' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['gender']:
                             gender_str = all_artists_to_process[artist_name]['gender'].lower()
@@ -1631,9 +1631,9 @@ class MappingEngine:
                             if isinstance(legal_names, list):
                                 for legal_name in legal_names:
                                     if legal_name:
-                                        self.graph.add((artist_uri, self.mo.legalName, Literal(legal_name, lang="en")))
+                                        self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_name, lang="en")))
                             else:
-                                self.graph.add((artist_uri, self.mo.legalName, Literal(legal_names, lang="en")))
+                                self.graph.add((artist_uri, self.mo.hasLegalName, Literal(legal_names, lang="en")))
                                 
                         if 'gender' in all_artists_to_process[artist_name] and all_artists_to_process[artist_name]['gender']:
                             gender_str = all_artists_to_process[artist_name]['gender'].lower()
