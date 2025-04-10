@@ -3,3 +3,6 @@ rdflib
 rapidfuzz
 numpy
 python-Levenshtein
+fuzzywuzzy
+psutil
+matplotlib
