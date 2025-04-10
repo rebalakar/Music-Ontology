@@ -3,7 +3,7 @@ from datetime import datetime
 import musicbrainzngs
 from rapidfuzz import fuzz
 
-from musicbrainz.utils import get_release_dates
+from Structured.musicbrainz.utils import get_release_dates
 
 def get_most_similar(query_song, query_artist_list, query_artists_str):
     query_artist = query_artist_list[0] # Use first artist for query

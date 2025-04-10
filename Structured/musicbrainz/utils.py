@@ -1,7 +1,7 @@
 import time
 import musicbrainzngs
 
-import musicbrainz.filters as filters
+import Structured.musicbrainz.filters as filters
 
 def select_recording(recording_list):
     tie = False

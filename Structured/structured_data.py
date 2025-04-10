@@ -3,10 +3,10 @@ import json
 import ast
 import os
 
-from musicbrainz.filters import get_most_similar
-from musicbrainz.utils import select_recording, get_work_data, get_artist_data
-from musicbrainz.data_utils import load_cleaned_data
-from musicbrainz.format_recording import format_recording
+from Structured.musicbrainz.filters import get_most_similar
+from Structured.musicbrainz.utils import select_recording, get_work_data, get_artist_data
+from Structured.musicbrainz.data_utils import load_cleaned_data
+from Structured.musicbrainz.format_recording import format_recording
 
 def main():
     # Setup MusicBrainz client
