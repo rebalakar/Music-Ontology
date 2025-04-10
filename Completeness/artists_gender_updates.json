@@ -1,0 +1,1226 @@
+[
+  {
+    "artist": "6i",
+    "artist_uri": "http://example.org/mo#artist_6i_653c60",
+    "legalName": null,
+    "dateOfBirth": "1989-07-08T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/6i> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "9ine",
+    "artist_uri": "http://example.org/mo#artist_9ine_e6f6ef",
+    "legalName": "Paulo Fernando Fazenda Manuel",
+    "dateOfBirth": "1998-11-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/9ine> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "9ine feat Anuel AA",
+    "artist_uri": "http://example.org/mo#artist_9ine_feat_anuel_aa_ee5161",
+    "legalName": "Paulo Fernando Fazenda Manuel",
+    "dateOfBirth": "1998-11-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/9ine> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "@iHeartMemphis",
+    "artist_uri": "http://example.org/mo#artist_iheartmemphis_57a2af",
+    "legalName": null,
+    "dateOfBirth": "1993-01-25T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/iheartmemphis> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "A Boogie Wit Da Hoodie",
+    "artist_uri": "http://example.org/mo#artist_a_boogie_wit_da_hoodie_c8cdb8",
+    "legalName": "Artist Julius DuBose",
+    "dateOfBirth": "1995-12-06T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/a-boogie-wit-da-hoodie> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Afrojack",
+    "artist_uri": "http://example.org/mo#artist_afrojack_6f9731",
+    "legalName": "Nick van de Wall",
+    "dateOfBirth": "1987-09-09T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/afrojack> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Alabama",
+    "artist_uri": "http://example.org/mo#artist_alabama_213fe6",
+    "legalName": null,
+    "dateOfBirth": "2005-12-24T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/alabama> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Ale",
+    "artist_uri": "http://example.org/mo#artist_ale_f40f1b",
+    "legalName": "Alessandro Francesco Tommaso Antonio Manzoni",
+    "dateOfBirth": "1785-03-07T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ale> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Allan Kingdom",
+    "artist_uri": "http://example.org/mo#artist_allan_kingdom_e5cb0a",
+    "legalName": null,
+    "dateOfBirth": "1994-01-06T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/allan-kingdom> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Amber Riley",
+    "artist_uri": "http://example.org/mo#artist_amber_riley_ab62af",
+    "legalName": "Amber Patrice Riley",
+    "dateOfBirth": "1986-02-15T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/amber-riley> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Ayo",
+    "artist_uri": "http://example.org/mo#artist_ayo_7b1bed",
+    "legalName": null,
+    "dateOfBirth": "1980-09-14T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ayo> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "BTS",
+    "artist_uri": "http://example.org/mo#artist_bts_e66b8a",
+    "legalName": null,
+    "dateOfBirth": "1357-11-29T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/bts> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Bastille",
+    "artist_uri": "http://example.org/mo#artist_bastille_b31cc1",
+    "legalName": null,
+    "dateOfBirth": "1929-07-14T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/bastille> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Bebe Re",
+    "artist_uri": "http://example.org/mo#artist_bebe_re_648780",
+    "legalName": "Mar\u00eda Nieves Rebolledo Vila",
+    "dateOfBirth": "1978-05-09T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/bebe-re> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Bon Iver",
+    "artist_uri": "http://example.org/mo#artist_bon_iver_c2aa5f",
+    "legalName": "Justin DeYarmond Edison Vernon",
+    "dateOfBirth": "1981-04-30T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/bon-iver> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Bon Jovi",
+    "artist_uri": "http://example.org/mo#artist_bon_jovi_97df8c",
+    "legalName": "John Francis Bongiovi Jr.",
+    "dateOfBirth": "1962-03-02T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/bon-jovi> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Brendon Urie",
+    "artist_uri": "http://example.org/mo#artist_brendon_urie_9fdf14",
+    "legalName": null,
+    "dateOfBirth": "1987-04-12T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/brendon-urie> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Cedric Gervais",
+    "artist_uri": "http://example.org/mo#artist_cedric_gervais_99b37e",
+    "legalName": "C\u00e9dric DePasquale",
+    "dateOfBirth": "1979-06-07T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/cedric-gervais> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Cee Lo Green",
+    "artist_uri": "http://example.org/mo#artist_cee_lo_green_0ef463",
+    "legalName": "Thomas DeCarlo Callaway",
+    "dateOfBirth": "1975-05-30T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/cee-lo-green> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Charlie Se",
+    "artist_uri": "http://example.org/mo#artist_charlie_se_ab1903",
+    "legalName": "Charles Wayne Sexton",
+    "dateOfBirth": "1968-08-11T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/charlie-se> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Cirez D",
+    "artist_uri": "http://example.org/mo#artist_cirez_d_5cf3f8",
+    "legalName": "Eric Sheridan Prydz",
+    "dateOfBirth": "1976-07-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/cirez-d> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Clare",
+    "artist_uri": "http://example.org/mo#artist_clare_4da3d7",
+    "legalName": null,
+    "dateOfBirth": "1948-06-23T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/clare> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Cory Monteith",
+    "artist_uri": "http://example.org/mo#artist_cory_monteith_f24ada",
+    "legalName": "Cory Allan Michael Monteith",
+    "dateOfBirth": "1982-05-11T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/cory-monteith> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "DLOW",
+    "artist_uri": "http://example.org/mo#artist_dlow_7a0d08",
+    "legalName": null,
+    "dateOfBirth": "1995-08-15T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/dlow> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Dan",
+    "artist_uri": "http://example.org/mo#artist_dan_97c8e6",
+    "legalName": "Dante da Alaghiero degli Alaghieri",
+    "dateOfBirth": "1265-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/dan> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Daughtry",
+    "artist_uri": "http://example.org/mo#artist_daughtry_490d86",
+    "legalName": null,
+    "dateOfBirth": "1898-02-01T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/daughtry> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Demi Lovato",
+    "artist_uri": "http://example.org/mo#artist_demi_lovato_de59f8",
+    "legalName": "Demetria Devonne Lovato",
+    "dateOfBirth": "1992-08-20T00:00:00Z",
+    "retrievedGender": "non-binary",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/demi-lovato> mo:hasGender <http://example.org/mo#gender_unknown> .\n```"
+  },
+  {
+    "artist": "Diddy - Dirty Money",
+    "artist_uri": "http://example.org/mo#artist_diddy__dirty_money_bd561e",
+    "legalName": "Sean John Combs",
+    "dateOfBirth": "1969-11-04T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/diddy-dirty-money> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Dragonette",
+    "artist_uri": "http://example.org/mo#artist_dragonette_c98615",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/dragonette> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Estelle",
+    "artist_uri": "http://example.org/mo#artist_estelle_dc195a",
+    "legalName": "Estelle Louise Fletcher",
+    "dateOfBirth": "1934-07-22T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/estelle> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Florence",
+    "artist_uri": "http://example.org/mo#artist_florence_bbf5e1",
+    "legalName": null,
+    "dateOfBirth": "1959-12-21T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/florence> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Fo",
+    "artist_uri": "http://example.org/mo#artist_fo_5aa893",
+    "legalName": null,
+    "dateOfBirth": "-0500-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/fo> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "G.R.L.",
+    "artist_uri": "http://example.org/mo#artist_grl_242213",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/g-r-l> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Gloriana",
+    "artist_uri": "http://example.org/mo#artist_gloriana_ec73d4",
+    "legalName": null,
+    "dateOfBirth": "1533-09-17T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/gloriana> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Grey",
+    "artist_uri": "http://example.org/mo#artist_grey_caf3a0",
+    "legalName": "Erin Grey Van Oosbree",
+    "dateOfBirth": "1973-08-24T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/grey> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "IamSu!",
+    "artist_uri": "http://example.org/mo#artist_iamsu_6e8f86",
+    "legalName": "Sudan Ameer Williams",
+    "dateOfBirth": "1989-11-16T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/iamsu> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "J. Balvin",
+    "artist_uri": "http://example.org/mo#artist_j_balvin_b89228",
+    "legalName": null,
+    "dateOfBirth": "1985-05-07T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/j-balvin> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "J. Davi$",
+    "artist_uri": "http://example.org/mo#artist_j_davi_3dbacd",
+    "legalName": null,
+    "dateOfBirth": "1914-07-12T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/j-davi> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "JAY-Z",
+    "artist_uri": "http://example.org/mo#artist_jayz_503de9",
+    "legalName": "Shawn Corey Carter",
+    "dateOfBirth": "1969-12-04T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jay-z> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Jacob Colgan",
+    "artist_uri": "http://example.org/mo#artist_jacob_colgan_79dd92",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jacob-colgan> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Jaden Smith",
+    "artist_uri": "http://example.org/mo#artist_jaden_smith_62f35b",
+    "legalName": "Jaden Christopher Syre Smith",
+    "dateOfBirth": "1998-07-08T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jaden-smith> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "James Blake",
+    "artist_uri": "http://example.org/mo#artist_james_blake_f7a8e8",
+    "legalName": "James Riley Blake",
+    "dateOfBirth": "1979-12-28T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/james-blake> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Janelle Monae",
+    "artist_uri": "http://example.org/mo#artist_janelle_monae_63d62a",
+    "legalName": "Janelle Mon\u00e1e Robinson",
+    "dateOfBirth": "1985-12-01T00:00:00Z",
+    "retrievedGender": "non-binary",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/janelle-monae> mo:hasGender <http://example.org/mo#gender_unknown> .\n```"
+  },
+  {
+    "artist": "Jaron",
+    "artist_uri": "http://example.org/mo#artist_jaron_defcb8",
+    "legalName": null,
+    "dateOfBirth": "1960-05-03T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jaron> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Jay Rock",
+    "artist_uri": "http://example.org/mo#artist_jay_rock_aea6e0",
+    "legalName": null,
+    "dateOfBirth": "1985-03-31T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jay-rock> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Jay Z",
+    "artist_uri": "http://example.org/mo#artist_jay_z_af9b6f",
+    "legalName": "Shawn Corey Carter",
+    "dateOfBirth": "1969-12-04T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jay-z> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Joey Gala",
+    "artist_uri": "http://example.org/mo#artist_joey_gala_c9d332",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "unknown",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/joey-gala> mo:hasGender <http://example.org/mo#gender_unknown> .\n```"
+  },
+  {
+    "artist": "John",
+    "artist_uri": "http://example.org/mo#artist_john_61409a",
+    "legalName": null,
+    "dateOfBirth": "1892-01-03T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/john> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "KONGOS",
+    "artist_uri": "http://example.org/mo#artist_kongos_1de50d",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/kongos> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Kanye West",
+    "artist_uri": "http://example.org/mo#artist_kanye_west_729b33",
+    "legalName": "Kanye Omari West",
+    "dateOfBirth": "1977-06-08T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/kanye-west> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Karmin",
+    "artist_uri": "http://example.org/mo#artist_karmin_b8bb24",
+    "legalName": null,
+    "dateOfBirth": "1830-06-05T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/karmin> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Karol G",
+    "artist_uri": "http://example.org/mo#artist_karol_g_ed708b",
+    "legalName": null,
+    "dateOfBirth": "1781-11-08T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/karol-g> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Kehlani",
+    "artist_uri": "http://example.org/mo#artist_kehlani_8e0e72",
+    "legalName": "Kehlani Ashley Parrish",
+    "dateOfBirth": "1995-04-24T00:00:00Z",
+    "retrievedGender": "non-binary",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/kehlani> mo:hasGender <http://example.org/mo#gender_unknown> .\n```"
+  },
+  {
+    "artist": "Kesha",
+    "artist_uri": "http://example.org/mo#artist_kesha_8e35ce",
+    "legalName": "Kesha Rose Sebert",
+    "dateOfBirth": "1987-03-01T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/kesha> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "LANCO",
+    "artist_uri": "http://example.org/mo#artist_lanco_8903d6",
+    "legalName": null,
+    "dateOfBirth": "1637-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lanco> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Labrinth",
+    "artist_uri": "http://example.org/mo#artist_labrinth_0be141",
+    "legalName": "Timothy Lee McKenzie kefe nieggss",
+    "dateOfBirth": "1989-01-04T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/labrinth> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Lady A",
+    "artist_uri": "http://example.org/mo#artist_lady_a_ab9ac5",
+    "legalName": null,
+    "dateOfBirth": "1580-01-01T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lady-a> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Lana Del Ray",
+    "artist_uri": "http://example.org/mo#artist_lana_del_ray_08ed5e",
+    "legalName": "Elizabeth Woolridge Grant",
+    "dateOfBirth": "1985-06-21T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lana-del-ray> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Lea Michele",
+    "artist_uri": "http://example.org/mo#artist_lea_michele_1ba547",
+    "legalName": "Lea Michele Sarfati",
+    "dateOfBirth": "1986-08-29T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lea-michele> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Lil Uzi Vert",
+    "artist_uri": "http://example.org/mo#artist_lil_uzi_vert_0afe12",
+    "legalName": "Symere Bysil Woods",
+    "dateOfBirth": "1995-07-31T00:00:00Z",
+    "retrievedGender": "non-binary",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lil-uzi-vert> mo:hasGender <http://example.org/mo#gender_unknown> .\n```"
+  },
+  {
+    "artist": "Love",
+    "artist_uri": "http://example.org/mo#artist_love_8bd7a1",
+    "legalName": "Prince Rogers Nelson",
+    "dateOfBirth": "1958-06-07T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/love> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Lukas Graham",
+    "artist_uri": "http://example.org/mo#artist_lukas_graham_063c46",
+    "legalName": null,
+    "dateOfBirth": "1988-09-18T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lukas-graham> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "M0",
+    "artist_uri": "http://example.org/mo#artist_m0_8421ec",
+    "legalName": null,
+    "dateOfBirth": "2005-05-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/m0> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "MAGIC!",
+    "artist_uri": "http://example.org/mo#artist_magic_3cdcf8",
+    "legalName": null,
+    "dateOfBirth": "1971-04-18T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/magic> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "MO",
+    "artist_uri": "http://example.org/mo#artist_mo_eb0459",
+    "legalName": "Joannes Chrysostomus Wolfgangus Theophilus Mozart",
+    "dateOfBirth": "1756-01-27T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/mo> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Mac Miller",
+    "artist_uri": "http://example.org/mo#artist_mac_miller_fcb1b6",
+    "legalName": "Malcolm James McCormick",
+    "dateOfBirth": "1992-01-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/mac-miller> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Machine Gun Kelly",
+    "artist_uri": "http://example.org/mo#artist_machine_gun_kelly_3a5f83",
+    "legalName": "George Kelly Barnes",
+    "dateOfBirth": "1895-07-18T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/machine-gun-kelly> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Macklemore",
+    "artist_uri": "http://example.org/mo#artist_macklemore_1ecd6f",
+    "legalName": "Benjamin Hammond Haggerty",
+    "dateOfBirth": "1983-06-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/macklemore> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Maejor Ali",
+    "artist_uri": "http://example.org/mo#artist_maejor_ali_1a7fb9",
+    "legalName": null,
+    "dateOfBirth": "1988-07-23T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/maejor-ali> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Marian Hill",
+    "artist_uri": "http://example.org/mo#artist_marian_hill_d525d9",
+    "legalName": null,
+    "dateOfBirth": "1938-03-22T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/marian-hill> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Matthew Castle",
+    "artist_uri": "http://example.org/mo#artist_matthew_castle_bcdc3a",
+    "legalName": null,
+    "dateOfBirth": "1984-01-02T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/matthew-castle> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Matthew Schuler",
+    "artist_uri": "http://example.org/mo#artist_matthew_schuler_1571c1",
+    "legalName": null,
+    "dateOfBirth": "1992-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/matthew-schuler> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Men",
+    "artist_uri": "http://example.org/mo#artist_men_bbbcb4",
+    "legalName": "Mena Alexandra Suvari",
+    "dateOfBirth": "1979-02-13T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/men> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Metro Boomin Featuring Travis Scott",
+    "artist_uri": "http://example.org/mo#artist_metro_boomin_featuring_travis_scott_2c7dbb",
+    "legalName": "Leland Tyler Wayne",
+    "dateOfBirth": "1993-09-16T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/metro-boomin> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Miley Cyrus",
+    "artist_uri": "http://example.org/mo#artist_miley_cyrus_1406a0",
+    "legalName": "Destiny Hope Cyrus",
+    "dateOfBirth": "1992-11-23T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/miley-cyrus> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Mumford",
+    "artist_uri": "http://example.org/mo#artist_mumford_513cf4",
+    "legalName": null,
+    "dateOfBirth": "1895-10-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/mumford> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Mustard",
+    "artist_uri": "http://example.org/mo#artist_mustard_0c6ea1",
+    "legalName": null,
+    "dateOfBirth": "1760-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/mustard> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "NWA",
+    "artist_uri": "http://example.org/mo#artist_nwa_6bf898",
+    "legalName": null,
+    "dateOfBirth": "1976-08-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/nwa> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Neil Patrick Harris",
+    "artist_uri": "http://example.org/mo#artist_neil_patrick_harris_c7b680",
+    "legalName": null,
+    "dateOfBirth": "1973-06-15T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/neil-patrick-harris> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Nico",
+    "artist_uri": "http://example.org/mo#artist_nico_48088f",
+    "legalName": "Nicolas Paul St\u00e9phane Sark\u00f6zy de Nagy-Bocsa",
+    "dateOfBirth": "1955-01-28T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/nico> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Now",
+    "artist_uri": "http://example.org/mo#artist_now_1e1cc9",
+    "legalName": null,
+    "dateOfBirth": "1965-04-07T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/now> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Pharrell",
+    "artist_uri": "http://example.org/mo#artist_pharrell_608f5b",
+    "legalName": "Pharrell Lanscilo Williams",
+    "dateOfBirth": "1973-04-05T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/pharrell> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Pink",
+    "artist_uri": "http://example.org/mo#artist_pink_8dc534",
+    "legalName": "Alecia Beth Moore",
+    "dateOfBirth": "1979-09-08T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/pink> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Queen",
+    "artist_uri": "http://example.org/mo#artist_queen_2c2d2c",
+    "legalName": "Ella Jane Fitzgerald",
+    "dateOfBirth": "1917-04-25T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/queen> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Reba",
+    "artist_uri": "http://example.org/mo#artist_reba_c789cc",
+    "legalName": "Reba Nell McEntire",
+    "dateOfBirth": "1955-03-28T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/reba> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Remy Boyz",
+    "artist_uri": "http://example.org/mo#artist_remy_boyz_2ff1ce",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "unknown",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/remy-boyz> mo:hasGender <http://example.org/mo#gender_unknown> .\n```"
+  },
+  {
+    "artist": "Ri",
+    "artist_uri": "http://example.org/mo#artist_ri_6cecb2",
+    "legalName": "Wilhelm Richard Wagner",
+    "dateOfBirth": "1813-05-22T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ri> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Roman GianArthur",
+    "artist_uri": "http://example.org/mo#artist_roman_gianarthur_41dcfa",
+    "legalName": null,
+    "dateOfBirth": "1988-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/roman-gianarthur> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Ruth B",
+    "artist_uri": "http://example.org/mo#artist_ruth_b_04ba4a",
+    "legalName": "Joan Ruth Bader",
+    "dateOfBirth": "1933-03-15T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ruth-b> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "SHAED",
+    "artist_uri": "http://example.org/mo#artist_shaed_1205d0",
+    "legalName": "Shaeda Christine Moghaddam",
+    "dateOfBirth": null,
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/shaed> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Sam Smith",
+    "artist_uri": "http://example.org/mo#artist_sam_smith_f35f73",
+    "legalName": null,
+    "dateOfBirth": "1969-11-04T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/sam-smith> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Selena Gomez",
+    "artist_uri": "http://example.org/mo#artist_selena_gomez_401a28",
+    "legalName": "Selena Marie Gomez",
+    "dateOfBirth": "1992-07-22T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/selena-gomez> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Shay",
+    "artist_uri": "http://example.org/mo#artist_shay_eee656",
+    "legalName": "S\u00e9amus John James Given",
+    "dateOfBirth": "1976-04-20T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/shay> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Skipper",
+    "artist_uri": "http://example.org/mo#artist_skipper_66c877",
+    "legalName": null,
+    "dateOfBirth": "1892-06-15T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/skipper> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Skrille",
+    "artist_uri": "http://example.org/mo#artist_skrille_fa71e4",
+    "legalName": "Sonny John Moore",
+    "dateOfBirth": "1988-01-15T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/skrille> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Sons",
+    "artist_uri": "http://example.org/mo#artist_sons_8b520c",
+    "legalName": null,
+    "dateOfBirth": "1973-06-04T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/sons> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "Soulja Boy Tell'em",
+    "artist_uri": "http://example.org/mo#artist_soulja_boy_tellem_cb36d6",
+    "legalName": "DeAndre Cortez Way",
+    "dateOfBirth": "1990-07-28T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/soulja-boy-tell-em> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "TLC",
+    "artist_uri": "http://example.org/mo#artist_tlc_e12a8b",
+    "legalName": null,
+    "dateOfBirth": null,
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/tlc> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Teo",
+    "artist_uri": "http://example.org/mo#artist_teo_d479c2",
+    "legalName": null,
+    "dateOfBirth": "1541-10-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/teo> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "The Machine",
+    "artist_uri": "http://example.org/mo#artist_the_machine_cfda66",
+    "legalName": null,
+    "dateOfBirth": "1983-04-06T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/the-machine> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "The Weeknd",
+    "artist_uri": "http://example.org/mo#artist_the_weeknd_6175b9",
+    "legalName": "Abel Makkonen Tesfaye",
+    "dateOfBirth": "1990-02-16T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/the-weeknd> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Theophilus London",
+    "artist_uri": "http://example.org/mo#artist_theophilus_london_18b87c",
+    "legalName": "Theophilus Musa London",
+    "dateOfBirth": "1987-02-23T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/theophilus-london> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Tones",
+    "artist_uri": "http://example.org/mo#artist_tones_21566c",
+    "legalName": null,
+    "dateOfBirth": "1972-04-28T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/tones> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Train",
+    "artist_uri": "http://example.org/mo#artist_train_e41273",
+    "legalName": "Bradley Lee Daugherty",
+    "dateOfBirth": "1965-10-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/train> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Travis Scott",
+    "artist_uri": "http://example.org/mo#artist_travis_scott_d43893",
+    "legalName": null,
+    "dateOfBirth": "1975-09-14T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/travis-scott> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Vinz",
+    "artist_uri": "http://example.org/mo#artist_vinz_5ed9f5",
+    "legalName": null,
+    "dateOfBirth": "1823-09-30T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/vinz> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Watt",
+    "artist_uri": "http://example.org/mo#artist_watt_a11e76",
+    "legalName": null,
+    "dateOfBirth": "1823-06-13T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/watt> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "Young Jeezy",
+    "artist_uri": "http://example.org/mo#artist_young_jeezy_ec6912",
+    "legalName": "Jay Wayne Jenkins",
+    "dateOfBirth": "1977-09-28T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/young-jeezy> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "akon",
+    "artist_uri": "http://example.org/mo#artist_akon_ac6b00",
+    "legalName": "Alioune Badara Thiam N'gulu a Lulu",
+    "dateOfBirth": "1973-04-16T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/akon> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "beyonce",
+    "artist_uri": "http://example.org/mo#artist_beyonce_88f179",
+    "legalName": "Beyonce Giselle Knowles",
+    "dateOfBirth": "1981-09-04T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/beyonce> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "big sean",
+    "artist_uri": "http://example.org/mo#artist_big_sean_0dbdc9",
+    "legalName": "Sean Michael Leonard Anderson",
+    "dateOfBirth": "1988-03-25T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/big-sean> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "blackbear",
+    "artist_uri": "http://example.org/mo#artist_blackbear_d2d950",
+    "legalName": null,
+    "dateOfBirth": "1680-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/blackbear> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "carrie underwood",
+    "artist_uri": "http://example.org/mo#artist_carrie_underwood_ca097a",
+    "legalName": "Carrie Marie Underwood",
+    "dateOfBirth": "1983-03-10T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/carrie-underwood> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "drake",
+    "artist_uri": "http://example.org/mo#artist_drake_3ac75a",
+    "legalName": "Drake Aubrey Graham",
+    "dateOfBirth": "1986-10-24T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/drake> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "es",
+    "artist_uri": "http://example.org/mo#artist_es_12470f",
+    "legalName": null,
+    "dateOfBirth": "1972-10-25T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/es> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "fun.",
+    "artist_uri": "http://example.org/mo#artist_fun_a08060",
+    "legalName": null,
+    "dateOfBirth": "1967-12-30T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/fun> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "ha",
+    "artist_uri": "http://example.org/mo#artist_ha_925cc8",
+    "legalName": "Hans Christian Andersen",
+    "dateOfBirth": "1805-04-02T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ha> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "iHeartMemphis",
+    "artist_uri": "http://example.org/mo#artist_iheartmemphis_c26430",
+    "legalName": null,
+    "dateOfBirth": "1993-01-25T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/iheartmemphis> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "iggy azalea",
+    "artist_uri": "http://example.org/mo#artist_iggy_azalea_847634",
+    "legalName": null,
+    "dateOfBirth": "1990-06-07T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/iggy-azalea> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "jason aldean",
+    "artist_uri": "http://example.org/mo#artist_jason_aldean_1bad10",
+    "legalName": "Jason Aldine Williams",
+    "dateOfBirth": "1977-02-28T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jason-aldean> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "jessie j",
+    "artist_uri": "http://example.org/mo#artist_jessie_j_95dad9",
+    "legalName": "Jessica Ellen Cornish",
+    "dateOfBirth": "1988-03-27T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/jessie-j> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "justin timberlake",
+    "artist_uri": "http://example.org/mo#artist_justin_timberlake_27adb3",
+    "legalName": "Justin Randall Timberlake",
+    "dateOfBirth": "1981-01-31T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/justin-timberlake> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "katy perry",
+    "artist_uri": "http://example.org/mo#artist_katy_perry_a325e5",
+    "legalName": "Katheryn Elizabeth Hudson",
+    "dateOfBirth": "1984-10-25T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/katy-perry> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "ke$ha",
+    "artist_uri": "http://example.org/mo#artist_keha_ecb4ce",
+    "legalName": null,
+    "dateOfBirth": "1955-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ke-ha> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "keith urban",
+    "artist_uri": "http://example.org/mo#artist_keith_urban_0ac341",
+    "legalName": "Keith Lionel Urban",
+    "dateOfBirth": "1967-10-26T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/keith-urban> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "lana del rey",
+    "artist_uri": "http://example.org/mo#artist_lana_del_rey_6843f1",
+    "legalName": "Elizabeth Woolridge Grant",
+    "dateOfBirth": "1985-06-21T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lana-del-rey> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "lil wayne",
+    "artist_uri": "http://example.org/mo#artist_lil_wayne_008240",
+    "legalName": "Dwayne Michael Carter Jr.",
+    "dateOfBirth": "1982-09-27T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/lil-wayne> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "macklemore",
+    "artist_uri": "http://example.org/mo#artist_macklemore_de3669",
+    "legalName": "Benjamin Hammond Haggerty",
+    "dateOfBirth": "1983-06-19T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/macklemore> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "melle mel",
+    "artist_uri": "http://example.org/mo#artist_melle_mel_2d35d9",
+    "legalName": "Melvin Glover",
+    "dateOfBirth": "1962-05-15T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/melle-mel> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "miley cyrus",
+    "artist_uri": "http://example.org/mo#artist_miley_cyrus_5abffb",
+    "legalName": "Destiny Hope Cyrus",
+    "dateOfBirth": "1992-11-23T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/miley-cyrus> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "nicki minaj",
+    "artist_uri": "http://example.org/mo#artist_nicki_minaj_1ed9ae",
+    "legalName": "Onika Tanya Maraj",
+    "dateOfBirth": "1982-12-08T00:00:00Z",
+    "retrievedGender": "female",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/nicki-minaj> mo:hasGender <http://example.org/mo#gender_female> .\n```"
+  },
+  {
+    "artist": "ryan lewis",
+    "artist_uri": "http://example.org/mo#artist_ryan_lewis_e9fcfb",
+    "legalName": null,
+    "dateOfBirth": "1988-03-25T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ryan-lewis> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "t.i.",
+    "artist_uri": "http://example.org/mo#artist_ti_3f3228",
+    "legalName": null,
+    "dateOfBirth": "1585-01-01T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/t-i> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "ton",
+    "artist_uri": "http://example.org/mo#artist_ton_511942",
+    "legalName": null,
+    "dateOfBirth": "1953-05-06T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/ton> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "wiz khalifa",
+    "artist_uri": "http://example.org/mo#artist_wiz_khalifa_523d76",
+    "legalName": "Cameron Jibril Thomaz",
+    "dateOfBirth": "1987-09-08T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/wiz-khalifa> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  },
+  {
+    "artist": "zedd",
+    "artist_uri": "http://example.org/mo#artist_zedd_28b20c",
+    "legalName": null,
+    "dateOfBirth": "1989-09-02T00:00:00Z",
+    "retrievedGender": "male",
+    "sampleSong": null,
+    "rdfTriple": "```turtle\n<http://example.org/artist/zedd> mo:hasGender <http://example.org/mo#gender_male> .\n```"
+  }
+]

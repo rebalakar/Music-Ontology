@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- Map URIs to the actual file locations -->
+    <uri id="User Entered Import Resolution" name="http://example.org/mo#" uri="ontologies/music_ontology.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://example.org/billboard#" uri="ontologies/billboard.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://example.org/time#" uri="ontologies/time.ttl"/>
+    
+    <!-- These are added to handle the base URIs in the files -->
+    <uri id="User Entered Import Resolution" name="http://example.org/mo" uri="ontologies/music_ontology.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://example.org/billboard" uri="ontologies/billboard.ttl"/>
+    <uri id="User Entered Import Resolution" name="http://example.org/time" uri="ontologies/time.ttl"/>
+</catalog> 

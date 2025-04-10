@@ -4,3 +4,9 @@ rapidfuzz
 numpy
 python-Levenshtein
 matplotlib
+
+# LangChain and OpenAI
+langchain==0.3.23
+langchain-core==0.3.51
+langchain-community==0.0.32
+openai==1.70.0
