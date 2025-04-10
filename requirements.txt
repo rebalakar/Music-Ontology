@@ -4,3 +4,4 @@ rapidfuzz
 numpy
 python-Levenshtein
 matplotlib
+musicbrainzngs
