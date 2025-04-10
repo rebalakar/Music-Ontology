@@ -639,6 +639,109 @@ def analyze_labels(graph):
         "Top labels": top_labels
     }
 
+def analyze_gender(graph):
+    """
+    Analyze gender coverage for Music Artists in the knowledge graph.
+    Returns a dictionary with:
+       - Total artists (for gender analysis)
+       - Artists with gender information
+       - Gender coverage (percentage)
+       - A breakdown distribution of gender values.
+    """
+    mo = Namespace(NAMESPACES['mo'])
+    
+    # Query for total distinct artists
+    query_total_artists = """
+    SELECT (COUNT(DISTINCT ?artist) as ?count)
+    WHERE {
+      ?artist a <http://example.org/mo#MusicArtist> .
+    }
+    """
+    total_artists = 0
+    for row in graph.query(query_total_artists):
+        total_artists = int(row[0])
+    
+    # Query for artists with a gender assigned
+    query_artists_with_gender = """
+    SELECT (COUNT(DISTINCT ?artist) as ?count)
+    WHERE {
+      ?artist a <http://example.org/mo#MusicArtist> .
+      ?artist <http://example.org/mo#hasGender> ?gender .
+    }
+    """
+    artists_with_gender = 0
+    for row in graph.query(query_artists_with_gender):
+        artists_with_gender = int(row[0])
+    
+    # Calculate coverage percentage
+    gender_coverage = (artists_with_gender / total_artists) * 100 if total_artists > 0 else 0
+    
+    # Query to get the distribution of gender values
+    query_gender_distribution = """
+    SELECT ?gender (COUNT(DISTINCT ?artist) as ?count)
+    WHERE {
+      ?artist a <http://example.org/mo#MusicArtist> .
+      ?artist <http://example.org/mo#hasGender> ?gender .
+    }
+    GROUP BY ?gender
+    ORDER BY DESC(?count)
+    """
+    gender_distribution = []
+    for row in graph.query(query_gender_distribution):
+        gender = str(row[0])
+        count = int(row[1])
+        percentage = (count / artists_with_gender) * 100 if artists_with_gender > 0 else 0
+        gender_distribution.append({
+            'gender': gender,
+            'count': count,
+            'percentage': percentage
+        })
+    
+    return {
+        "Artists with gender": artists_with_gender,
+        "Total artists (gender analysis)": total_artists,
+        "Gender coverage (%)": gender_coverage,
+        "Gender distribution": gender_distribution
+    }
+
+
+
+def analyze_genres(graph):
+    """Analyze genre coverage for tracks"""
+    mo = Namespace(NAMESPACES['mo'])
+    
+    # Total number of tracks
+    query_total_tracks = """
+    SELECT (COUNT(?track) as ?count)
+    WHERE {
+        ?track a <http://example.org/mo#Track> .
+    }
+    """
+    total_tracks = 0
+    for row in graph.query(query_total_tracks):
+        total_tracks = int(row[0])
+    
+    # Tracks with genre information
+    query_tracks_with_genre = """
+    SELECT (COUNT(DISTINCT ?track) as ?count)
+    WHERE {
+        ?track a <http://example.org/mo#Track> .
+        ?track <http://example.org/mo#hasGenre> ?genre .
+    }
+    """
+    tracks_with_genre = 0
+    for row in graph.query(query_tracks_with_genre):
+        tracks_with_genre = int(row[0])
+    
+    # Calculate coverage
+    genre_coverage = (tracks_with_genre / total_tracks) * 100 if total_tracks > 0 else 0
+    
+    return {
+        "Tracks with genre": tracks_with_genre,
+        "Total tracks (genre analysis)": total_tracks,
+        "Genre coverage (%)": genre_coverage
+    }
+
 def analyze_chart_runs(graph):
     """Analyze chart runs and their durations"""
     ex = Namespace(NAMESPACES['ex'])
@@ -866,7 +969,7 @@ def analyze_chart_runs(graph):
 def generate_comprehensive_report(output_dir, total_triples, entity_counts, relationship_counts, 
                                  time_analysis, lyrics_analysis, roles_analysis,
                                  artist_analysis, label_analysis,
-                                 chart_runs_analysis, time_entities_total, time_rels_total):
+                                 chart_runs_analysis, time_entities_total, time_rels_total,genre_analysis,gender_analysis):
     """Generate a comprehensive report containing all analysis in a single Markdown file"""
     
     # Create output directory if it doesn't exist
@@ -983,7 +1086,40 @@ def generate_comprehensive_report(output_dir, total_triples, entity_counts, rela
     
     for entry in lyrics_analysis.get("Lyrics length distribution", []):
         report += f"| {entry['range']} | {entry['count']} | {entry['percentage']:.2f}% |\n"
-    
+
+
+    report += f"""
+## Gender Analysis
+| Metric | Value |
+|--------|-------|
+| Artists with gender | {gender_analysis["Artists with gender"]} |
+| Total artists (gender analysis) | {gender_analysis["Total artists (gender analysis)"]} |
+| Gender coverage (%) | {gender_analysis["Gender coverage (%)"]:.2f}% |
+"""
+
+    if gender_analysis.get("Gender distribution"):
+        report += f"""
+        ### Gender Distribution
+        | Gender | Count | Percentage |
+        |--------|-------|------------|
+        """
+        for entry in gender_analysis["Gender distribution"]:
+            report += f"| {entry['gender']} | {entry['count']} | {entry['percentage']:.2f}% |\n"
+
+
+
+    report += f"""
+### Genre Analysis
+| Metric | Value |
+|--------|-------|
+"""
+
+    for metric, value in genre_analysis.items():
+        if isinstance(value, float):
+            report += f"| {metric} | {value:.2f}% |\n"
+        else:
+            report += f"| {metric} | {value} |\n"
+
     # Add theme distribution
     if "Theme distribution" in lyrics_analysis and lyrics_analysis["Theme distribution"]:
         report += f"""
@@ -1140,7 +1276,13 @@ def main():
     # Analyze chart runs
     print("Analyzing chart runs...")
     chart_runs_analysis = analyze_chart_runs(graph)
-    
+    # Analyze genre coverage
+    print("Analyzing genre coverage...")
+    genre_analysis = analyze_genres(graph)
+
+    print("Analyzing gender coverage...")
+    gender_analysis = analyze_gender(graph)
+
     # Print summary
     print("\nSummary:")
     print(f"- Total triples: {total_triples}")
@@ -1166,7 +1308,9 @@ def main():
         label_analysis,
         chart_runs_analysis,
         time_entities_total, 
-        time_rels_total
+        time_rels_total,
+        genre_analysis,
+        gender_analysis
     )
     
     print("\nAnalysis completed successfully!")
