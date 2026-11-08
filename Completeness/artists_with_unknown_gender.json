@@ -1,0 +1,2060 @@
+[
+  {
+    "artist_label": "2 Chains",
+    "artist_uri": "http://example.org/mo#artist_2_chains_0cd005",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "21 Savage and Metro Boomin",
+    "artist_uri": "http://example.org/mo#artist_21_savage_and_metro_boomin_11135b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "2Cellos",
+    "artist_uri": "http://example.org/mo#artist_2cellos_dc4363",
+    "legalName": null,
+    "dateOfBirth": "2011-01-20"
+  },
+  {
+    "artist_label": "3OH!3",
+    "artist_uri": "http://example.org/mo#artist_3oh3_9704ac",
+    "legalName": null,
+    "dateOfBirth": "2004-01-01"
+  },
+  {
+    "artist_label": "5 Seconds Of Summer",
+    "artist_uri": "http://example.org/mo#artist_5_seconds_of_summer_d2f6c0",
+    "legalName": null,
+    "dateOfBirth": "2011-01-01"
+  },
+  {
+    "artist_label": "6i",
+    "artist_uri": "http://example.org/mo#artist_6i_653c60",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "9ine",
+    "artist_uri": "http://example.org/mo#artist_9ine_e6f6ef",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "9ine feat Anuel AA",
+    "artist_uri": "http://example.org/mo#artist_9ine_feat_anuel_aa_ee5161",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "@iHeartMemphis",
+    "artist_uri": "http://example.org/mo#artist_iheartmemphis_57a2af",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "A Boogie Wit Da Hoodie",
+    "artist_uri": "http://example.org/mo#artist_a_boogie_wit_da_hoodie_c8cdb8",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "A Great Big World",
+    "artist_uri": "http://example.org/mo#artist_a_great_big_world_3bb08d",
+    "legalName": null,
+    "dateOfBirth": "2012-01-01"
+  },
+  {
+    "artist_label": "A Thous and Horses",
+    "artist_uri": "http://example.org/mo#artist_a_thous_and_horses_f4eb9b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "A Thousand Horses",
+    "artist_uri": "http://example.org/mo#artist_a_thousand_horses_7013c6",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "AWOLNATION",
+    "artist_uri": "http://example.org/mo#artist_awolnation_ff6ebe",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Afrojack",
+    "artist_uri": "http://example.org/mo#artist_afrojack_6f9731",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Alabama",
+    "artist_uri": "http://example.org/mo#artist_alabama_213fe6",
+    "legalName": null,
+    "dateOfBirth": "1969-01-01"
+  },
+  {
+    "artist_label": "Ale",
+    "artist_uri": "http://example.org/mo#artist_ale_f40f1b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Allan Kingdom",
+    "artist_uri": "http://example.org/mo#artist_allan_kingdom_e5cb0a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "AlunaGeorge",
+    "artist_uri": "http://example.org/mo#artist_alunageorge_4a523a",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Amber Riley",
+    "artist_uri": "http://example.org/mo#artist_amber_riley_ab62af",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "American Authors",
+    "artist_uri": "http://example.org/mo#artist_american_authors_89f130",
+    "legalName": null,
+    "dateOfBirth": "2006-01-01"
+  },
+  {
+    "artist_label": "Artists For Haiti",
+    "artist_uri": "http://example.org/mo#artist_artists_for_haiti_a45da8",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Artists Of Then",
+    "artist_uri": "http://example.org/mo#artist_artists_of_then_c51aca",
+    "legalName": null,
+    "dateOfBirth": "2016-01-01"
+  },
+  {
+    "artist_label": "Ayo",
+    "artist_uri": "http://example.org/mo#artist_ayo_7b1bed",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "BLACKPINK",
+    "artist_uri": "http://example.org/mo#artist_blackpink_0d055b",
+    "legalName": null,
+    "dateOfBirth": "2016-08-08"
+  },
+  {
+    "artist_label": "BTS",
+    "artist_uri": "http://example.org/mo#artist_bts_e66b8a",
+    "legalName": null,
+    "dateOfBirth": "2013-06-13"
+  },
+  {
+    "artist_label": "Backstreet Boys",
+    "artist_uri": "http://example.org/mo#artist_backstreet_boys_340af9",
+    "legalName": null,
+    "dateOfBirth": "1993-01-01"
+  },
+  {
+    "artist_label": "Bad Meets Evil",
+    "artist_uri": "http://example.org/mo#artist_bad_meets_evil_949de8",
+    "legalName": null,
+    "dateOfBirth": "1997-01-01"
+  },
+  {
+    "artist_label": "Bastille",
+    "artist_uri": "http://example.org/mo#artist_bastille_b31cc1",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Bebe Re",
+    "artist_uri": "http://example.org/mo#artist_bebe_re_648780",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Bon Iver",
+    "artist_uri": "http://example.org/mo#artist_bon_iver_c2aa5f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Bon Jovi",
+    "artist_uri": "http://example.org/mo#artist_bon_jovi_97df8c",
+    "legalName": null,
+    "dateOfBirth": "1983-01-01"
+  },
+  {
+    "artist_label": "Boys Like Girls",
+    "artist_uri": "http://example.org/mo#artist_boys_like_girls_fe7ba7",
+    "legalName": null,
+    "dateOfBirth": "2005-01-01"
+  },
+  {
+    "artist_label": "Brad Paisley duet",
+    "artist_uri": "http://example.org/mo#artist_brad_paisley_duet_000293",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Breathe Carolina",
+    "artist_uri": "http://example.org/mo#artist_breathe_carolina_bbe305",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "Breathe Caroline",
+    "artist_uri": "http://example.org/mo#artist_breathe_caroline_ceade2",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Brendon Urie",
+    "artist_uri": "http://example.org/mo#artist_brendon_urie_9fdf14",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Brothers Osborne",
+    "artist_uri": "http://example.org/mo#artist_brothers_osborne_2f56d6",
+    "legalName": null,
+    "dateOfBirth": "2013-01-01"
+  },
+  {
+    "artist_label": "CHVRCHES",
+    "artist_uri": "http://example.org/mo#artist_chvrches_077550",
+    "legalName": null,
+    "dateOfBirth": "2011-01-01"
+  },
+  {
+    "artist_label": "Cali Swag District",
+    "artist_uri": "http://example.org/mo#artist_cali_swag_district_89f077",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Campground Effect",
+    "artist_uri": "http://example.org/mo#artist_campground_effect_d01552",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Capital Cities",
+    "artist_uri": "http://example.org/mo#artist_capital_cities_ce2c74",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Cary Rae Jepsen",
+    "artist_uri": "http://example.org/mo#artist_cary_rae_jepsen_1b02b4",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Cascada",
+    "artist_uri": "http://example.org/mo#artist_cascada_c6f273",
+    "legalName": null,
+    "dateOfBirth": "2004-01-01"
+  },
+  {
+    "artist_label": "Cataracs",
+    "artist_uri": "http://example.org/mo#artist_cataracs_afdf66",
+    "legalName": null,
+    "dateOfBirth": "2003-01-01"
+  },
+  {
+    "artist_label": "Cedric Gervais",
+    "artist_uri": "http://example.org/mo#artist_cedric_gervais_99b37e",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Cee Lo Green",
+    "artist_uri": "http://example.org/mo#artist_cee_lo_green_0ef463",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Charli X C X",
+    "artist_uri": "http://example.org/mo#artist_charli_x_c_x_e1e50d",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Charlie Se",
+    "artist_uri": "http://example.org/mo#artist_charlie_se_ab1903",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Cheat Codes",
+    "artist_uri": "http://example.org/mo#artist_cheat_codes_70c4bc",
+    "legalName": null,
+    "dateOfBirth": "2014-01-01"
+  },
+  {
+    "artist_label": "Chris Young duet",
+    "artist_uri": "http://example.org/mo#artist_chris_young_duet_001c43",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Cirez D",
+    "artist_uri": "http://example.org/mo#artist_cirez_d_5cf3f8",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "City Girls",
+    "artist_uri": "http://example.org/mo#artist_city_girls_c556ac",
+    "legalName": null,
+    "dateOfBirth": "2017-01-01"
+  },
+  {
+    "artist_label": "Clare",
+    "artist_uri": "http://example.org/mo#artist_clare_4da3d7",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Clean B and it",
+    "artist_uri": "http://example.org/mo#artist_clean_b_and_it_81a007",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Clean Bandit",
+    "artist_uri": "http://example.org/mo#artist_clean_bandit_309b74",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Clipse",
+    "artist_uri": "http://example.org/mo#artist_clipse_66638e",
+    "legalName": null,
+    "dateOfBirth": "1992-01-01"
+  },
+  {
+    "artist_label": "Cobra Starship",
+    "artist_uri": "http://example.org/mo#artist_cobra_starship_9a77bb",
+    "legalName": null,
+    "dateOfBirth": "2005-01-01"
+  },
+  {
+    "artist_label": "Cold in Berlin",
+    "artist_uri": "http://example.org/mo#artist_cold_in_berlin_40d388",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Coldplay",
+    "artist_uri": "http://example.org/mo#artist_coldplay_aa9688",
+    "legalName": null,
+    "dateOfBirth": "1996-09-01"
+  },
+  {
+    "artist_label": "Cookin’ on 3 Burners",
+    "artist_uri": "http://example.org/mo#artist_cookin_on_3_burners_28e663",
+    "legalName": null,
+    "dateOfBirth": "2000-01-01"
+  },
+  {
+    "artist_label": "Cory Monteith",
+    "artist_uri": "http://example.org/mo#artist_cory_monteith_f24ada",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "DLOW",
+    "artist_uri": "http://example.org/mo#artist_dlow_7a0d08",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "DNCE",
+    "artist_uri": "http://example.org/mo#artist_dnce_7bfe0e",
+    "legalName": null,
+    "dateOfBirth": "2015-01-01"
+  },
+  {
+    "artist_label": "Daddy Yankee and Katy Perry",
+    "artist_uri": "http://example.org/mo#artist_daddy_yankee_and_katy_perry_6cb8ef",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Daft Punk",
+    "artist_uri": "http://example.org/mo#artist_daft_punk_8ee2c0",
+    "legalName": null,
+    "dateOfBirth": "1993-01-01"
+  },
+  {
+    "artist_label": "Dan",
+    "artist_uri": "http://example.org/mo#artist_dan_97c8e6",
+    "legalName": null,
+    "dateOfBirth": "2012-12-01"
+  },
+  {
+    "artist_label": "Daughtry",
+    "artist_uri": "http://example.org/mo#artist_daughtry_490d86",
+    "legalName": null,
+    "dateOfBirth": "2006-07-10"
+  },
+  {
+    "artist_label": "David Guetta and Chris Willis",
+    "artist_uri": "http://example.org/mo#artist_david_guetta_and_chris_willis_63571f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Davis Bowie",
+    "artist_uri": "http://example.org/mo#artist_davis_bowie_f8f806",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Deche-Charge",
+    "artist_uri": "http://example.org/mo#artist_dechecharge_5e5df0",
+    "legalName": null,
+    "dateOfBirth": "1990-08-01"
+  },
+  {
+    "artist_label": "Demi Lovato",
+    "artist_uri": "http://example.org/mo#artist_demi_lovato_de59f8",
+    "legalName": null,
+    "dateOfBirth": "1992-08-20"
+  },
+  {
+    "artist_label": "Diddy - Dirty Money",
+    "artist_uri": "http://example.org/mo#artist_diddy__dirty_money_bd561e",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Disciples",
+    "artist_uri": "http://example.org/mo#artist_disciples_ca1ef6",
+    "legalName": null,
+    "dateOfBirth": "2013-01-01"
+  },
+  {
+    "artist_label": "Disclosure",
+    "artist_uri": "http://example.org/mo#artist_disclosure_cffcb1",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Disturbed",
+    "artist_uri": "http://example.org/mo#artist_disturbed_1fde13",
+    "legalName": null,
+    "dateOfBirth": "1996-01-01"
+  },
+  {
+    "artist_label": "Dragonette",
+    "artist_uri": "http://example.org/mo#artist_dragonette_c98615",
+    "legalName": null,
+    "dateOfBirth": "2005-01-01"
+  },
+  {
+    "artist_label": "Dreamville",
+    "artist_uri": "http://example.org/mo#artist_dreamville_d9bfe0",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "Echosmith",
+    "artist_uri": "http://example.org/mo#artist_echosmith_06b4ac",
+    "legalName": null,
+    "dateOfBirth": "2009-02-01"
+  },
+  {
+    "artist_label": "Edward Maya and Vika Jigulina",
+    "artist_uri": "http://example.org/mo#artist_edward_maya_and_vika_jigulina_6e8484",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "El Cata or Dizzee Rascal",
+    "artist_uri": "http://example.org/mo#artist_el_cata_or_dizzee_rascal_ad5d0d",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Eli Young B and",
+    "artist_uri": "http://example.org/mo#artist_eli_young_b_and_cca840",
+    "legalName": null,
+    "dateOfBirth": "2000-01-01"
+  },
+  {
+    "artist_label": "Ellie Goulding X Diplo",
+    "artist_uri": "http://example.org/mo#artist_ellie_goulding_x_diplo_ddd2f0",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Empire Cast",
+    "artist_uri": "http://example.org/mo#artist_empire_cast_1cb6e8",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Estelle",
+    "artist_uri": "http://example.org/mo#artist_estelle_dc195a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Fall Out Boy",
+    "artist_uri": "http://example.org/mo#artist_fall_out_boy_ba7790",
+    "legalName": null,
+    "dateOfBirth": "2001-01-01"
+  },
+  {
+    "artist_label": "Far East Movement",
+    "artist_uri": "http://example.org/mo#artist_far_east_movement_2c7d4e",
+    "legalName": null,
+    "dateOfBirth": "2003-01-01"
+  },
+  {
+    "artist_label": "Far*East Movement",
+    "artist_uri": "http://example.org/mo#artist_fareast_movement_a08c47",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Fifth Harmony",
+    "artist_uri": "http://example.org/mo#artist_fifth_harmony_2ec043",
+    "legalName": null,
+    "dateOfBirth": "2012-07-27"
+  },
+  {
+    "artist_label": "Firestarter",
+    "artist_uri": "http://example.org/mo#artist_firestarter_60ad6e",
+    "legalName": null,
+    "dateOfBirth": "1997-01-01"
+  },
+  {
+    "artist_label": "Florence",
+    "artist_uri": "http://example.org/mo#artist_florence_bbf5e1",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "Florida Georgia Line",
+    "artist_uri": "http://example.org/mo#artist_florida_georgia_line_773d2c",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Fo",
+    "artist_uri": "http://example.org/mo#artist_fo_5aa893",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Forever",
+    "artist_uri": "http://example.org/mo#artist_forever_97055d",
+    "legalName": null,
+    "dateOfBirth": "2016-01-01"
+  },
+  {
+    "artist_label": "Foster The People",
+    "artist_uri": "http://example.org/mo#artist_foster_the_people_b41114",
+    "legalName": null,
+    "dateOfBirth": "2009-10-01"
+  },
+  {
+    "artist_label": "Freshlyground",
+    "artist_uri": "http://example.org/mo#artist_freshlyground_c0caec",
+    "legalName": null,
+    "dateOfBirth": "2002-01-01"
+  },
+  {
+    "artist_label": "Friends",
+    "artist_uri": "http://example.org/mo#artist_friends_3d5946",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Future and Young Thug",
+    "artist_uri": "http://example.org/mo#artist_future_and_young_thug_15379b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "G.R.L.",
+    "artist_uri": "http://example.org/mo#artist_grl_242213",
+    "legalName": null,
+    "dateOfBirth": "2013-02-01"
+  },
+  {
+    "artist_label": "Gente de Zona",
+    "artist_uri": "http://example.org/mo#artist_gente_de_zona_db1f76",
+    "legalName": null,
+    "dateOfBirth": "2000-01-01"
+  },
+  {
+    "artist_label": "Ghost Town DJ's",
+    "artist_uri": "http://example.org/mo#artist_ghost_town_djs_90b5f6",
+    "legalName": null,
+    "dateOfBirth": "1995-01-01"
+  },
+  {
+    "artist_label": "Glee Cast",
+    "artist_uri": "http://example.org/mo#artist_glee_cast_30b1fa",
+    "legalName": null,
+    "dateOfBirth": "2009-05-19"
+  },
+  {
+    "artist_label": "Gloriana",
+    "artist_uri": "http://example.org/mo#artist_gloriana_ec73d4",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Green Shoe Studio",
+    "artist_uri": "http://example.org/mo#artist_green_shoe_studio_8023b2",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Grey",
+    "artist_uri": "http://example.org/mo#artist_grey_caf3a0",
+    "legalName": null,
+    "dateOfBirth": "2015-01-01"
+  },
+  {
+    "artist_label": "Grouplove",
+    "artist_uri": "http://example.org/mo#artist_grouplove_38c73e",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Gucci Mane X Bruno Mars X Kodak Black",
+    "artist_uri": "http://example.org/mo#artist_gucci_mane_x_bruno_mars_x_kodak_black_6feb0d",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Gym Class Heroes",
+    "artist_uri": "http://example.org/mo#artist_gym_class_heroes_f5f6b8",
+    "legalName": null,
+    "dateOfBirth": "1997-01-01"
+  },
+  {
+    "artist_label": "Hailee Steinfeld and Alesso",
+    "artist_uri": "http://example.org/mo#artist_hailee_steinfeld_and_alesso_9a9784",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Hailee Steinfeld and Grey",
+    "artist_uri": "http://example.org/mo#artist_hailee_steinfeld_and_grey_ba7e4a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Hot Chelle Rae",
+    "artist_uri": "http://example.org/mo#artist_hot_chelle_rae_f965ec",
+    "legalName": null,
+    "dateOfBirth": "2005-01-01"
+  },
+  {
+    "artist_label": "IamDLOW",
+    "artist_uri": "http://example.org/mo#artist_iamdlow_801458",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "IamSu!",
+    "artist_uri": "http://example.org/mo#artist_iamsu_6e8f86",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Icona Pop",
+    "artist_uri": "http://example.org/mo#artist_icona_pop_f493c5",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Imagine Dragons",
+    "artist_uri": "http://example.org/mo#artist_imagine_dragons_84bb4f",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Imagine Dragons With Logic",
+    "artist_uri": "http://example.org/mo#artist_imagine_dragons_with_logic_1f5f5c",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Infared",
+    "artist_uri": "http://example.org/mo#artist_infared_c63b49",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "J Balvin and Willy William",
+    "artist_uri": "http://example.org/mo#artist_j_balvin_and_willy_william_40eab6",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "J. Balvin",
+    "artist_uri": "http://example.org/mo#artist_j_balvin_b89228",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "J. Davi$",
+    "artist_uri": "http://example.org/mo#artist_j_davi_3dbacd",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "JAY-Z",
+    "artist_uri": "http://example.org/mo#artist_jayz_503de9",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Jacob Colgan",
+    "artist_uri": "http://example.org/mo#artist_jacob_colgan_79dd92",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Jaden Smith",
+    "artist_uri": "http://example.org/mo#artist_jaden_smith_62f35b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "James Blake",
+    "artist_uri": "http://example.org/mo#artist_james_blake_f7a8e8",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Janelle Monae",
+    "artist_uri": "http://example.org/mo#artist_janelle_monae_63d62a",
+    "legalName": null,
+    "dateOfBirth": "1985-12-01"
+  },
+  {
+    "artist_label": "Jaron",
+    "artist_uri": "http://example.org/mo#artist_jaron_defcb8",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Jay Rock",
+    "artist_uri": "http://example.org/mo#artist_jay_rock_aea6e0",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Jay Z",
+    "artist_uri": "http://example.org/mo#artist_jay_z_af9b6f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Jay-Z and Kanye West",
+    "artist_uri": "http://example.org/mo#artist_jayz_and_kanye_west_9e5b7c",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Joey Gala",
+    "artist_uri": "http://example.org/mo#artist_joey_gala_c9d332",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "John",
+    "artist_uri": "http://example.org/mo#artist_john_61409a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Jonas Brothers",
+    "artist_uri": "http://example.org/mo#artist_jonas_brothers_6b6ec3",
+    "legalName": null,
+    "dateOfBirth": "2005-01-01"
+  },
+  {
+    "artist_label": "Justin Timberlake and Matt Morris",
+    "artist_uri": "http://example.org/mo#artist_justin_timberlake_and_matt_morris_bc689f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "KCamp",
+    "artist_uri": "http://example.org/mo#artist_kcamp_1d4df1",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "KONGOS",
+    "artist_uri": "http://example.org/mo#artist_kongos_1de50d",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "Kaney West",
+    "artist_uri": "http://example.org/mo#artist_kaney_west_426f29",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Kanye West",
+    "artist_uri": "http://example.org/mo#artist_kanye_west_729b33",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Karen Fairchild",
+    "artist_uri": "http://example.org/mo#artist_karen_fairchild_8c5df0",
+    "legalName": null,
+    "dateOfBirth": "1969-09-28"
+  },
+  {
+    "artist_label": "Karmin",
+    "artist_uri": "http://example.org/mo#artist_karmin_b8bb24",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Karol G",
+    "artist_uri": "http://example.org/mo#artist_karol_g_ed708b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Kehlani",
+    "artist_uri": "http://example.org/mo#artist_kehlani_8e0e72",
+    "legalName": null,
+    "dateOfBirth": "1995-04-24"
+  },
+  {
+    "artist_label": "Kelly Rowl and",
+    "artist_uri": "http://example.org/mo#artist_kelly_rowl_and_27ad49",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Kesha",
+    "artist_uri": "http://example.org/mo#artist_kesha_8e35ce",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Kids See Ghosts",
+    "artist_uri": "http://example.org/mo#artist_kids_see_ghosts_682481",
+    "legalName": null,
+    "dateOfBirth": "2018-01-01"
+  },
+  {
+    "artist_label": "Kings Of Leon",
+    "artist_uri": "http://example.org/mo#artist_kings_of_leon_87b6e6",
+    "legalName": null,
+    "dateOfBirth": "1999-01-01"
+  },
+  {
+    "artist_label": "Krewella",
+    "artist_uri": "http://example.org/mo#artist_krewella_8a61fd",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "Kungs vs Cookin' On 3 Burners",
+    "artist_uri": "http://example.org/mo#artist_kungs_vs_cookin_on_3_burners_ef4502",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "LANCO",
+    "artist_uri": "http://example.org/mo#artist_lanco_8903d6",
+    "legalName": null,
+    "dateOfBirth": "2012-01-01"
+  },
+  {
+    "artist_label": "LMFAO",
+    "artist_uri": "http://example.org/mo#artist_lmfao_de49c1",
+    "legalName": null,
+    "dateOfBirth": "2006-01-01"
+  },
+  {
+    "artist_label": "La Rou x",
+    "artist_uri": "http://example.org/mo#artist_la_rou_x_868d78",
+    "legalName": null,
+    "dateOfBirth": "2006-01-01"
+  },
+  {
+    "artist_label": "Labrinth",
+    "artist_uri": "http://example.org/mo#artist_labrinth_0be141",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Lady A",
+    "artist_uri": "http://example.org/mo#artist_lady_a_ab9ac5",
+    "legalName": null,
+    "dateOfBirth": "2006-01-01"
+  },
+  {
+    "artist_label": "Lady Antebellum",
+    "artist_uri": "http://example.org/mo#artist_lady_antebellum_c21580",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Lana Del Ray",
+    "artist_uri": "http://example.org/mo#artist_lana_del_ray_08ed5e",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Lea Michele",
+    "artist_uri": "http://example.org/mo#artist_lea_michele_1ba547",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Lifehouse",
+    "artist_uri": "http://example.org/mo#artist_lifehouse_751134",
+    "legalName": null,
+    "dateOfBirth": "1996-01-01"
+  },
+  {
+    "artist_label": "Lil Baby and Gunna",
+    "artist_uri": "http://example.org/mo#artist_lil_baby_and_gunna_015b56",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Lil Uzi Vert",
+    "artist_uri": "http://example.org/mo#artist_lil_uzi_vert_0afe12",
+    "legalName": null,
+    "dateOfBirth": "1995-07-31"
+  },
+  {
+    "artist_label": "Lilly Wood and The Prick",
+    "artist_uri": "http://example.org/mo#artist_lilly_wood_and_the_prick_5dd97e",
+    "legalName": null,
+    "dateOfBirth": "2006-01-01"
+  },
+  {
+    "artist_label": "Lillywood",
+    "artist_uri": "http://example.org/mo#artist_lillywood_f2a97a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Linkin Park",
+    "artist_uri": "http://example.org/mo#artist_linkin_park_c11dea",
+    "legalName": null,
+    "dateOfBirth": "1996-01-01"
+  },
+  {
+    "artist_label": "Little Big Town",
+    "artist_uri": "http://example.org/mo#artist_little_big_town_f508b6",
+    "legalName": null,
+    "dateOfBirth": "1998-01-01"
+  },
+  {
+    "artist_label": "Love",
+    "artist_uri": "http://example.org/mo#artist_love_8bd7a1",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Love and Theft",
+    "artist_uri": "http://example.org/mo#artist_love_and_theft_2bb535",
+    "legalName": null,
+    "dateOfBirth": "2006-01-01"
+  },
+  {
+    "artist_label": "Luis Fonsi and Daddy Yankee",
+    "artist_uri": "http://example.org/mo#artist_luis_fonsi_and_daddy_yankee_60faf7",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Lukas Graham",
+    "artist_uri": "http://example.org/mo#artist_lukas_graham_063c46",
+    "legalName": null,
+    "dateOfBirth": "2011-01-01"
+  },
+  {
+    "artist_label": "M0",
+    "artist_uri": "http://example.org/mo#artist_m0_8421ec",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "MAGIC!",
+    "artist_uri": "http://example.org/mo#artist_magic_3cdcf8",
+    "legalName": null,
+    "dateOfBirth": "2012-01-01"
+  },
+  {
+    "artist_label": "MKTO",
+    "artist_uri": "http://example.org/mo#artist_mkto_e8ec70",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "MO",
+    "artist_uri": "http://example.org/mo#artist_mo_eb0459",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Mac Miller",
+    "artist_uri": "http://example.org/mo#artist_mac_miller_fcb1b6",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Machine Gun Kelly",
+    "artist_uri": "http://example.org/mo#artist_machine_gun_kelly_3a5f83",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Macklemore",
+    "artist_uri": "http://example.org/mo#artist_macklemore_1ecd6f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Macklemore and Ryan Lewis",
+    "artist_uri": "http://example.org/mo#artist_macklemore_and_ryan_lewis_9f592a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Maejor Ali",
+    "artist_uri": "http://example.org/mo#artist_maejor_ali_1a7fb9",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Majid Jordan",
+    "artist_uri": "http://example.org/mo#artist_majid_jordan_c1b2c5",
+    "legalName": null,
+    "dateOfBirth": "2011-01-01"
+  },
+  {
+    "artist_label": "Major Lazer",
+    "artist_uri": "http://example.org/mo#artist_major_lazer_4ff7ef",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Major Lazer and DJ Snake",
+    "artist_uri": "http://example.org/mo#artist_major_lazer_and_dj_snake_8f9f1b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Marian Hill",
+    "artist_uri": "http://example.org/mo#artist_marian_hill_d525d9",
+    "legalName": null,
+    "dateOfBirth": "2013-01-01"
+  },
+  {
+    "artist_label": "Maroon 5",
+    "artist_uri": "http://example.org/mo#artist_maroon_5_0462eb",
+    "legalName": null,
+    "dateOfBirth": "2002-01-01"
+  },
+  {
+    "artist_label": "Matchbox Twenty",
+    "artist_uri": "http://example.org/mo#artist_matchbox_twenty_5909c1",
+    "legalName": null,
+    "dateOfBirth": "1996-01-01"
+  },
+  {
+    "artist_label": "Matt Mc And rew",
+    "artist_uri": "http://example.org/mo#artist_matt_mc_and_rew_39beb7",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Matthew Castle",
+    "artist_uri": "http://example.org/mo#artist_matthew_castle_bcdc3a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Matthew Schuler",
+    "artist_uri": "http://example.org/mo#artist_matthew_schuler_1571c1",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Men",
+    "artist_uri": "http://example.org/mo#artist_men_bbbcb4",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Metro Boomin Featuring Travis Scott",
+    "artist_uri": "http://example.org/mo#artist_metro_boomin_featuring_travis_scott_2c7dbb",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Michael Jackson duet",
+    "artist_uri": "http://example.org/mo#artist_michael_jackson_duet_872282",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Midl and",
+    "artist_uri": "http://example.org/mo#artist_midl_and_2456fd",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Midland",
+    "artist_uri": "http://example.org/mo#artist_midland_cc4c0e",
+    "legalName": null,
+    "dateOfBirth": "2014-01-01"
+  },
+  {
+    "artist_label": "Migos",
+    "artist_uri": "http://example.org/mo#artist_migos_d462e8",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Miley Cyrus",
+    "artist_uri": "http://example.org/mo#artist_miley_cyrus_1406a0",
+    "legalName": null,
+    "dateOfBirth": "1992-11-23"
+  },
+  {
+    "artist_label": "Milky Chance",
+    "artist_uri": "http://example.org/mo#artist_milky_chance_7f0a00",
+    "legalName": null,
+    "dateOfBirth": "2012-01-01"
+  },
+  {
+    "artist_label": "Missy \"Misdemeanor\" Elliott",
+    "artist_uri": "http://example.org/mo#artist_missy_misdemeanor_elliott_bcdd7f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Mumford",
+    "artist_uri": "http://example.org/mo#artist_mumford_513cf4",
+    "legalName": null,
+    "dateOfBirth": "2007-12-01"
+  },
+  {
+    "artist_label": "Muse",
+    "artist_uri": "http://example.org/mo#artist_muse_e3ff49",
+    "legalName": null,
+    "dateOfBirth": "1994-01-01"
+  },
+  {
+    "artist_label": "Mustard",
+    "artist_uri": "http://example.org/mo#artist_mustard_0c6ea1",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "N*E*R*D",
+    "artist_uri": "http://example.org/mo#artist_nerd_76de2f",
+    "legalName": null,
+    "dateOfBirth": "2001-01-01"
+  },
+  {
+    "artist_label": "NWA",
+    "artist_uri": "http://example.org/mo#artist_nwa_6bf898",
+    "legalName": null,
+    "dateOfBirth": "1986-01-01"
+  },
+  {
+    "artist_label": "Neil Patrick Harris",
+    "artist_uri": "http://example.org/mo#artist_neil_patrick_harris_c7b680",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Neon Trees",
+    "artist_uri": "http://example.org/mo#artist_neon_trees_911149",
+    "legalName": null,
+    "dateOfBirth": "2005-01-01"
+  },
+  {
+    "artist_label": "New Boyz",
+    "artist_uri": "http://example.org/mo#artist_new_boyz_2e8256",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Nickelback",
+    "artist_uri": "http://example.org/mo#artist_nickelback_6f9412",
+    "legalName": null,
+    "dateOfBirth": "1995-01-01"
+  },
+  {
+    "artist_label": "Nico",
+    "artist_uri": "http://example.org/mo#artist_nico_48088f",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "No Doubt",
+    "artist_uri": "http://example.org/mo#artist_no_doubt_997b42",
+    "legalName": null,
+    "dateOfBirth": "1986-12-01"
+  },
+  {
+    "artist_label": "Now",
+    "artist_uri": "http://example.org/mo#artist_now_1e1cc9",
+    "legalName": null,
+    "dateOfBirth": "2016-01-01"
+  },
+  {
+    "artist_label": "Of Monsters",
+    "artist_uri": "http://example.org/mo#artist_of_monsters_1caf7c",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Of Monsters and Men",
+    "artist_uri": "http://example.org/mo#artist_of_monsters_and_men_514a40",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Oh Wonder",
+    "artist_uri": "http://example.org/mo#artist_oh_wonder_e1c7a1",
+    "legalName": null,
+    "dateOfBirth": "2014-01-01"
+  },
+  {
+    "artist_label": "Old Dominion",
+    "artist_uri": "http://example.org/mo#artist_old_dominion_6eb38c",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "One Direction",
+    "artist_uri": "http://example.org/mo#artist_one_direction_88f801",
+    "legalName": null,
+    "dateOfBirth": "2010-07-23"
+  },
+  {
+    "artist_label": "OneRepublic",
+    "artist_uri": "http://example.org/mo#artist_onerepublic_d7e3dd",
+    "legalName": null,
+    "dateOfBirth": "2004-01-01"
+  },
+  {
+    "artist_label": "Panic! At The Disco",
+    "artist_uri": "http://example.org/mo#artist_panic_at_the_disco_815a8f",
+    "legalName": null,
+    "dateOfBirth": "2004-01-01"
+  },
+  {
+    "artist_label": "Paramore",
+    "artist_uri": "http://example.org/mo#artist_paramore_62ec94",
+    "legalName": null,
+    "dateOfBirth": "2004-01-01"
+  },
+  {
+    "artist_label": "Parmalee",
+    "artist_uri": "http://example.org/mo#artist_parmalee_3c5c62",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Pentatoni x",
+    "artist_uri": "http://example.org/mo#artist_pentatoni_x_1050ab",
+    "legalName": null,
+    "dateOfBirth": "2011-01-01"
+  },
+  {
+    "artist_label": "Pete Drake and His Talking Guitar",
+    "artist_uri": "http://example.org/mo#artist_pete_drake_and_his_talking_guitar_75d9bc",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Pharrell",
+    "artist_uri": "http://example.org/mo#artist_pharrell_608f5b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Pink",
+    "artist_uri": "http://example.org/mo#artist_pink_8dc534",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Pinkfong",
+    "artist_uri": "http://example.org/mo#artist_pinkfong_2c88f5",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Pistol Annies",
+    "artist_uri": "http://example.org/mo#artist_pistol_annies_7245d7",
+    "legalName": null,
+    "dateOfBirth": "2011-04-04"
+  },
+  {
+    "artist_label": "Plain White T's",
+    "artist_uri": "http://example.org/mo#artist_plain_white_ts_c1fac6",
+    "legalName": null,
+    "dateOfBirth": "1997-01-01"
+  },
+  {
+    "artist_label": "Portugal. The Man",
+    "artist_uri": "http://example.org/mo#artist_portugal_the_man_2d56da",
+    "legalName": null,
+    "dateOfBirth": "2004-01-01"
+  },
+  {
+    "artist_label": "Queen",
+    "artist_uri": "http://example.org/mo#artist_queen_2c2d2c",
+    "legalName": null,
+    "dateOfBirth": "1970-06-27"
+  },
+  {
+    "artist_label": "R. City",
+    "artist_uri": "http://example.org/mo#artist_r_city_a94ee8",
+    "legalName": null,
+    "dateOfBirth": "2003-01-01"
+  },
+  {
+    "artist_label": "Rae Sremmurd",
+    "artist_uri": "http://example.org/mo#artist_rae_sremmurd_addb70",
+    "legalName": null,
+    "dateOfBirth": "2013-01-01"
+  },
+  {
+    "artist_label": "Rascal Flatts",
+    "artist_uri": "http://example.org/mo#artist_rascal_flatts_e8257b",
+    "legalName": null,
+    "dateOfBirth": "1999-01-01"
+  },
+  {
+    "artist_label": "Reba",
+    "artist_uri": "http://example.org/mo#artist_reba_c789cc",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Red Hot Chili Peppers",
+    "artist_uri": "http://example.org/mo#artist_red_hot_chili_peppers_8780f1",
+    "legalName": null,
+    "dateOfBirth": "1983-01-01"
+  },
+  {
+    "artist_label": "Remy Boyz",
+    "artist_uri": "http://example.org/mo#artist_remy_boyz_2ff1ce",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Ri",
+    "artist_uri": "http://example.org/mo#artist_ri_6cecb2",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Rich Gang",
+    "artist_uri": "http://example.org/mo#artist_rich_gang_085c8c",
+    "legalName": null,
+    "dateOfBirth": "2013-01-01"
+  },
+  {
+    "artist_label": "Rixton",
+    "artist_uri": "http://example.org/mo#artist_rixton_391f3a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Roman GianArthur",
+    "artist_uri": "http://example.org/mo#artist_roman_gianarthur_41dcfa",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Rudimental",
+    "artist_uri": "http://example.org/mo#artist_rudimental_dd011a",
+    "legalName": null,
+    "dateOfBirth": "2010-01-01"
+  },
+  {
+    "artist_label": "Ruth B",
+    "artist_uri": "http://example.org/mo#artist_ruth_b_04ba4a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "SHAED",
+    "artist_uri": "http://example.org/mo#artist_shaed_1205d0",
+    "legalName": null,
+    "dateOfBirth": "2016-03-01"
+  },
+  {
+    "artist_label": "Sam Smith",
+    "artist_uri": "http://example.org/mo#artist_sam_smith_f35f73",
+    "legalName": null,
+    "dateOfBirth": "1992-05-19"
+  },
+  {
+    "artist_label": "Selena Gomez",
+    "artist_uri": "http://example.org/mo#artist_selena_gomez_401a28",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Shawn Mendes X Zedd",
+    "artist_uri": "http://example.org/mo#artist_shawn_mendes_x_zedd_3c0897",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Shay",
+    "artist_uri": "http://example.org/mo#artist_shay_eee656",
+    "legalName": null,
+    "dateOfBirth": "2012-12-01"
+  },
+  {
+    "artist_label": "Shinedown",
+    "artist_uri": "http://example.org/mo#artist_shinedown_ebdcda",
+    "legalName": null,
+    "dateOfBirth": "2001-01-01"
+  },
+  {
+    "artist_label": "Skipper",
+    "artist_uri": "http://example.org/mo#artist_skipper_66c877",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Skrille",
+    "artist_uri": "http://example.org/mo#artist_skrille_fa71e4",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Snoop Dogg and Wiz Khalifa",
+    "artist_uri": "http://example.org/mo#artist_snoop_dogg_and_wiz_khalifa_0e64d3",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Sons",
+    "artist_uri": "http://example.org/mo#artist_sons_8b520c",
+    "legalName": null,
+    "dateOfBirth": "2007-12-01"
+  },
+  {
+    "artist_label": "Soulja Boy Tell'em",
+    "artist_uri": "http://example.org/mo#artist_soulja_boy_tellem_cb36d6",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Spooks",
+    "artist_uri": "http://example.org/mo#artist_spooks_365336",
+    "legalName": null,
+    "dateOfBirth": "1994-01-01"
+  },
+  {
+    "artist_label": "Sunday Service Choir",
+    "artist_uri": "http://example.org/mo#artist_sunday_service_choir_708ab6",
+    "legalName": null,
+    "dateOfBirth": "2019-01-01"
+  },
+  {
+    "artist_label": "Swedish House Mafia",
+    "artist_uri": "http://example.org/mo#artist_swedish_house_mafia_e096cb",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "TLC",
+    "artist_uri": "http://example.org/mo#artist_tlc_e12a8b",
+    "legalName": null,
+    "dateOfBirth": "1991-01-01"
+  },
+  {
+    "artist_label": "Teo",
+    "artist_uri": "http://example.org/mo#artist_teo_d479c2",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Black Eyed Peas",
+    "artist_uri": "http://example.org/mo#artist_the_black_eyed_peas_e3623d",
+    "legalName": null,
+    "dateOfBirth": "1995-01-01"
+  },
+  {
+    "artist_label": "The Black Eyes Peas",
+    "artist_uri": "http://example.org/mo#artist_the_black_eyes_peas_01e339",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Bush Chemists",
+    "artist_uri": "http://example.org/mo#artist_the_bush_chemists_ba2226",
+    "legalName": null,
+    "dateOfBirth": "1993-01-01"
+  },
+  {
+    "artist_label": "The Carters",
+    "artist_uri": "http://example.org/mo#artist_the_carters_3c4d3d",
+    "legalName": null,
+    "dateOfBirth": "2018-01-01"
+  },
+  {
+    "artist_label": "The Cataracs",
+    "artist_uri": "http://example.org/mo#artist_the_cataracs_39c933",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Chainsmokers",
+    "artist_uri": "http://example.org/mo#artist_the_chainsmokers_3eb0c5",
+    "legalName": null,
+    "dateOfBirth": "2012-01-01"
+  },
+  {
+    "artist_label": "The Child Molesters",
+    "artist_uri": "http://example.org/mo#artist_the_child_molesters_dd0e94",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Civil Wars",
+    "artist_uri": "http://example.org/mo#artist_the_civil_wars_ec9b2e",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "The FiNATTiCZ",
+    "artist_uri": "http://example.org/mo#artist_the_finatticz_8b452e",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Fray",
+    "artist_uri": "http://example.org/mo#artist_the_fray_c231ce",
+    "legalName": null,
+    "dateOfBirth": "2002-01-01"
+  },
+  {
+    "artist_label": "The Long Road To Love",
+    "artist_uri": "http://example.org/mo#artist_the_long_road_to_love_4b3325",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Lumineers",
+    "artist_uri": "http://example.org/mo#artist_the_lumineers_73f89f",
+    "legalName": null,
+    "dateOfBirth": "2008-12-31"
+  },
+  {
+    "artist_label": "The Machine",
+    "artist_uri": "http://example.org/mo#artist_the_machine_cfda66",
+    "legalName": null,
+    "dateOfBirth": "2007-01-01"
+  },
+  {
+    "artist_label": "The Neighbourhood",
+    "artist_uri": "http://example.org/mo#artist_the_neighbourhood_8ca80b",
+    "legalName": null,
+    "dateOfBirth": "2011-08-01"
+  },
+  {
+    "artist_label": "The Revolution",
+    "artist_uri": "http://example.org/mo#artist_the_revolution_d1aa7f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Ronettes",
+    "artist_uri": "http://example.org/mo#artist_the_ronettes_cdd044",
+    "legalName": null,
+    "dateOfBirth": "1959-01-01"
+  },
+  {
+    "artist_label": "The Script",
+    "artist_uri": "http://example.org/mo#artist_the_script_ac256c",
+    "legalName": null,
+    "dateOfBirth": "2001-01-01"
+  },
+  {
+    "artist_label": "The Throne",
+    "artist_uri": "http://example.org/mo#artist_the_throne_4a573d",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "The Wanted",
+    "artist_uri": "http://example.org/mo#artist_the_wanted_b2e796",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "The Weeknd",
+    "artist_uri": "http://example.org/mo#artist_the_weeknd_6175b9",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Theft",
+    "artist_uri": "http://example.org/mo#artist_theft_40f03b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Theophilus London",
+    "artist_uri": "http://example.org/mo#artist_theophilus_london_18b87c",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Thompson Square",
+    "artist_uri": "http://example.org/mo#artist_thompson_square_07a7f1",
+    "legalName": null,
+    "dateOfBirth": "2002-01-01"
+  },
+  {
+    "artist_label": "Tiara Thomas or Rihanna",
+    "artist_uri": "http://example.org/mo#artist_tiara_thomas_or_rihanna_357a94",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Tickle Me Pink",
+    "artist_uri": "http://example.org/mo#artist_tickle_me_pink_cecc47",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Tones",
+    "artist_uri": "http://example.org/mo#artist_tones_21566c",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Train",
+    "artist_uri": "http://example.org/mo#artist_train_e41273",
+    "legalName": null,
+    "dateOfBirth": "1994-01-01"
+  },
+  {
+    "artist_label": "Travis Porter",
+    "artist_uri": "http://example.org/mo#artist_travis_porter_646de0",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "Travis Scott",
+    "artist_uri": "http://example.org/mo#artist_travis_scott_d43893",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "U2",
+    "artist_uri": "http://example.org/mo#artist_u2_468482",
+    "legalName": null,
+    "dateOfBirth": "1976-01-01"
+  },
+  {
+    "artist_label": "Victorious Cast",
+    "artist_uri": "http://example.org/mo#artist_victorious_cast_b23412",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Vinz",
+    "artist_uri": "http://example.org/mo#artist_vinz_5ed9f5",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "Walk The Moon",
+    "artist_uri": "http://example.org/mo#artist_walk_the_moon_88aca4",
+    "legalName": null,
+    "dateOfBirth": "2008-03-06"
+  },
+  {
+    "artist_label": "Watt",
+    "artist_uri": "http://example.org/mo#artist_watt_a11e76",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Wham",
+    "artist_uri": "http://example.org/mo#artist_wham_e8a31b",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Wham!",
+    "artist_uri": "http://example.org/mo#artist_wham_870247",
+    "legalName": null,
+    "dateOfBirth": "1981-01-01"
+  },
+  {
+    "artist_label": "X Ambassadors",
+    "artist_uri": "http://example.org/mo#artist_x_ambassadors_fd0730",
+    "legalName": null,
+    "dateOfBirth": "2008-10-22"
+  },
+  {
+    "artist_label": "X X X TENTACION",
+    "artist_uri": "http://example.org/mo#artist_x_x_x_tentacion_2e4b06",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "X X X Tentacion",
+    "artist_uri": "http://example.org/mo#artist_x_x_x_tentacion_9365b7",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Ylvis",
+    "artist_uri": "http://example.org/mo#artist_ylvis_792fb1",
+    "legalName": null,
+    "dateOfBirth": "2000-10-19"
+  },
+  {
+    "artist_label": "Yoko / The Plastic Ono BandWith The Harlem Community Choir",
+    "artist_uri": "http://example.org/mo#artist_yoko__the_plastic_ono_bandwith_the_harle_b3cc25",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Young Jeezy",
+    "artist_uri": "http://example.org/mo#artist_young_jeezy_ec6912",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Young Money",
+    "artist_uri": "http://example.org/mo#artist_young_money_c5fcb2",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Young Thug and Travis Scott",
+    "artist_uri": "http://example.org/mo#artist_young_thug_and_travis_scott_41ff54",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "Zayn / Taylor Swift",
+    "artist_uri": "http://example.org/mo#artist_zayn__taylor_swift_b8c21f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "akon",
+    "artist_uri": "http://example.org/mo#artist_akon_ac6b00",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "and Diplo",
+    "artist_uri": "http://example.org/mo#artist_and_diplo_a9d0f7",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "and ra Stan",
+    "artist_uri": "http://example.org/mo#artist_and_ra_stan_4774cd",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "artists for puerto rico",
+    "artist_uri": "http://example.org/mo#artist_artists_for_puerto_rico_8395a4",
+    "legalName": null,
+    "dateOfBirth": "2017-01-01"
+  },
+  {
+    "artist_label": "beyonce",
+    "artist_uri": "http://example.org/mo#artist_beyonce_88f179",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "big sean",
+    "artist_uri": "http://example.org/mo#artist_big_sean_0dbdc9",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "blackbear",
+    "artist_uri": "http://example.org/mo#artist_blackbear_d2d950",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "carrie underwood",
+    "artist_uri": "http://example.org/mo#artist_carrie_underwood_ca097a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "drake",
+    "artist_uri": "http://example.org/mo#artist_drake_3ac75a",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "dro",
+    "artist_uri": "http://example.org/mo#artist_dro_fe1558",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "es",
+    "artist_uri": "http://example.org/mo#artist_es_12470f",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "fun.",
+    "artist_uri": "http://example.org/mo#artist_fun_a08060",
+    "legalName": null,
+    "dateOfBirth": "2008-01-01"
+  },
+  {
+    "artist_label": "ha",
+    "artist_uri": "http://example.org/mo#artist_ha_925cc8",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "iHeartMemphis",
+    "artist_uri": "http://example.org/mo#artist_iheartmemphis_c26430",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "iggy azalea",
+    "artist_uri": "http://example.org/mo#artist_iggy_azalea_847634",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "jason aldean",
+    "artist_uri": "http://example.org/mo#artist_jason_aldean_1bad10",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "jessie j",
+    "artist_uri": "http://example.org/mo#artist_jessie_j_95dad9",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "justin timberlake",
+    "artist_uri": "http://example.org/mo#artist_justin_timberlake_27adb3",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "katy perry",
+    "artist_uri": "http://example.org/mo#artist_katy_perry_a325e5",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "ke$ha",
+    "artist_uri": "http://example.org/mo#artist_keha_ecb4ce",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "keith urban",
+    "artist_uri": "http://example.org/mo#artist_keith_urban_0ac341",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "lana del rey",
+    "artist_uri": "http://example.org/mo#artist_lana_del_rey_6843f1",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "lil wayne",
+    "artist_uri": "http://example.org/mo#artist_lil_wayne_008240",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "lovelytheb and",
+    "artist_uri": "http://example.org/mo#artist_lovelytheb_and_d1095c",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "lovelytheband",
+    "artist_uri": "http://example.org/mo#artist_lovelytheband_572464",
+    "legalName": null,
+    "dateOfBirth": "2016-01-01"
+  },
+  {
+    "artist_label": "macklemore",
+    "artist_uri": "http://example.org/mo#artist_macklemore_de3669",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "matchbo",
+    "artist_uri": "http://example.org/mo#artist_matchbo_5a2ac2",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "melle mel",
+    "artist_uri": "http://example.org/mo#artist_melle_mel_2d35d9",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "miley cyrus",
+    "artist_uri": "http://example.org/mo#artist_miley_cyrus_5abffb",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "miranda lambert duet",
+    "artist_uri": "http://example.org/mo#artist_miranda_lambert_duet_4eeabd",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "nicki minaj",
+    "artist_uri": "http://example.org/mo#artist_nicki_minaj_1ed9ae",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "ryan lewis",
+    "artist_uri": "http://example.org/mo#artist_ryan_lewis_e9fcfb",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "social house",
+    "artist_uri": "http://example.org/mo#artist_social_house_9567ab",
+    "legalName": null,
+    "dateOfBirth": "2018-01-01"
+  },
+  {
+    "artist_label": "sugarland",
+    "artist_uri": "http://example.org/mo#artist_sugarland_225de9",
+    "legalName": null,
+    "dateOfBirth": "2002-01-01"
+  },
+  {
+    "artist_label": "t.i.",
+    "artist_uri": "http://example.org/mo#artist_ti_3f3228",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "the Fontane Sisters",
+    "artist_uri": "http://example.org/mo#artist_the_fontane_sisters_a0d507",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "the band perry",
+    "artist_uri": "http://example.org/mo#artist_the_band_perry_05373c",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "the lonely island",
+    "artist_uri": "http://example.org/mo#artist_the_lonely_island_7fe6f5",
+    "legalName": null,
+    "dateOfBirth": "2001-01-01"
+  },
+  {
+    "artist_label": "ton",
+    "artist_uri": "http://example.org/mo#artist_ton_511942",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "twenty",
+    "artist_uri": "http://example.org/mo#artist_twenty_ab389e",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "twenty one pilots",
+    "artist_uri": "http://example.org/mo#artist_twenty_one_pilots_0f24ea",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "wickerwolves",
+    "artist_uri": "http://example.org/mo#artist_wickerwolves_7be010",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "will.i.am or Juicy J",
+    "artist_uri": "http://example.org/mo#artist_william_or_juicy_j_a968ee",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "wiz khalifa",
+    "artist_uri": "http://example.org/mo#artist_wiz_khalifa_523d76",
+    "legalName": null,
+    "dateOfBirth": null
+  },
+  {
+    "artist_label": "yolanda be cool",
+    "artist_uri": "http://example.org/mo#artist_yolanda_be_cool_aafbfd",
+    "legalName": null,
+    "dateOfBirth": "2009-01-01"
+  },
+  {
+    "artist_label": "zac brown band",
+    "artist_uri": "http://example.org/mo#artist_zac_brown_band_a95c4f",
+    "legalName": null,
+    "dateOfBirth": "2000-01-01"
+  },
+  {
+    "artist_label": "zedd",
+    "artist_uri": "http://example.org/mo#artist_zedd_28b20c",
+    "legalName": null,
+    "dateOfBirth": null
+  }
+]

@@ -1,0 +1,409 @@
+artist,artist_uri,legalName,dateOfBirth,retrievedGender,sampleSong,rdfTriple
+6i,http://example.org/mo#artist_6i_653c60,,1989-07-08T00:00:00Z,male,,"```turtle
+<http://example.org/artist/6i> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+9ine,http://example.org/mo#artist_9ine_e6f6ef,Paulo Fernando Fazenda Manuel,1998-11-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/9ine> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+9ine feat Anuel AA,http://example.org/mo#artist_9ine_feat_anuel_aa_ee5161,Paulo Fernando Fazenda Manuel,1998-11-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/9ine> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+@iHeartMemphis,http://example.org/mo#artist_iheartmemphis_57a2af,,1993-01-25T00:00:00Z,male,,"```turtle
+<http://example.org/artist/iheartmemphis> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+A Boogie Wit Da Hoodie,http://example.org/mo#artist_a_boogie_wit_da_hoodie_c8cdb8,Artist Julius DuBose,1995-12-06T00:00:00Z,male,,"```turtle
+<http://example.org/artist/a-boogie-wit-da-hoodie> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Afrojack,http://example.org/mo#artist_afrojack_6f9731,Nick van de Wall,1987-09-09T00:00:00Z,male,,"```turtle
+<http://example.org/artist/afrojack> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Alabama,http://example.org/mo#artist_alabama_213fe6,,2005-12-24T00:00:00Z,female,,"```turtle
+<http://example.org/artist/alabama> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Ale,http://example.org/mo#artist_ale_f40f1b,Alessandro Francesco Tommaso Antonio Manzoni,1785-03-07T00:00:00Z,male,,"```turtle
+<http://example.org/artist/ale> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Allan Kingdom,http://example.org/mo#artist_allan_kingdom_e5cb0a,,1994-01-06T00:00:00Z,male,,"```turtle
+<http://example.org/artist/allan-kingdom> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Amber Riley,http://example.org/mo#artist_amber_riley_ab62af,Amber Patrice Riley,1986-02-15T00:00:00Z,female,,"```turtle
+<http://example.org/artist/amber-riley> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Ayo,http://example.org/mo#artist_ayo_7b1bed,,1980-09-14T00:00:00Z,female,,"```turtle
+<http://example.org/artist/ayo> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+BTS,http://example.org/mo#artist_bts_e66b8a,,1357-11-29T00:00:00Z,male,,"```turtle
+<http://example.org/artist/bts> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Bastille,http://example.org/mo#artist_bastille_b31cc1,,1929-07-14T00:00:00Z,male,,"```turtle
+<http://example.org/artist/bastille> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Bebe Re,http://example.org/mo#artist_bebe_re_648780,María Nieves Rebolledo Vila,1978-05-09T00:00:00Z,female,,"```turtle
+<http://example.org/artist/bebe-re> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Bon Iver,http://example.org/mo#artist_bon_iver_c2aa5f,Justin DeYarmond Edison Vernon,1981-04-30T00:00:00Z,male,,"```turtle
+<http://example.org/artist/bon-iver> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Bon Jovi,http://example.org/mo#artist_bon_jovi_97df8c,John Francis Bongiovi Jr.,1962-03-02T00:00:00Z,male,,"```turtle
+<http://example.org/artist/bon-jovi> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Brendon Urie,http://example.org/mo#artist_brendon_urie_9fdf14,,1987-04-12T00:00:00Z,male,,"```turtle
+<http://example.org/artist/brendon-urie> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Cedric Gervais,http://example.org/mo#artist_cedric_gervais_99b37e,Cédric DePasquale,1979-06-07T00:00:00Z,male,,"```turtle
+<http://example.org/artist/cedric-gervais> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Cee Lo Green,http://example.org/mo#artist_cee_lo_green_0ef463,Thomas DeCarlo Callaway,1975-05-30T00:00:00Z,male,,"```turtle
+<http://example.org/artist/cee-lo-green> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Charlie Se,http://example.org/mo#artist_charlie_se_ab1903,Charles Wayne Sexton,1968-08-11T00:00:00Z,male,,"```turtle
+<http://example.org/artist/charlie-se> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Cirez D,http://example.org/mo#artist_cirez_d_5cf3f8,Eric Sheridan Prydz,1976-07-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/cirez-d> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Clare,http://example.org/mo#artist_clare_4da3d7,,1948-06-23T00:00:00Z,male,,"```turtle
+<http://example.org/artist/clare> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Cory Monteith,http://example.org/mo#artist_cory_monteith_f24ada,Cory Allan Michael Monteith,1982-05-11T00:00:00Z,male,,"```turtle
+<http://example.org/artist/cory-monteith> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+DLOW,http://example.org/mo#artist_dlow_7a0d08,,1995-08-15T00:00:00Z,male,,"```turtle
+<http://example.org/artist/dlow> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Dan,http://example.org/mo#artist_dan_97c8e6,Dante da Alaghiero degli Alaghieri,1265-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/dan> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Daughtry,http://example.org/mo#artist_daughtry_490d86,,1898-02-01T00:00:00Z,female,,"```turtle
+<http://example.org/artist/daughtry> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Demi Lovato,http://example.org/mo#artist_demi_lovato_de59f8,Demetria Devonne Lovato,1992-08-20T00:00:00Z,non-binary,,"```turtle
+<http://example.org/artist/demi-lovato> mo:hasGender <http://example.org/mo#gender_unknown> .
+```"
+Diddy - Dirty Money,http://example.org/mo#artist_diddy__dirty_money_bd561e,Sean John Combs,1969-11-04T00:00:00Z,male,,"```turtle
+<http://example.org/artist/diddy-dirty-money> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Dragonette,http://example.org/mo#artist_dragonette_c98615,,,female,,"```turtle
+<http://example.org/artist/dragonette> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Estelle,http://example.org/mo#artist_estelle_dc195a,Estelle Louise Fletcher,1934-07-22T00:00:00Z,female,,"```turtle
+<http://example.org/artist/estelle> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Florence,http://example.org/mo#artist_florence_bbf5e1,,1959-12-21T00:00:00Z,female,,"```turtle
+<http://example.org/artist/florence> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Fo,http://example.org/mo#artist_fo_5aa893,,-0500-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/fo> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+G.R.L.,http://example.org/mo#artist_grl_242213,,,male,,"```turtle
+<http://example.org/artist/g-r-l> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Gloriana,http://example.org/mo#artist_gloriana_ec73d4,,1533-09-17T00:00:00Z,female,,"```turtle
+<http://example.org/artist/gloriana> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Grey,http://example.org/mo#artist_grey_caf3a0,Erin Grey Van Oosbree,1973-08-24T00:00:00Z,female,,"```turtle
+<http://example.org/artist/grey> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+IamSu!,http://example.org/mo#artist_iamsu_6e8f86,Sudan Ameer Williams,1989-11-16T00:00:00Z,male,,"```turtle
+<http://example.org/artist/iamsu> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+J. Balvin,http://example.org/mo#artist_j_balvin_b89228,,1985-05-07T00:00:00Z,male,,"```turtle
+<http://example.org/artist/j-balvin> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+J. Davi$,http://example.org/mo#artist_j_davi_3dbacd,,1914-07-12T00:00:00Z,male,,"```turtle
+<http://example.org/artist/j-davi> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+JAY-Z,http://example.org/mo#artist_jayz_503de9,Shawn Corey Carter,1969-12-04T00:00:00Z,male,,"```turtle
+<http://example.org/artist/jay-z> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Jacob Colgan,http://example.org/mo#artist_jacob_colgan_79dd92,,,male,,"```turtle
+<http://example.org/artist/jacob-colgan> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Jaden Smith,http://example.org/mo#artist_jaden_smith_62f35b,Jaden Christopher Syre Smith,1998-07-08T00:00:00Z,male,,"```turtle
+<http://example.org/artist/jaden-smith> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+James Blake,http://example.org/mo#artist_james_blake_f7a8e8,James Riley Blake,1979-12-28T00:00:00Z,male,,"```turtle
+<http://example.org/artist/james-blake> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Janelle Monae,http://example.org/mo#artist_janelle_monae_63d62a,Janelle Monáe Robinson,1985-12-01T00:00:00Z,non-binary,,"```turtle
+<http://example.org/artist/janelle-monae> mo:hasGender <http://example.org/mo#gender_unknown> .
+```"
+Jaron,http://example.org/mo#artist_jaron_defcb8,,1960-05-03T00:00:00Z,male,,"```turtle
+<http://example.org/artist/jaron> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Jay Rock,http://example.org/mo#artist_jay_rock_aea6e0,,1985-03-31T00:00:00Z,male,,"```turtle
+<http://example.org/artist/jay-rock> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Jay Z,http://example.org/mo#artist_jay_z_af9b6f,Shawn Corey Carter,1969-12-04T00:00:00Z,male,,"```turtle
+<http://example.org/artist/jay-z> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Joey Gala,http://example.org/mo#artist_joey_gala_c9d332,,,unknown,,"```turtle
+<http://example.org/artist/joey-gala> mo:hasGender <http://example.org/mo#gender_unknown> .
+```"
+John,http://example.org/mo#artist_john_61409a,,1892-01-03T00:00:00Z,male,,"```turtle
+<http://example.org/artist/john> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+KONGOS,http://example.org/mo#artist_kongos_1de50d,,,female,,"```turtle
+<http://example.org/artist/kongos> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Kanye West,http://example.org/mo#artist_kanye_west_729b33,Kanye Omari West,1977-06-08T00:00:00Z,male,,"```turtle
+<http://example.org/artist/kanye-west> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Karmin,http://example.org/mo#artist_karmin_b8bb24,,1830-06-05T00:00:00Z,male,,"```turtle
+<http://example.org/artist/karmin> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Karol G,http://example.org/mo#artist_karol_g_ed708b,,1781-11-08T00:00:00Z,male,,"```turtle
+<http://example.org/artist/karol-g> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Kehlani,http://example.org/mo#artist_kehlani_8e0e72,Kehlani Ashley Parrish,1995-04-24T00:00:00Z,non-binary,,"```turtle
+<http://example.org/artist/kehlani> mo:hasGender <http://example.org/mo#gender_unknown> .
+```"
+Kesha,http://example.org/mo#artist_kesha_8e35ce,Kesha Rose Sebert,1987-03-01T00:00:00Z,female,,"```turtle
+<http://example.org/artist/kesha> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+LANCO,http://example.org/mo#artist_lanco_8903d6,,1637-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/lanco> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Labrinth,http://example.org/mo#artist_labrinth_0be141,Timothy Lee McKenzie kefe nieggss,1989-01-04T00:00:00Z,male,,"```turtle
+<http://example.org/artist/labrinth> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Lady A,http://example.org/mo#artist_lady_a_ab9ac5,,1580-01-01T00:00:00Z,female,,"```turtle
+<http://example.org/artist/lady-a> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Lana Del Ray,http://example.org/mo#artist_lana_del_ray_08ed5e,Elizabeth Woolridge Grant,1985-06-21T00:00:00Z,female,,"```turtle
+<http://example.org/artist/lana-del-ray> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Lea Michele,http://example.org/mo#artist_lea_michele_1ba547,Lea Michele Sarfati,1986-08-29T00:00:00Z,female,,"```turtle
+<http://example.org/artist/lea-michele> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Lil Uzi Vert,http://example.org/mo#artist_lil_uzi_vert_0afe12,Symere Bysil Woods,1995-07-31T00:00:00Z,non-binary,,"```turtle
+<http://example.org/artist/lil-uzi-vert> mo:hasGender <http://example.org/mo#gender_unknown> .
+```"
+Love,http://example.org/mo#artist_love_8bd7a1,Prince Rogers Nelson,1958-06-07T00:00:00Z,male,,"```turtle
+<http://example.org/artist/love> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Lukas Graham,http://example.org/mo#artist_lukas_graham_063c46,,1988-09-18T00:00:00Z,male,,"```turtle
+<http://example.org/artist/lukas-graham> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+M0,http://example.org/mo#artist_m0_8421ec,,2005-05-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/m0> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+MAGIC!,http://example.org/mo#artist_magic_3cdcf8,,1971-04-18T00:00:00Z,male,,"```turtle
+<http://example.org/artist/magic> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+MO,http://example.org/mo#artist_mo_eb0459,Joannes Chrysostomus Wolfgangus Theophilus Mozart,1756-01-27T00:00:00Z,male,,"```turtle
+<http://example.org/artist/mo> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Mac Miller,http://example.org/mo#artist_mac_miller_fcb1b6,Malcolm James McCormick,1992-01-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/mac-miller> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Machine Gun Kelly,http://example.org/mo#artist_machine_gun_kelly_3a5f83,George Kelly Barnes,1895-07-18T00:00:00Z,male,,"```turtle
+<http://example.org/artist/machine-gun-kelly> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Macklemore,http://example.org/mo#artist_macklemore_1ecd6f,Benjamin Hammond Haggerty,1983-06-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/macklemore> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Maejor Ali,http://example.org/mo#artist_maejor_ali_1a7fb9,,1988-07-23T00:00:00Z,male,,"```turtle
+<http://example.org/artist/maejor-ali> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Marian Hill,http://example.org/mo#artist_marian_hill_d525d9,,1938-03-22T00:00:00Z,male,,"```turtle
+<http://example.org/artist/marian-hill> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Matthew Castle,http://example.org/mo#artist_matthew_castle_bcdc3a,,1984-01-02T00:00:00Z,male,,"```turtle
+<http://example.org/artist/matthew-castle> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Matthew Schuler,http://example.org/mo#artist_matthew_schuler_1571c1,,1992-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/matthew-schuler> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Men,http://example.org/mo#artist_men_bbbcb4,Mena Alexandra Suvari,1979-02-13T00:00:00Z,female,,"```turtle
+<http://example.org/artist/men> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Metro Boomin Featuring Travis Scott,http://example.org/mo#artist_metro_boomin_featuring_travis_scott_2c7dbb,Leland Tyler Wayne,1993-09-16T00:00:00Z,male,,"```turtle
+<http://example.org/artist/metro-boomin> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Miley Cyrus,http://example.org/mo#artist_miley_cyrus_1406a0,Destiny Hope Cyrus,1992-11-23T00:00:00Z,female,,"```turtle
+<http://example.org/artist/miley-cyrus> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Mumford,http://example.org/mo#artist_mumford_513cf4,,1895-10-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/mumford> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Mustard,http://example.org/mo#artist_mustard_0c6ea1,,1760-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/mustard> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+NWA,http://example.org/mo#artist_nwa_6bf898,,1976-08-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/nwa> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Neil Patrick Harris,http://example.org/mo#artist_neil_patrick_harris_c7b680,,1973-06-15T00:00:00Z,male,,"```turtle
+<http://example.org/artist/neil-patrick-harris> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Nico,http://example.org/mo#artist_nico_48088f,Nicolas Paul Stéphane Sarközy de Nagy-Bocsa,1955-01-28T00:00:00Z,male,,"```turtle
+<http://example.org/artist/nico> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Now,http://example.org/mo#artist_now_1e1cc9,,1965-04-07T00:00:00Z,male,,"```turtle
+<http://example.org/artist/now> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Pharrell,http://example.org/mo#artist_pharrell_608f5b,Pharrell Lanscilo Williams,1973-04-05T00:00:00Z,male,,"```turtle
+<http://example.org/artist/pharrell> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Pink,http://example.org/mo#artist_pink_8dc534,Alecia Beth Moore,1979-09-08T00:00:00Z,female,,"```turtle
+<http://example.org/artist/pink> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Queen,http://example.org/mo#artist_queen_2c2d2c,Ella Jane Fitzgerald,1917-04-25T00:00:00Z,female,,"```turtle
+<http://example.org/artist/queen> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Reba,http://example.org/mo#artist_reba_c789cc,Reba Nell McEntire,1955-03-28T00:00:00Z,female,,"```turtle
+<http://example.org/artist/reba> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Remy Boyz,http://example.org/mo#artist_remy_boyz_2ff1ce,,,unknown,,"```turtle
+<http://example.org/artist/remy-boyz> mo:hasGender <http://example.org/mo#gender_unknown> .
+```"
+Ri,http://example.org/mo#artist_ri_6cecb2,Wilhelm Richard Wagner,1813-05-22T00:00:00Z,male,,"```turtle
+<http://example.org/artist/ri> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Roman GianArthur,http://example.org/mo#artist_roman_gianarthur_41dcfa,,1988-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/roman-gianarthur> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Ruth B,http://example.org/mo#artist_ruth_b_04ba4a,Joan Ruth Bader,1933-03-15T00:00:00Z,female,,"```turtle
+<http://example.org/artist/ruth-b> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+SHAED,http://example.org/mo#artist_shaed_1205d0,Shaeda Christine Moghaddam,,female,,"```turtle
+<http://example.org/artist/shaed> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Sam Smith,http://example.org/mo#artist_sam_smith_f35f73,,1969-11-04T00:00:00Z,female,,"```turtle
+<http://example.org/artist/sam-smith> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Selena Gomez,http://example.org/mo#artist_selena_gomez_401a28,Selena Marie Gomez,1992-07-22T00:00:00Z,female,,"```turtle
+<http://example.org/artist/selena-gomez> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Shay,http://example.org/mo#artist_shay_eee656,Séamus John James Given,1976-04-20T00:00:00Z,male,,"```turtle
+<http://example.org/artist/shay> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Skipper,http://example.org/mo#artist_skipper_66c877,,1892-06-15T00:00:00Z,male,,"```turtle
+<http://example.org/artist/skipper> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Skrille,http://example.org/mo#artist_skrille_fa71e4,Sonny John Moore,1988-01-15T00:00:00Z,male,,"```turtle
+<http://example.org/artist/skrille> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Sons,http://example.org/mo#artist_sons_8b520c,,1973-06-04T00:00:00Z,female,,"```turtle
+<http://example.org/artist/sons> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+Soulja Boy Tell'em,http://example.org/mo#artist_soulja_boy_tellem_cb36d6,DeAndre Cortez Way,1990-07-28T00:00:00Z,male,,"```turtle
+<http://example.org/artist/soulja-boy-tell-em> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+TLC,http://example.org/mo#artist_tlc_e12a8b,,,male,,"```turtle
+<http://example.org/artist/tlc> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Teo,http://example.org/mo#artist_teo_d479c2,,1541-10-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/teo> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+The Machine,http://example.org/mo#artist_the_machine_cfda66,,1983-04-06T00:00:00Z,male,,"```turtle
+<http://example.org/artist/the-machine> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+The Weeknd,http://example.org/mo#artist_the_weeknd_6175b9,Abel Makkonen Tesfaye,1990-02-16T00:00:00Z,male,,"```turtle
+<http://example.org/artist/the-weeknd> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Theophilus London,http://example.org/mo#artist_theophilus_london_18b87c,Theophilus Musa London,1987-02-23T00:00:00Z,male,,"```turtle
+<http://example.org/artist/theophilus-london> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Tones,http://example.org/mo#artist_tones_21566c,,1972-04-28T00:00:00Z,male,,"```turtle
+<http://example.org/artist/tones> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Train,http://example.org/mo#artist_train_e41273,Bradley Lee Daugherty,1965-10-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/train> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Travis Scott,http://example.org/mo#artist_travis_scott_d43893,,1975-09-14T00:00:00Z,male,,"```turtle
+<http://example.org/artist/travis-scott> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Vinz,http://example.org/mo#artist_vinz_5ed9f5,,1823-09-30T00:00:00Z,male,,"```turtle
+<http://example.org/artist/vinz> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Watt,http://example.org/mo#artist_watt_a11e76,,1823-06-13T00:00:00Z,male,,"```turtle
+<http://example.org/artist/watt> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+Young Jeezy,http://example.org/mo#artist_young_jeezy_ec6912,Jay Wayne Jenkins,1977-09-28T00:00:00Z,male,,"```turtle
+<http://example.org/artist/young-jeezy> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+akon,http://example.org/mo#artist_akon_ac6b00,Alioune Badara Thiam N'gulu a Lulu,1973-04-16T00:00:00Z,male,,"```turtle
+<http://example.org/artist/akon> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+beyonce,http://example.org/mo#artist_beyonce_88f179,Beyonce Giselle Knowles,1981-09-04T00:00:00Z,female,,"```turtle
+<http://example.org/artist/beyonce> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+big sean,http://example.org/mo#artist_big_sean_0dbdc9,Sean Michael Leonard Anderson,1988-03-25T00:00:00Z,male,,"```turtle
+<http://example.org/artist/big-sean> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+blackbear,http://example.org/mo#artist_blackbear_d2d950,,1680-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/blackbear> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+carrie underwood,http://example.org/mo#artist_carrie_underwood_ca097a,Carrie Marie Underwood,1983-03-10T00:00:00Z,female,,"```turtle
+<http://example.org/artist/carrie-underwood> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+drake,http://example.org/mo#artist_drake_3ac75a,Drake Aubrey Graham,1986-10-24T00:00:00Z,male,,"```turtle
+<http://example.org/artist/drake> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+es,http://example.org/mo#artist_es_12470f,,1972-10-25T00:00:00Z,female,,"```turtle
+<http://example.org/artist/es> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+fun.,http://example.org/mo#artist_fun_a08060,,1967-12-30T00:00:00Z,male,,"```turtle
+<http://example.org/artist/fun> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+ha,http://example.org/mo#artist_ha_925cc8,Hans Christian Andersen,1805-04-02T00:00:00Z,male,,"```turtle
+<http://example.org/artist/ha> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+iHeartMemphis,http://example.org/mo#artist_iheartmemphis_c26430,,1993-01-25T00:00:00Z,male,,"```turtle
+<http://example.org/artist/iheartmemphis> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+iggy azalea,http://example.org/mo#artist_iggy_azalea_847634,,1990-06-07T00:00:00Z,female,,"```turtle
+<http://example.org/artist/iggy-azalea> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+jason aldean,http://example.org/mo#artist_jason_aldean_1bad10,Jason Aldine Williams,1977-02-28T00:00:00Z,male,,"```turtle
+<http://example.org/artist/jason-aldean> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+jessie j,http://example.org/mo#artist_jessie_j_95dad9,Jessica Ellen Cornish,1988-03-27T00:00:00Z,female,,"```turtle
+<http://example.org/artist/jessie-j> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+justin timberlake,http://example.org/mo#artist_justin_timberlake_27adb3,Justin Randall Timberlake,1981-01-31T00:00:00Z,male,,"```turtle
+<http://example.org/artist/justin-timberlake> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+katy perry,http://example.org/mo#artist_katy_perry_a325e5,Katheryn Elizabeth Hudson,1984-10-25T00:00:00Z,female,,"```turtle
+<http://example.org/artist/katy-perry> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+ke$ha,http://example.org/mo#artist_keha_ecb4ce,,1955-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/ke-ha> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+keith urban,http://example.org/mo#artist_keith_urban_0ac341,Keith Lionel Urban,1967-10-26T00:00:00Z,male,,"```turtle
+<http://example.org/artist/keith-urban> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+lana del rey,http://example.org/mo#artist_lana_del_rey_6843f1,Elizabeth Woolridge Grant,1985-06-21T00:00:00Z,female,,"```turtle
+<http://example.org/artist/lana-del-rey> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+lil wayne,http://example.org/mo#artist_lil_wayne_008240,Dwayne Michael Carter Jr.,1982-09-27T00:00:00Z,male,,"```turtle
+<http://example.org/artist/lil-wayne> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+macklemore,http://example.org/mo#artist_macklemore_de3669,Benjamin Hammond Haggerty,1983-06-19T00:00:00Z,male,,"```turtle
+<http://example.org/artist/macklemore> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+melle mel,http://example.org/mo#artist_melle_mel_2d35d9,Melvin Glover,1962-05-15T00:00:00Z,male,,"```turtle
+<http://example.org/artist/melle-mel> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+miley cyrus,http://example.org/mo#artist_miley_cyrus_5abffb,Destiny Hope Cyrus,1992-11-23T00:00:00Z,female,,"```turtle
+<http://example.org/artist/miley-cyrus> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+nicki minaj,http://example.org/mo#artist_nicki_minaj_1ed9ae,Onika Tanya Maraj,1982-12-08T00:00:00Z,female,,"```turtle
+<http://example.org/artist/nicki-minaj> mo:hasGender <http://example.org/mo#gender_female> .
+```"
+ryan lewis,http://example.org/mo#artist_ryan_lewis_e9fcfb,,1988-03-25T00:00:00Z,male,,"```turtle
+<http://example.org/artist/ryan-lewis> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+t.i.,http://example.org/mo#artist_ti_3f3228,,1585-01-01T00:00:00Z,male,,"```turtle
+<http://example.org/artist/t-i> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+ton,http://example.org/mo#artist_ton_511942,,1953-05-06T00:00:00Z,male,,"```turtle
+<http://example.org/artist/ton> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+wiz khalifa,http://example.org/mo#artist_wiz_khalifa_523d76,Cameron Jibril Thomaz,1987-09-08T00:00:00Z,male,,"```turtle
+<http://example.org/artist/wiz-khalifa> mo:hasGender <http://example.org/mo#gender_male> .
+```"
+zedd,http://example.org/mo#artist_zedd_28b20c,,1989-09-02T00:00:00Z,male,,"```turtle
+<http://example.org/artist/zedd> mo:hasGender <http://example.org/mo#gender_male> .
+```"
